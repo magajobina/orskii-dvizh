@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 498, in script
+    "Вы проснулись с диким сушняком, у вас складывалось ощущение что вы больше не состоите на 60% из воды. Это было больше похоже на 100% головной боли и желания пить. Осушив литровую бутылку воды залпом вы собираетесь пойти в столовую, в которой на время практики вас бесплатно кормят."
+ValueError: unsupported format character '?' (0x438) at index 93
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 498, in script
+    "Вы проснулись с диким сушняком, у вас складывалось ощущение что вы больше не состоите на 60% из воды. Это было больше похоже на 100% головной боли и желания пить. Осушив литровую бутылку воды залпом вы собираетесь пойти в столовую, в которой на время практики вас бесплатно кормят."
+  File "renpy/ast.py", line 715, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "renpy/exports.py", line 1373, in say
+    what = what % tag_quoting_dict
+ValueError: unsupported format character '?' (0x438) at index 93
+
+Windows-10-10.0.26100
+Ren'Py 7.4.2.1292
+Орский движ 1.0
+Sat Nov 21 14:37:53 2026
