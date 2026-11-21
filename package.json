@@ -4,12 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "prepare:assets": "node tools/prepare-preview.mjs",
-    "predev": "npm run prepare:assets",
     "dev": "vite --host 127.0.0.1",
-    "prebuild": "npm run prepare:assets",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/engine.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/golos-text": "^5.3.0",
