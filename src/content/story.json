@@ -1,155 +1,123 @@
 {
   "version": 1,
-  "entry": "section-startt",
+  "entry": "line-38",
   "cover": "main-menu",
   "chapters": [
     {
       "id": "startt",
       "title": "Приезд в Орск",
-      "entry": "section-startt",
+      "entry": "line-38",
       "image": "bg-polina-anya"
     },
     {
       "id": "viotsidelli",
       "title": "Наземка и жигули",
-      "entry": "section-viotsidelli",
+      "entry": "line-275",
       "image": "bg-yarik-predlagaet-mashinu"
     },
     {
       "id": "dalee",
       "title": "Самолёт и «Трава»",
-      "entry": "section-dalee",
+      "entry": "line-361",
       "image": "limonchella"
     },
     {
       "id": "gostichkayarik",
       "title": "Сдача ФАПов",
-      "entry": "section-gostichkayarik",
+      "entry": "line-507",
       "image": "stolovaya"
     }
   ],
   "nodes": {
-    "line-53": {
-      "type": "jump",
-      "next": "section-suetahueta"
-    },
-    "line-56": {
-      "type": "jump",
-      "next": "section-kto_sret"
-    },
-    "line-59": {
-      "type": "jump",
-      "next": "section-buhalovka"
-    },
     "line-49": {
       "type": "choice",
       "options": [
         {
           "id": "line-52",
           "text": "Суета-хуета",
-          "next": "line-53",
+          "next": "line-67",
           "once": true
         },
         {
           "id": "line-55",
           "text": "Устроить соревнования кто быстрее срёт",
-          "next": "line-56",
+          "next": "line-77",
           "once": true
         },
         {
           "id": "line-58",
           "text": "Устроить соревнования кто быстрее нажрётся",
-          "next": "line-59"
+          "next": "line-87"
         }
       ],
-      "prompt": "line-50"
+      "prompt": "line-50",
+      "chapterId": "startt"
     },
     "line-50": {
       "type": "text",
       "text": "На балкон вошли ваши друзья Полина и Аня, вы поздоровались, послали друг друга нахуй и вам охота навести суету",
-      "next": "line-49"
+      "next": "line-49",
+      "chapterId": "startt"
     },
     "line-47": {
       "type": "scene",
       "asset": "bg-polina-anya",
-      "next": "line-50"
+      "next": "line-50",
+      "chapterId": "startt"
     },
     "line-45": {
       "type": "text",
       "text": "Вашему взору открылась бескрайняя степь и небольшое здание аэропорта с возвышающейся на фоне всего диспетчерской вышкой.",
-      "next": "line-47"
+      "next": "line-47",
+      "chapterId": "startt"
     },
     "line-43": {
       "type": "scene",
       "asset": "bg-orsk-tower1",
-      "next": "line-45"
+      "next": "line-45",
+      "chapterId": "startt"
     },
     "line-41": {
       "type": "text",
       "text": "Вы поднялись на третий этаж кирпичного здания, это была ваша гостиница. Вы быстро закинули вещи в комнату, и решили выйти на общий балкон.",
-      "next": "line-43"
+      "next": "line-43",
+      "chapterId": "startt"
     },
     "line-39": {
       "type": "scene",
       "asset": "bg-orsk-vid1",
-      "next": "line-41"
+      "next": "line-41",
+      "chapterId": "startt"
     },
     "line-38": {
       "type": "text",
       "text": "Вы приехали на практику в Орск. Это ваша первая летная практика, вы в предвкушении чего-то особенного.",
-      "next": "line-39"
-    },
-    "section-startt": {
-      "type": "jump",
-      "next": "line-38"
-    },
-    "line-69": {
-      "type": "jump",
-      "next": "section-buhalovka"
+      "next": "line-39",
+      "chapterId": "startt"
     },
     "line-67": {
       "type": "text",
       "text": "Суета-хуета, а бухать всё равно придётся",
-      "next": "line-49"
-    },
-    "section-suetahueta": {
-      "type": "jump",
-      "next": "line-67"
-    },
-    "line-79": {
-      "type": "jump",
-      "next": "section-buhalovka"
+      "next": "line-49",
+      "chapterId": "startt"
     },
     "line-77": {
       "type": "text",
       "text": "Давайте не будем расстраивать Алика, т.к. он всё равно проиграет в эту игру.",
-      "next": "line-49"
-    },
-    "section-kto_sret": {
-      "type": "jump",
-      "next": "line-77"
-    },
-    "line-96": {
-      "type": "jump",
-      "next": "section-vi_nazralis"
+      "next": "line-49",
+      "chapterId": "startt"
     },
     "line-95": {
       "type": "text",
       "text": "Пиздец, ты сюда бухать приехал или летать?",
-      "next": "line-96"
-    },
-    "line-100": {
-      "type": "jump",
-      "next": "section-vi_nazralis"
+      "next": "copy-8ee1c762-0",
+      "chapterId": "startt"
     },
     "line-99": {
       "type": "text",
       "text": "Ой, рука дрогнула, ну, придётся пить всё",
-      "next": "line-100"
-    },
-    "line-103": {
-      "type": "jump",
-      "next": "section-vi_nazralis"
+      "next": "line-111",
+      "chapterId": "startt"
     },
     "line-91": {
       "type": "choice",
@@ -157,75 +125,69 @@
         {
           "id": "line-94",
           "text": "Немножко, аргументируя это тем что сейчас 6 утра",
-          "next": "line-95"
+          "next": "scene-055daf5c",
+          "once": true
         },
         {
           "id": "line-98",
           "text": "Пол кружки",
-          "next": "line-99"
+          "next": "scene-110ebac8"
         },
         {
           "id": "line-102",
           "text": "Хуле я всё ещё вижу дно? Лей с горкой",
-          "next": "line-103"
+          "next": "copy-0e68ebc5-0"
         }
-      ]
+      ],
+      "chapterId": "startt"
     },
     "line-92": {
       "type": "text",
       "text": "Алик спрашивает сколько вам налить",
-      "next": "line-91"
+      "next": "line-91",
+      "chapterId": "startt"
     },
     "line-89": {
       "type": "text",
-      "text": "Вы пошли в комнату к тупым девкам и видите что Алик и Ярик, почему-то в трусах, уже наливают в пятую кружку водку ВОЗДУХ, будто знали что вы сейчас зайдёте подышать.",
-      "next": "line-92"
+      "text": "Вы пошли в комнату к тупым девкам и видите что Алик и Ярик, почему-то в трусах, уже наливают в пятую \"кружку\" водку ВОЗДУХ, будто знали что вы сейчас зайдёте подышать.",
+      "next": "line-92",
+      "chapterId": "startt"
     },
     "line-87": {
       "type": "scene",
-      "asset": "bg-alik-yarik-v-trusah",
-      "next": "line-89"
-    },
-    "section-buhalovka": {
-      "type": "jump",
-      "next": "line-87"
-    },
-    "line-120": {
-      "type": "jump",
-      "next": "section-otdohnut"
+      "asset": "bg-alik-yarik-v-trusah-v2",
+      "next": "line-89",
+      "chapterId": "startt"
     },
     "line-118": {
       "type": "text",
       "text": "На вас напал цыганский табор",
-      "next": "line-120"
+      "next": "line-140",
+      "chapterId": "startt"
     },
     "line-117": {
       "type": "scene",
       "asset": "bg-tsigani-anya",
-      "next": "line-118"
-    },
-    "line-126": {
-      "type": "jump",
-      "next": "section-otdohnut"
+      "next": "line-118",
+      "chapterId": "startt"
     },
     "line-124": {
       "type": "text",
       "text": "Вас утащили черти в преисподнюю",
-      "next": "line-126"
+      "next": "line-140",
+      "chapterId": "startt"
     },
     "line-123": {
       "type": "scene",
       "asset": "bg-preispodnyaa",
-      "next": "line-124"
-    },
-    "line-132": {
-      "type": "jump",
-      "next": "section-otdohnut"
+      "next": "line-124",
+      "chapterId": "startt"
     },
     "line-130": {
       "type": "text",
       "text": "Теперь вы живёте в конуре с Альбертом",
-      "next": "line-132"
+      "next": "line-140",
+      "chapterId": "startt"
     },
     "line-113": {
       "type": "choice",
@@ -245,48 +207,38 @@
           "text": "Алика от псины",
           "next": "line-130"
         }
-      ]
+      ],
+      "chapterId": "startt"
     },
     "line-114": {
       "type": "text",
-      "text": "Вы нажрались в рекордные сроки... опять. И не смотря на то что время без пятнадцати семь утра, вы уже не в состоянии отличить",
-      "next": "line-113"
+      "text": "Вы нажрались в рекордные сроки... опять. И не смотря на то что время без пятнадцати семь утра, вы уже не в состоянии отличить...",
+      "next": "line-113",
+      "chapterId": "startt"
     },
     "line-111": {
       "type": "scene",
       "asset": "bg-yarik-pivo",
-      "next": "line-114"
-    },
-    "section-vi_nazralis": {
-      "type": "jump",
-      "next": "line-111"
-    },
-    "line-162": {
-      "type": "jump",
-      "next": "section-vhodvkabinet1"
+      "next": "line-114",
+      "chapterId": "startt"
     },
     "line-160": {
       "type": "text",
       "text": "Он не моргает уже час. Это было глупым поступком, ведь все знают, что после того случая в армии он больше не моргает.",
-      "next": "line-162"
-    },
-    "line-170": {
-      "type": "jump",
-      "next": "section-vhodvkabinet2"
+      "next": "copy-49132140-0",
+      "chapterId": "startt"
     },
     "line-168": {
       "type": "text",
-      "text": "Однако ваше лицо он не заметил, но пока вы убегали, почувствовали его взгляд своей спиной, от чего обосрались ещё раз. Пока вы отмывались в туалете, по счастливой случайности нашли чьи-то трусы, надетые на швабру, поменяли их со своими, и пошли обратно к учебному классу.",
-      "next": "line-170"
+      "text": "Однако ваше лицо он не заметил, но пока вы убегали, почувствовали его взгляд своей спиной, от чего обосрались ещё раз. Пока вы отмывались в туалете, по счастливой случайности нашли чьи-то трусы, надетые на швабру",
+      "next": "choice-96a0aac7",
+      "chapterId": "startt"
     },
     "line-166": {
       "type": "text",
       "text": "План провалился. Вы обосрались не успев спустить штаны потому что Акашев вас заметил.",
-      "next": "line-168"
-    },
-    "line-174": {
-      "type": "jump",
-      "next": "section-vhodvkabinet"
+      "next": "scene-c80cc8e5",
+      "chapterId": "startt"
     },
     "line-156": {
       "type": "choice",
@@ -294,200 +246,70 @@
         {
           "id": "line-159",
           "text": "Как только он моргнёт усесться в класс",
-          "next": "line-160"
+          "next": "line-160",
+          "once": true
         },
         {
           "id": "line-164",
           "text": "Насрать в свой ранец и кинуть его ему в лицо",
-          "next": "line-166"
+          "next": "line-166",
+          "once": true
         },
         {
           "id": "line-172",
           "text": "Извиниться за опоздание и умереть добровольно",
-          "next": "line-174"
+          "next": "line-226"
         }
-      ]
+      ],
+      "chapterId": "startt"
     },
     "line-157": {
       "type": "text",
       "text": "Ваш командир Акашев уже был в классе. Бля че делать?",
-      "next": "line-156"
-    },
-    "line-154": {
-      "type": "text",
-      "text": "Ваш командир Акашев уже был в классе. Бля че делать?",
-      "next": "line-157"
+      "next": "copy-49132140-0",
+      "chapterId": "startt"
     },
     "line-152": {
       "type": "scene",
-      "asset": "bg-akashevclass",
-      "next": "line-154"
+      "asset": "bg-akashevclass-za-partoy-montazh-v2",
+      "next": "line-157",
+      "chapterId": "startt"
     },
     "line-150": {
       "type": "text",
       "text": "Вы выламываете нахуй дверь, пробегаете мимо КПП на перрон, и заглядываете в класс, в котором уже было полно народу.",
-      "next": "line-152"
+      "next": "line-152",
+      "chapterId": "startt"
     },
     "line-148": {
       "type": "scene",
       "asset": "bg-vilam-dver",
-      "next": "line-150"
+      "next": "line-150",
+      "chapterId": "startt"
     },
     "line-146": {
       "type": "text",
       "text": "Вы проснулись без признаков похмелья, потому что до сих пор пьяны. Кстати, вы опаздываете на наземку, так как ваш оглушительный храп затмивал звук будильника, и вы всё проебали.",
-      "next": "line-148"
+      "next": "line-148",
+      "chapterId": "startt"
     },
     "line-142": {
       "type": "text",
       "text": "Вы решили закончить пьянку и прилечь отдохнуть, ведь через пару часов вам уже нужно идти в АТБ на наземную подготовку.",
-      "next": "line-146"
+      "next": "scene-eb0c27fc",
+      "chapterId": "startt"
     },
     "line-140": {
       "type": "scene",
       "asset": "bg-alikspit",
-      "next": "line-142"
-    },
-    "section-otdohnut": {
-      "type": "jump",
-      "next": "line-140"
-    },
-    "line-191": {
-      "type": "jump",
-      "next": "section-vhodvkabinet"
-    },
-    "line-187": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-189",
-          "text": "Извиниться за опоздание и умереть добровольно",
-          "next": "line-191"
-        }
-      ]
-    },
-    "line-188": {
-      "type": "text",
-      "text": "Ваш командир Акашев уже был в классе. Бля че делать?",
-      "next": "line-187"
-    },
-    "line-185": {
-      "type": "text",
-      "text": "Однако ваше лицо он не заметил, но пока вы убегали, почувствовали его взгляд своей спиной, от чего обосрались ещё раз. Пока вы отмывались в туалете, по счастливой случайности нашли чьи-то трусы, надетые на швабру, поменяли их со своими, и пошли обратно к учебному классу.",
-      "next": "line-188"
-    },
-    "line-184": {
-      "type": "text",
-      "text": "План провалился. Вы обосрались не успев спустить штаны потому что Акашев вас заметил.",
-      "next": "line-185"
-    },
-    "line-195": {
-      "type": "jump",
-      "next": "section-vhodvkabinet"
-    },
-    "line-180": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-183",
-          "text": "Насрать в свой ранец и кинуть его ему в лицо",
-          "next": "line-184"
-        },
-        {
-          "id": "line-193",
-          "text": "Извиниться за опоздание и умереть добровольно",
-          "next": "line-195"
-        }
-      ]
-    },
-    "line-181": {
-      "type": "text",
-      "text": "Ваш командир Акашев уже был в классе. Бля че делать?",
-      "next": "line-180"
-    },
-    "section-vhodvkabinet1": {
-      "type": "jump",
-      "next": "line-181"
-    },
-    "line-212": {
-      "type": "jump",
-      "next": "section-vhodvkabinet"
-    },
-    "line-207": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-210",
-          "text": "Извиниться за опоздание и умереть добровольно",
-          "next": "line-212"
-        }
-      ]
-    },
-    "line-208": {
-      "type": "text",
-      "text": "Ваш командир Акашев уже был в классе. Бля че делать?",
-      "next": "line-207"
-    },
-    "line-205": {
-      "type": "text",
-      "text": "Он не моргает уже час. Это было глупым поступком, ведь все знают, что после того случая в армии он больше не моргает.",
-      "next": "line-208"
-    },
-    "line-216": {
-      "type": "jump",
-      "next": "section-vhodvkabinet"
-    },
-    "line-201": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-204",
-          "text": "Как только он моргнёт усесться в класс",
-          "next": "line-205"
-        },
-        {
-          "id": "line-214",
-          "text": "Извиниться за опоздание и умереть добровольно",
-          "next": "line-216"
-        }
-      ]
-    },
-    "line-202": {
-      "type": "text",
-      "text": "Ваш командир Акашев уже был в классе. Бля че делать?",
-      "next": "line-201"
-    },
-    "section-vhodvkabinet2": {
-      "type": "jump",
-      "next": "line-202"
-    },
-    "line-241": {
-      "type": "jump",
-      "next": "section-otvetmne"
-    },
-    "line-236": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-239",
-          "text": "Я усердно готовился",
-          "next": "line-241"
-        }
-      ]
-    },
-    "line-237": {
-      "type": "text",
-      "text": "Вы заходите в кабинет, и тут же слышите \"Слыш бля, чё опаздываем?\"",
-      "next": "line-236"
+      "next": "line-142",
+      "chapterId": "startt"
     },
     "line-234": {
       "type": "text",
       "text": "У вас недостаточно денег чтоб оплатить свои похороны.",
-      "next": "line-237"
-    },
-    "line-245": {
-      "type": "jump",
-      "next": "section-otvetmne"
+      "next": "line-230",
+      "chapterId": "startt"
     },
     "line-230": {
       "type": "choice",
@@ -495,60 +317,46 @@
         {
           "id": "line-233",
           "text": "Я проспал",
-          "next": "line-234"
+          "next": "line-234",
+          "once": true
         },
         {
           "id": "line-243",
           "text": "Я усердно готовился",
-          "next": "line-245"
+          "next": "line-254"
         }
-      ]
+      ],
+      "chapterId": "startt"
     },
     "line-231": {
       "type": "text",
       "text": "Вы заходите в кабинет, и тут же слышите \"Слыш бля, чё опаздываем?\"",
-      "next": "line-230"
-    },
-    "line-228": {
-      "type": "text",
-      "text": "Вы заходите в кабинет, и тут же слышите \"Слыш бля, чё опаздываем?\"",
-      "next": "line-231"
+      "next": "line-230",
+      "chapterId": "startt"
     },
     "line-226": {
       "type": "scene",
       "asset": "bg-akashevclass",
-      "next": "line-228"
-    },
-    "section-vhodvkabinet": {
-      "type": "jump",
-      "next": "line-226"
-    },
-    "line-259": {
-      "type": "jump",
-      "next": "section-viotsidelli"
+      "next": "line-231",
+      "chapterId": "startt"
     },
     "line-257": {
       "type": "text",
       "text": "Акашев вас запомнил и разрешил пройти в класс.",
-      "next": "line-259"
-    },
-    "line-264": {
-      "type": "jump",
-      "next": "section-viotsidelli"
+      "next": "scene-e0eb3818",
+      "chapterId": "startt"
     },
     "line-262": {
       "type": "text",
       "text": "Акашев вас запомнил, дал пиздюлей и разрешил пройти в класс.",
-      "next": "line-264"
-    },
-    "line-269": {
-      "type": "jump",
-      "next": "section-viotsidelli"
+      "next": "scene-e0eb3818",
+      "chapterId": "startt"
     },
     "line-267": {
       "type": "text",
       "text": "Акашев вас запомнил, дал пизды и разрешил пройти в класс.",
-      "next": "line-269"
+      "next": "scene-e0eb3818",
+      "chapterId": "startt"
     },
     "line-253": {
       "type": "choice",
@@ -568,28 +376,14 @@
           "text": "300 м",
           "next": "line-267"
         }
-      ]
+      ],
+      "chapterId": "startt"
     },
     "line-254": {
       "type": "text",
       "text": "Ну тогда ответь мне какая у нас минимальная высота полёта по ПВП",
-      "next": "line-253"
-    },
-    "section-otvetmne": {
-      "type": "jump",
-      "next": "line-254"
-    },
-    "line-302": {
-      "type": "jump",
-      "next": "section-yarik_zabral_dengi"
-    },
-    "line-311": {
-      "type": "jump",
-      "next": "section-yarik_zabral_dengi"
-    },
-    "line-320": {
-      "type": "jump",
-      "next": "section-yarik_zabral_dengi"
+      "next": "line-253",
+      "chapterId": "startt"
     },
     "line-315": {
       "type": "choice",
@@ -597,14 +391,16 @@
         {
           "id": "line-318",
           "text": "Согласиться и скинуться на жигули",
-          "next": "line-320"
+          "next": "scene-g2-line-329"
         }
-      ]
+      ],
+      "chapterId": "viotsidelli"
     },
     "line-316": {
       "type": "text",
       "text": "Вот ты садишься в обычную машину, заводишь её, едешь по делам. Ничего необычного. Но если ты заведешь жигули это будут эмоции на весь оставшийся день.",
-      "next": "line-315"
+      "next": "line-315",
+      "chapterId": "viotsidelli"
     },
     "line-306": {
       "type": "choice",
@@ -612,19 +408,21 @@
         {
           "id": "line-309",
           "text": "Согласиться и скинуться на жигули",
-          "next": "line-311"
+          "next": "scene-g2-line-329"
         },
         {
           "id": "line-313",
           "text": "Не соглашаться, жигули фигня",
-          "next": "line-316"
+          "next": "scene-g2-line-316"
         }
-      ]
+      ],
+      "chapterId": "viotsidelli"
     },
     "line-307": {
       "type": "text",
       "text": "Ты просто не понимаешь от чего отказываешься, это пропуск в лучшую жизнь.",
-      "next": "line-306"
+      "next": "line-306",
+      "chapterId": "viotsidelli"
     },
     "line-297": {
       "type": "choice",
@@ -632,120 +430,117 @@
         {
           "id": "line-300",
           "text": "Согласиться и скинуться на жигули",
-          "next": "line-302"
+          "next": "scene-g2-line-329"
         },
         {
           "id": "line-304",
           "text": "Не соглашаться, жигули хуйня",
-          "next": "line-307"
+          "next": "scene-g2-line-307"
         }
-      ]
+      ],
+      "chapterId": "viotsidelli"
     },
     "line-298": {
       "type": "text",
       "text": "Предлагаю совершить самую лучшую покупку в нашей жизни. Короче тема такая, скидываемся по две тыщи рублей и красный ретро автомобиль будет доступен в любое время когда мы сможем его завести.",
-      "next": "line-297"
-    },
-    "line-295": {
-      "type": "text",
-      "text": "Предлагаю совершить самую лучшую покупку в нашей жизни. Короче тема такая, скидываемся по две тыщи рублей и красный ретро автомобиль будет доступен в любое время когда мы сможем его завести.",
-      "next": "line-298"
+      "next": "copy-c0acd6b7-0",
+      "chapterId": "viotsidelli"
     },
     "line-293": {
       "type": "scene",
       "asset": "bg-yarik-predlagaet-mashinu",
-      "next": "line-295"
+      "next": "line-298",
+      "chapterId": "viotsidelli"
     },
     "line-291": {
       "type": "text",
       "text": "Вы уже начали собираться, как зашел Ярик.",
-      "next": "line-293"
+      "next": "line-293",
+      "chapterId": "viotsidelli"
     },
     "line-289": {
       "type": "text",
       "text": "Вам несказанно повезло, потому что вы летаете во вторую смену и просыпаетесь почти трезвым.",
-      "next": "line-291"
+      "next": "line-291",
+      "chapterId": "viotsidelli"
     },
     "line-287": {
       "type": "text",
       "text": "Наконец-то! Первый полёт не за горами, он будет уже завтра. Вы были безумно счастливы и всю ночь праздновали удачную сдачу зачёта. Саня Ларионов тоже праздновал, но пил не чокаясь.",
-      "next": "line-289"
+      "next": "line-289",
+      "chapterId": "viotsidelli"
     },
     "line-286": {
       "type": "scene",
-      "asset": "bg-komnata-buhat1",
-      "next": "line-287"
+      "asset": "g2-line-287-sanya-ne-chokaetsya",
+      "next": "line-287",
+      "chapterId": "viotsidelli"
     },
     "line-285": {
       "type": "text",
       "text": "Наступили выходные. Вы усердно готовились к зачёту (бухали), который должен будет пройти в понедельник, и, каким-то чудом вы все, кроме Сани Ларионова, сдали его с первого раза. Увы, чудо на нём не сработало.",
-      "next": "line-286"
+      "next": "line-286",
+      "chapterId": "viotsidelli"
     },
     "line-284": {
       "type": "scene",
       "asset": "bg-komnata-buhali-noch",
-      "next": "line-285"
+      "next": "line-285",
+      "chapterId": "viotsidelli"
     },
     "line-283": {
       "type": "text",
       "text": "Немного поиграв, вы пошли спать. ",
-      "next": "line-284"
+      "next": "line-284",
+      "chapterId": "viotsidelli"
     },
     "line-282": {
       "type": "scene",
       "asset": "dendy",
-      "next": "line-283"
+      "next": "line-283",
+      "chapterId": "viotsidelli"
     },
     "line-281": {
       "type": "text",
       "text": "По пути вы встречаете Алика, который зовёт вас поиграть в денди в комнату к тупым девкам, на что вы сразу соглашаетесь, ведь не важно что вы будете делать, вас всё равно в итоге выебут. Пускай это будет первым правилом практики.",
-      "next": "line-282"
+      "next": "line-282",
+      "chapterId": "viotsidelli"
     },
     "line-279": {
       "type": "text",
       "text": "И вот вы, униженный и опущеный, в этом, пока ещё чужом для вас Орске, идёте к себе в гостиницу, готовиться к зачётам на допуск к полётам.",
-      "next": "line-281"
+      "next": "scene-g2-line-281",
+      "chapterId": "viotsidelli"
     },
     "line-277": {
       "type": "text",
       "text": "Теперь вам предстояло знакомство с инструктором. Им оказался Зиненко Вадим Эдуардович. Собравшись со своим экипажем, вы пошли к самолёту где он унизил вас при всех своими странными вопросами, многие из которых вы до сих пор так и не поняли.",
-      "next": "line-279"
+      "next": "line-279",
+      "chapterId": "viotsidelli"
     },
     "line-276": {
       "type": "scene",
       "asset": "stoyanka",
-      "next": "line-277"
+      "next": "line-277",
+      "chapterId": "viotsidelli"
     },
     "line-275": {
       "type": "text",
       "text": "Вы отсидели всю наземную подготовку, на которой Акашев периодически заставлял вас чувствовать себя говном, обращаясь к вам с вопросами, на которые вы не знали ответа.",
-      "next": "line-276"
-    },
-    "section-viotsidelli": {
-      "type": "jump",
-      "next": "line-275"
-    },
-    "line-345": {
-      "type": "jump",
-      "next": "section-dalee"
+      "next": "line-276",
+      "chapterId": "viotsidelli"
     },
     "line-343": {
       "type": "text",
       "text": "Это будет слишком очевидная ложь, потому что все знают что его очень сложно не заметить.",
-      "next": "line-345"
-    },
-    "line-350": {
-      "type": "jump",
-      "next": "section-dalee"
+      "next": "line-339",
+      "chapterId": "viotsidelli"
     },
     "line-348": {
       "type": "text",
       "text": "Вы всё равно получите пизды. Первое правило практики.",
-      "next": "line-350"
-    },
-    "line-354": {
-      "type": "jump",
-      "next": "section-dalee"
+      "next": "line-361",
+      "chapterId": "viotsidelli"
     },
     "line-339": {
       "type": "choice",
@@ -753,85 +548,76 @@
         {
           "id": "line-342",
           "text": "Притвориться что вы его не заметили",
-          "next": "line-343"
+          "next": "line-343",
+          "once": true
+        },
+        {
+          "id": "line-352",
+          "text": "Выдохнуть ему в лицо",
+          "next": "scene-ab4f639a",
+          "once": true
         },
         {
           "id": "line-347",
           "text": "Да я не курю, я просто взял посмотреть",
           "next": "line-348"
-        },
-        {
-          "id": "line-352",
-          "text": "Выдохнуть ему в лицо",
-          "next": "line-354"
         }
-      ]
+      ],
+      "chapterId": "viotsidelli"
     },
     "line-340": {
       "type": "text",
       "text": "Как только очередь отсоса электро-дилдо дошла до вас, вы услышали голос из-за спины: \"Чё курим бля?\". Это был заместитель Акашева - Дмитриев. Бля чё делать",
-      "next": "line-339"
-    },
-    "line-337": {
-      "type": "text",
-      "text": "Как только очередь отсоса электро-дилдо дошла до вас, вы услышали голос из-за спины: \"Чё курим бля?\". Это был заместитель Акашева - Дмитриев. Бля чё делать",
-      "next": "line-340"
+      "next": "line-339",
+      "chapterId": "viotsidelli"
     },
     "line-335": {
       "type": "text",
       "text": "Вы вылезаете из самолёта и идёте в курилку чтобы попарить вейп Алика с миксом слюней.",
-      "next": "line-337"
+      "next": "scene-3d666560",
+      "chapterId": "viotsidelli"
     },
     "line-333": {
       "type": "text",
       "text": "вы уже заходите на посадку, как Зиненко спрашивает у вас: \"угол наклона глиссады два градуса сорок минут о чём это\". \"Действительно, о чем же это?\" - подумали вы, и не успели понять вопрос как он посадил за вас самолёт.",
-      "next": "line-335"
+      "next": "scene-34440fd8",
+      "chapterId": "viotsidelli"
     },
     "line-332": {
       "type": "scene",
       "asset": "sazhaet-samolet",
-      "next": "line-333"
+      "next": "line-333",
+      "chapterId": "viotsidelli"
     },
     "line-331": {
       "type": "text",
       "text": "В полёте время прошло незаметно, вы впервые снижаетесь на посадочной прямой, с охуевшими глазами и подскочившим сахаром в крови, ибо ветер в бочину дует с такой силой, что метеодатчики не могут его зарегистрировать, и сводка АТИС вещает в наушники \"не лезь блять дебил сука ебаный\"... ",
-      "next": "line-332"
+      "next": "line-332",
+      "chapterId": "viotsidelli"
     },
     "line-330": {
       "type": "scene",
-      "asset": "polet",
-      "next": "line-331"
+      "asset": "g2-line-331-bokovoy-veter",
+      "next": "line-331",
+      "chapterId": "viotsidelli"
     },
     "line-329": {
       "type": "text",
       "text": "Ярик забирает ваши деньги и скрывается на горизонте.",
-      "next": "line-330"
-    },
-    "section-yarik_zabral_dengi": {
-      "type": "jump",
-      "next": "line-329"
-    },
-    "line-375": {
-      "type": "jump",
-      "next": "section-limonchello1"
+      "next": "line-330",
+      "chapterId": "viotsidelli"
     },
     "line-373": {
       "type": "text",
       "text": "По сюжету вы не должны нажраться больше чем Ярик.",
-      "next": "line-375"
-    },
-    "line-381": {
-      "type": "jump",
-      "next": "section-limonchello2"
+      "next": "line-369",
+      "chapterId": "dalee"
     },
     "line-379": {
       "type": "text",
       "text": "Вас всё равно заставят пить лимончелло.",
-      "next": "line-381"
-    },
-    "line-385": {
-      "type": "jump",
-      "next": "section-limonchello"
+      "next": "line-369",
+      "chapterId": "dalee"
     },
     "line-369": {
       "type": "choice",
@@ -839,277 +625,152 @@
         {
           "id": "line-372",
           "text": "Запить лимончеллу водкой",
-          "next": "line-373"
+          "next": "line-373",
+          "once": true
         },
         {
           "id": "line-377",
           "text": "Заказать пиво, потому что вы и так не трезвели с начала практики",
-          "next": "line-379"
+          "next": "line-379",
+          "once": true
         },
         {
           "id": "line-383",
           "text": "Согласиться ебашить лимончеллу",
-          "next": "line-385"
+          "next": "scene-1da459fb"
         }
-      ]
+      ],
+      "chapterId": "dalee"
     },
     "line-370": {
       "type": "text",
       "text": "Девки предлагают вам глушить лимончеллу литрами, а вы хотите выпить водки.",
-      "next": "line-369"
-    },
-    "line-367": {
-      "type": "text",
-      "text": "Девки предлагают вам глушить лимончеллу литрами, а вы хотите выпить водки.",
-      "next": "line-370"
+      "next": "line-369",
+      "chapterId": "dalee"
     },
     "line-366": {
       "type": "scene",
-      "asset": "limonchella",
-      "next": "line-367"
+      "asset": "bg-limonchella-anya-polina-alik-v3",
+      "next": "line-370",
+      "chapterId": "dalee"
     },
     "line-365": {
       "type": "text",
-      "text": "Вы заехали за жигой и поехали на ней в самое культурное место Орска - в бар Трава.",
-      "next": "line-366"
+      "text": "Так как вы быстро отмыли самолёт у вас было время. Вы зашли за жигой и поехали на ней в самое культурное место Орска - в бар Трава.",
+      "next": "line-366",
+      "chapterId": "dalee"
     },
     "line-364": {
       "type": "scene",
       "asset": "devki-zhiga",
-      "next": "line-365"
+      "next": "line-365",
+      "chapterId": "dalee"
     },
     "line-363": {
       "type": "text",
       "text": "Вы уже было решили кто какую часть самолета станет мыть, но тут вы вспомнили первое правило практики, так что вы просто вылили на самолёт ведро воды, а оставшееся время потратили на то чтобы покурить с техниками. Вы были полны решимости сплавить все сегодняшние проблемы завтрашнему себе.",
-      "next": "line-364"
+      "next": "line-364",
+      "chapterId": "dalee"
     },
     "line-362": {
       "type": "scene",
       "asset": "moet-samolet",
-      "next": "line-363"
+      "next": "line-363",
+      "chapterId": "dalee"
     },
     "line-361": {
       "type": "text",
       "text": "Тут не было правильного ответа, ведь вы все в любом случае в наказание пойдёте драить самолёт с мылом. Ещё это похоже на то, что весь ваш план поехать за жигой и в бар накрылся пиздой.",
-      "next": "line-362"
-    },
-    "section-dalee": {
-      "type": "jump",
-      "next": "line-361"
-    },
-    "line-400": {
-      "type": "jump",
-      "next": "section-limonchello"
-    },
-    "line-396": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-398",
-          "text": "Согласиться ебашить лимончеллу",
-          "next": "line-400"
-        }
-      ]
-    },
-    "line-397": {
-      "type": "text",
-      "text": "Девки предлагают вам глушить лимончеллу литрами, а вы хотите выпить водки.",
-      "next": "line-396"
-    },
-    "line-394": {
-      "type": "text",
-      "text": "Вас всё равно заставят пить лимончелло.",
-      "next": "line-397"
-    },
-    "line-405": {
-      "type": "jump",
-      "next": "section-limonchello"
-    },
-    "line-391": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-393",
-          "text": "Заказать пиво, потому что вы и так не трезвели с начала практики",
-          "next": "line-394"
-        },
-        {
-          "id": "line-403",
-          "text": "Согласиться ебашить лимончеллу",
-          "next": "line-405"
-        }
-      ]
-    },
-    "line-392": {
-      "type": "text",
-      "text": "Девки предлагают вам глушить лимончеллу литрами, а вы хотите выпить водки.",
-      "next": "line-391"
-    },
-    "section-limonchello1": {
-      "type": "jump",
-      "next": "line-392"
-    },
-    "line-423": {
-      "type": "jump",
-      "next": "section-limonchello"
-    },
-    "line-419": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-421",
-          "text": "Согласиться ебашить лимончеллу",
-          "next": "line-423"
-        }
-      ]
-    },
-    "line-420": {
-      "type": "text",
-      "text": "Девки предлагают вам глушить лимончеллу литрами, а вы хотите выпить водки.",
-      "next": "line-419"
-    },
-    "line-417": {
-      "type": "text",
-      "text": "По сюжету вы не должны нажраться больше чем Ярик.",
-      "next": "line-420"
-    },
-    "line-427": {
-      "type": "jump",
-      "next": "section-limonchello"
-    },
-    "line-414": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-416",
-          "text": "Запить лимончеллу водкой",
-          "next": "line-417"
-        },
-        {
-          "id": "line-425",
-          "text": "Согласиться ебашить лимончеллу",
-          "next": "line-427"
-        }
-      ]
-    },
-    "line-415": {
-      "type": "text",
-      "text": "Девки предлагают вам глушить лимончеллу литрами, а вы хотите выпить водки.",
-      "next": "line-414"
-    },
-    "section-limonchello2": {
-      "type": "jump",
-      "next": "line-415"
-    },
-    "line-446": {
-      "type": "jump",
-      "next": "section-trava"
-    },
-    "line-453": {
-      "type": "jump",
-      "next": "section-trava"
+      "next": "line-362",
+      "chapterId": "dalee"
     },
     "line-451": {
       "type": "text",
-      "text": "Вы выпили ещё одну рюмку лимончеллы. \"Пиздец это что Акашев?\" пошутил Ярик и показал вам за спину. Вы обернулись. Лица всех людей выглядили как лицо Акашева. Вы поняли что это всего лишь галлюцинации, но это было не важно, вы были в минуте от того чтобы наложить в штаны. Нужно срочно пойти на улицу попарить с Аликом.",
-      "next": "line-453"
+      "text": "Лица всех людей выглядили как лицо Акашева. Вы поняли что это всего лишь галлюцинации, но это было не важно, вы были в минуте от того чтобы наложить в штаны. Нужно срочно пойти на улицу попарить с Аликом.",
+      "next": "scene-bf5f7d10",
+      "chapterId": "dalee"
     },
     "line-449": {
       "type": "scene",
       "asset": "eto-akashev",
-      "next": "line-451"
+      "next": "line-451",
+      "chapterId": "dalee"
     },
     "line-441": {
       "type": "choice",
       "options": [
         {
-          "id": "line-444",
-          "text": "Выйти на улицу чтоб пососать у Алика электрический дилдо",
-          "next": "line-446"
-        },
-        {
           "id": "line-448",
           "text": "Продолжить бухать дальше",
-          "next": "line-449"
+          "next": "text-e3e97e62"
+        },
+        {
+          "id": "line-444",
+          "text": "Выйти на улицу чтоб пососать у Алика электрический дилдо",
+          "next": "line-464"
         }
-      ]
-    },
-    "line-442": {
-      "type": "text",
-      "text": "Кажется вы уже потеряли счет выпитым рюмкам пива и бокалам лимончеллы. Вам хуёво",
-      "next": "line-441"
+      ],
+      "chapterId": "dalee"
     },
     "line-439": {
       "type": "text",
       "text": "Кажется вы уже потеряли счет выпитым рюмкам пива и бокалам лимончеллы. Вам хуёво",
-      "next": "line-442"
-    },
-    "section-limonchello": {
-      "type": "jump",
-      "next": "line-439"
-    },
-    "line-493": {
-      "type": "jump",
-      "next": "section-gostichkayarik"
-    },
-    "line-490": {
-      "type": "text",
-      "text": "Вы решили сходить на обед в столовую, в которой вас на время практики бесплатно кормят.",
-      "next": "line-493"
-    },
-    "line-489": {
-      "type": "text",
-      "text": "В очередной раз проснувшись с ужасным похмельем, вы страдали пару часов в кровати от головной боли, а затем пошли к девкам. У них не бывает похмелья, чему вы всегда очень завидовали, поэтому они давно проснулись и уже побывали в комнате у Ярика. Выяснилось что он ничего не помнит о вчерашнем дне, поэтому они сказали ему что вы все вместе приехали на жиге и легли спать.",
-      "next": "line-490"
+      "next": "line-441",
+      "chapterId": "dalee"
     },
     "line-488": {
       "type": "text",
       "text": "Из неё вываливается Ярик и ползёт в гостиницу. Вы захотели посмотреть это шоу до конца и смотрели че будет. Он полз через кусты, ворота, по шершавому освальту но не останавливался. Через некоторое время всё же добрался до входа, а там ему помогли добраться до своей комнаты ваши одногруппники. Вы решили посмотреть что будет утром, допили всё оставшееся и пошли спать.",
-      "next": "line-489"
+      "next": "line-498",
+      "chapterId": "dalee"
     },
     "line-487": {
       "type": "scene",
-      "asset": "devki-zhdut",
-      "next": "line-488"
+      "asset": "g3-line-486-zhiga-cherez-pole",
+      "next": "text-aab66a96",
+      "chapterId": "dalee"
     },
     "line-486": {
       "type": "text",
-      "text": "Вы делали тосты за здоровье Ярика, обсуждали как он смешно умер, как вдруг вы ушлышали звук автомобиля на улице. Вы выглянули из окна, а там ваша жига, прям по полю, врезаясь в стога сена, после крутого виража на 270 градусов паркуется напрямо на парковке около гостиницы.",
-      "next": "line-487"
+      "text": "Вы делали тосты за здоровье Ярика, обсуждали как он смешно умер, как вдруг вы ушлышали звук автомобиля на улице",
+      "next": "line-487",
+      "chapterId": "dalee"
     },
     "line-485": {
       "type": "scene",
-      "asset": "yarik-na-zhige",
-      "next": "line-486"
+      "asset": "pidor-yarik-traurnaya-lenta",
+      "next": "line-486",
+      "chapterId": "dalee"
     },
     "line-484": {
       "type": "text",
       "text": "Пока они ушли в туалет проверять этого черта вы быстренько собрались и вышли на улицу, вызвали такси и свалили в гостиницу пить дальше.",
-      "next": "line-485"
+      "next": "line-485",
+      "chapterId": "dalee"
     },
     "line-483": {
       "type": "text",
       "text": "Вы затаскиваете Ярика в туалет, закрываете дверь, затем идёте и рассказываете всё вашим собутыльникам и решаете эвакуироваться подальше от этого черта в туалете. Чтоб не наводить подозрений, вы, после недолгих раздумий, решаете позвать официанта и сказать что там какой-то совсем незнакомый бомж лежит в туалете с отказом ног.",
-      "next": "line-484"
-    },
-    "line-501": {
-      "type": "jump",
-      "next": "section-gostichkayarik"
+      "next": "line-484",
+      "chapterId": "dalee"
     },
     "line-498": {
       "type": "text",
-      "text": "Вы проснулись с диким сушняком, у вас складывалось ощущение что вы больше не состоите на 60% из воды. Это было больше похоже на 100% головной боли и желания пить. Осушив литровую бутылку воды залпом вы собираетесь пойти в столовую, в которой на время практики вас бесплатно кормят.",
-      "next": "line-501"
+      "text": "Вы проснулись с диким сушняком, у вас складывалось ощущение что вы больше не состоите на 60% из воды. Это было больше похоже на 100% головной боли и желания пить. Осушив литровую бутылку воды залпом вы собираетесь пойти проведать остальных",
+      "next": "scene-623f275a",
+      "chapterId": "dalee"
     },
     "line-497": {
       "type": "text",
       "text": "У вас было мало времени на вынос черта, но план сработал и вы благополучно провели спасательную операцию и вытащили Ярика на улицу, вызвали такси и свалили в гостиницу спать.",
-      "next": "line-498"
+      "next": "line-498",
+      "chapterId": "dalee"
     },
     "line-496": {
       "type": "text",
       "text": "Вы поржали с собутыльниками над Яриком и решили поступить так: пока Саня и Алик выносят Ярика вы отвлекаете официантов от сего происходящего. Повезло что сейчас в Траве используют кнопки для вызова официанта, поэтому вы пошли в другой конец зала и нажали на несколько кнопок на столах других людей чтоб все официанты ушли подальше от туалета.",
-      "next": "line-497"
+      "next": "line-497",
+      "chapterId": "dalee"
     },
     "line-479": {
       "type": "choice",
@@ -1122,121 +783,112 @@
         {
           "id": "line-495",
           "text": "Отвлечь официантов и вынести его вручную",
-          "next": "line-496"
+          "next": "scene-be8386f7"
         }
-      ]
-    },
-    "line-480": {
-      "type": "text",
-      "text": "Вы с Аликом заметили какие-то осколки у двери в туалет, зашли туда и увидели что толкан расколот пополам. Бля че делать",
-      "next": "line-479"
+      ],
+      "chapterId": "dalee"
     },
     "line-477": {
       "type": "text",
       "text": "Вы с Аликом заметили какие-то осколки у двери в туалет, зашли туда и увидели что толкан расколот пополам. Бля че делать",
-      "next": "line-480"
+      "next": "line-479",
+      "chapterId": "dalee"
     },
     "line-475": {
       "type": "text",
       "text": "Тут Ярик посмотрел на себя в зеркало, увидел чорта, и произошел отказ ног. Он сложился как карточный домик на пол и утратил всякую возможность ходить.",
-      "next": "line-477"
+      "next": "scene-1aaa7914",
+      "chapterId": "dalee"
     },
     "line-474": {
       "type": "scene",
       "asset": "yarik-slomalya",
-      "next": "line-475"
+      "next": "line-475",
+      "chapterId": "dalee"
     },
     "line-473": {
       "type": "text",
       "text": "Вы с Аликом пошли в туалет и обнаружили что Ярик немного недополз и что он лежит в луже блевотины. Вы привели его в чувство и стали помогать ему умыться.",
-      "next": "line-474"
+      "next": "line-474",
+      "chapterId": "dalee"
     },
     "line-471": {
       "type": "text",
       "text": "Полина сказала что Ярик, блять, пополз в туалет когда мы ушли парить и до сих пор не вернулся.",
-      "next": "line-473"
+      "next": "scene-4372be9b",
+      "chapterId": "dalee"
     },
     "line-469": {
       "type": "text",
       "text": "Альберт стал выглядить ещё подозрительнее, но тут вышла Полина и сказала чтоб вы шли внутрь потому что там пиздец.",
-      "next": "line-471"
+      "next": "scene-85fe1741",
+      "chapterId": "dalee"
     },
     "line-468": {
       "type": "scene",
       "asset": "litso-alik2",
-      "next": "line-469"
+      "next": "line-469",
+      "chapterId": "dalee"
     },
     "line-467": {
       "type": "text",
       "text": "Вы посмотрели на Алика, он подозрительно улыбался. Вы не смогли понять в чем дело и продолжили парить. Но этот вкус не давал вам покоя. Вы спросили у Алика об этом. ",
-      "next": "line-468"
+      "next": "line-468",
+      "chapterId": "dalee"
     },
     "line-466": {
       "type": "scene",
       "asset": "litso-alik1",
-      "next": "line-467"
+      "next": "line-467",
+      "chapterId": "dalee"
     },
     "line-465": {
       "type": "text",
-      "text": "Вы вышли на улицу и начинаете наяривать. Пар был очень приятным и сладким, но вы не могли понять с каким он вкусом. Вы решили закрыть глаза чтобы воображение заработало получше. Вы видите персик, яблоко и... писюн.",
-      "next": "line-466"
+      "text": "Вы вышли на улицу и начинаете наяривать. Пар был очень приятным и сладким, но вы не могли понять с каким он вкусом. Вы решили закрыть глаза чтобы воображение заработало получше. Вы видите \nперсик \nяблоко, и... \nписюн.",
+      "next": "line-466",
+      "chapterId": "dalee"
     },
     "line-464": {
       "type": "scene",
       "asset": "vishli-poparit",
-      "next": "line-465"
-    },
-    "section-trava": {
-      "type": "jump",
-      "next": "line-464"
-    },
-    "line-526": {
-      "type": "jump",
-      "next": "section-gostichkayarik"
-    },
-    "line-523": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-525",
-          "text": "Отмотать день на сегодняшнее утро",
-          "next": "line-526"
-        }
-      ]
+      "next": "line-465",
+      "chapterId": "dalee"
     },
     "line-524": {
       "type": "text",
       "text": "Вы проиграли",
-      "next": "line-523"
+      "next": "line-560",
+      "chapterId": "gostichkayarik"
     },
     "line-522": {
       "type": "text",
       "text": "Акашев заглянул в кабинет и нашел вас",
-      "next": "line-524"
+      "next": "line-524",
+      "chapterId": "gostichkayarik"
     },
     "line-521": {
       "type": "scene",
       "asset": "siyaniye",
-      "next": "line-522"
+      "next": "line-522",
+      "chapterId": "gostichkayarik"
     },
     "line-520": {
       "type": "text",
       "text": "В последнее мгновение вы успели зашмыгнуть в открытую дверь какого-то кабинета, там вы увидели шкаф и спрятались за ним. Сидя в засаде и слушая приближающиеся шаги своего ночного кошмара вы пытались учить оставшиеся главы ФАПа, но тут...",
-      "next": "line-521"
+      "next": "line-521",
+      "chapterId": "gostichkayarik"
     },
     "line-519": {
       "type": "text",
       "text": "Последнего человека выносят из Его кабинета на носилках, и вы в ужасе начинаете убегать куда нибудь, лишь бы ваша жизнь затянулась ещё на несколько мгновений, как вы услышали что Акашев вышел из своего кабинета...",
-      "next": "line-520"
+      "next": "line-520",
+      "chapterId": "gostichkayarik"
     },
     "line-518": {
       "type": "text",
       "text": "Очевидная близость к смерти, предсмертные послания родным людей, которые неправильно ответили ФАПы и прочие страшные вещи не оставляли вам и шанса сосредоточиться...",
-      "next": "line-519"
-    },
-    "line-536": {
-      "type": "jump",
-      "next": "section-gostichkayarik"
+      "next": "line-519",
+      "chapterId": "gostichkayarik"
     },
     "line-533": {
       "type": "choice",
@@ -1244,53 +896,58 @@
         {
           "id": "line-535",
           "text": "Отмотать день на сегодняшнее утро",
-          "next": "line-536"
+          "next": "line-507"
         }
-      ]
+      ],
+      "chapterId": "gostichkayarik"
     },
     "line-534": {
       "type": "text",
       "text": "Вы проиграли",
-      "next": "line-533"
+      "next": "line-533",
+      "chapterId": "gostichkayarik"
     },
     "line-532": {
       "type": "text",
       "text": "Подумали вы, как в класс заглянул Акешев.",
-      "next": "line-534"
+      "next": "line-534",
+      "chapterId": "gostichkayarik"
     },
     "line-531": {
       "type": "scene",
       "asset": "siyaniye",
-      "next": "line-532"
+      "next": "line-532",
+      "chapterId": "gostichkayarik"
     },
     "line-530": {
       "type": "text",
       "text": "Вы пошли в учебный класс в надежде на хороший исход. Вы не могли сосредоточиться из-за слишком громкого плача людей, которые уже побывали у Акешева. \"Кажется все уже сдали, но я ещё ничего не успел выучить\"...",
-      "next": "line-531"
-    },
-    "line-549": {
-      "type": "jump",
-      "next": "section-pipiska"
+      "next": "line-531",
+      "chapterId": "gostichkayarik"
     },
     "line-548": {
       "type": "text",
-      "text": "Так прошла вся эта неделя, выходные впервые были мрачными, вы сдавали ФАПы и страдали, иногда летали и сдавали ФАПы, и наконец, только к концу следующей недели вы, вместе со всеми, сдали весь 136 ФАП.",
-      "next": "line-549"
+      "text": "Так прошла вся эта неделя, выходные впервые были мрачными, вы сдавали ФАПы и страдали, иногда летали и сдавали ФАПы, вас ебали и вы сосали, и наконец, только к концу следующей недели вы, вместе со всеми, сдали весь 136 ФАП.",
+      "next": "line-558",
+      "chapterId": "gostichkayarik"
     },
     "line-547": {
       "type": "text",
       "text": "Вас спасла ваша молитва, состоящая из первых пяти глав 136го ФАПа. Он закрыл дверь, и судя по тому что вы ещё живы, вы отсрочили свою смерть на некоторое время. После этого вы пошли в класс, и заплакали вместе со всеми...",
-      "next": "line-548"
+      "next": "line-548",
+      "chapterId": "gostichkayarik"
     },
     "line-546": {
       "type": "text",
       "text": "Акашев за пару дней запомнил всех 60 студентов по вашим ФИО, фоткам и датам рождения бабушек, он знает где вы находитесь даже не глядя на вас, и, конечно, он всегда знает где вас найти...",
-      "next": "line-547"
+      "next": "line-547",
+      "chapterId": "gostichkayarik"
     },
     "line-545": {
       "type": "text",
       "text": "Вы бешено высрали все главы ФАПа, словно читая молитву лицом к лицу со смертью, рассказали всё что было нужно.",
-      "next": "line-546"
+      "next": "line-546",
+      "chapterId": "gostichkayarik"
     },
     "line-542": {
       "type": "choice",
@@ -1300,22 +957,26 @@
           "text": "Бешено высрать",
           "next": "line-545"
         }
-      ]
+      ],
+      "chapterId": "gostichkayarik"
     },
     "line-543": {
       "type": "text",
       "text": "Вы решили пойти сидеть в туалет, единственное место где сейчас было тихо. Благодаря господа за тишину, вы быстро читали нужные главы ФАПа, как в туалет заглянул Акешев",
-      "next": "line-542"
+      "next": "line-542",
+      "chapterId": "gostichkayarik"
     },
     "line-541": {
       "type": "scene",
       "asset": "siyaniye",
-      "next": "line-543"
+      "next": "line-543",
+      "chapterId": "gostichkayarik"
     },
     "line-540": {
       "type": "text",
       "text": "Вы решили пойти сидеть в туалет, единственное место где сейчас было тихо. Благодаря господа за тишину, вы быстро читали нужные главы ФАПа, как в туалет заглянул Акешев",
-      "next": "line-541"
+      "next": "line-541",
+      "chapterId": "gostichkayarik"
     },
     "line-514": {
       "type": "choice",
@@ -1335,58 +996,305 @@
           "text": "Уйти в туалет",
           "next": "line-540"
         }
-      ]
-    },
-    "line-515": {
-      "type": "text",
-      "text": "Пока вы стояли в очереди и учили вас постоянно отвлекали крики людей, которых выносили на носилках из Его кабинета одного за другим. Очередь уже подходила к концу, а вы всё ещё не выучили даже половины из того что нужно было рассказать. Может стоит куда-то уйти...",
-      "next": "line-514"
+      ],
+      "chapterId": "gostichkayarik"
     },
     "line-512": {
       "type": "text",
       "text": "Пока вы стояли в очереди и учили вас постоянно отвлекали крики людей, которых выносили на носилках из Его кабинета одного за другим. Очередь уже подходила к концу, а вы всё ещё не выучили даже половины из того что нужно было рассказать. Может стоит куда-то уйти...",
-      "next": "line-515"
+      "next": "line-514",
+      "chapterId": "gostichkayarik"
     },
     "line-511": {
       "type": "text",
       "text": "Когда вы зашли в АТБ вы увидели что половина людей стоит в очереди в Его кабинет и боится, вторая половина уже сдала и сидела плакала в классе. Вы поняли что вам будет вообще пиздец если вы не справитесь с этим заданием за сегодня, и принялись бешено учить нужные главы ФАПа.",
-      "next": "line-512"
+      "next": "line-512",
+      "chapterId": "gostichkayarik"
     },
     "line-510": {
       "type": "text",
-      "text": "Поздравляем, это ваше первое утро без похмелья. Будильник впервые смог вас разбудить. (Будильник который смог). Вы почистили зубы и пошли в АТБ учить, а затем сдавать Акашеву ФАПы.",
-      "next": "line-511"
+      "text": "Поздравляем, это ваше первое утро без похмелья. Будильник впервые смог вас разбудить. Вы почистили зубы и пошли в АТБ учить, а затем сдавать Акашеву ФАПы.",
+      "next": "line-511",
+      "chapterId": "gostichkayarik"
     },
     "line-509": {
       "type": "text",
       "text": "Во время разговоров за трапезой вы ушлышали что-то про \"сдавать Акашеву 136й ФАП (федеральные авиационные правила) наизусть завтра\", охуели от такой новости, и поняли, что вы единственный из всех кто об этом не знал. Времени до завтра оставалось не так много, а учитывая то, что вы умираете от похмелья, учить сегодня не вариант. \"Надеюсь он просто про меня забудет\" - думали вы до конца этого дня.",
-      "next": "line-510"
+      "next": "line-510",
+      "chapterId": "gostichkayarik"
     },
     "line-508": {
       "type": "text",
       "text": "Кроме всяких страшных гадостей, таких как печёночные котлеты и гороховое пюре, был так же странный кисель, похожий по цвету и вкусу на средство для мытья посуды.",
-      "next": "line-509"
+      "next": "line-509",
+      "chapterId": "gostichkayarik"
     },
     "line-507": {
       "type": "scene",
       "asset": "stolovaya",
-      "next": "line-508"
-    },
-    "section-gostichkayarik": {
-      "type": "jump",
-      "next": "line-507"
+      "next": "line-508",
+      "chapterId": "gostichkayarik"
     },
     "line-560": {
-      "type": "end"
+      "type": "end",
+      "chapterId": "gostichkayarik"
     },
     "line-558": {
       "type": "text",
       "text": "хуй залупа",
-      "next": "line-560"
+      "next": "line-560",
+      "chapterId": "gostichkayarik"
     },
-    "section-pipiska": {
-      "type": "jump",
-      "next": "line-558"
+    "scene-055daf5c": {
+      "type": "scene",
+      "asset": "bg-yarik-buhat-ili-letat",
+      "next": "line-95",
+      "chapterId": "startt"
+    },
+    "copy-8ee1c762-0": {
+      "type": "scene",
+      "asset": "bg-alik-yarik-v-trusah-v2",
+      "next": "line-91",
+      "chapterId": "startt"
+    },
+    "scene-110ebac8": {
+      "type": "scene",
+      "asset": "bg-alik-vaza-polnaya",
+      "next": "line-99",
+      "chapterId": "startt"
+    },
+    "copy-0e68ebc5-0": {
+      "type": "scene",
+      "asset": "bg-alik-vaza-polnaya",
+      "next": "text-d8e031f7",
+      "chapterId": "startt"
+    },
+    "text-d8e031f7": {
+      "type": "text",
+      "text": "Приятных ингаляций",
+      "next": "line-111",
+      "chapterId": "startt"
+    },
+    "scene-eb0c27fc": {
+      "type": "scene",
+      "asset": "bg-alikspit-eyes-open",
+      "next": "line-146",
+      "chapterId": "startt"
+    },
+    "choice-96a0aac7": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-96a0aac7-answer-1",
+          "text": "То что нужно",
+          "next": "scene-79b05d91"
+        }
+      ],
+      "chapterId": "startt"
+    },
+    "text-b6fd98ba": {
+      "type": "text",
+      "text": "Вы поменяли их со своими, и пошли обратно к учебному классу.",
+      "next": "copy-49132140-0",
+      "chapterId": "startt"
+    },
+    "scene-79b05d91": {
+      "type": "scene",
+      "asset": "bg-shvabra-trusy-gryaznye",
+      "next": "text-b6fd98ba",
+      "chapterId": "startt"
+    },
+    "scene-c80cc8e5": {
+      "type": "scene",
+      "asset": "bg-shvabra-trusy",
+      "next": "line-168",
+      "chapterId": "startt"
+    },
+    "copy-49132140-0": {
+      "type": "scene",
+      "asset": "bg-akashevclass-za-partoy-montazh-v2",
+      "next": "line-156",
+      "chapterId": "startt"
+    },
+    "scene-e0eb3818": {
+      "type": "scene",
+      "asset": "bg-akashevclass-kot-palets",
+      "next": "line-275",
+      "chapterId": "viotsidelli"
+    },
+    "scene-g2-line-281": {
+      "type": "scene",
+      "asset": "g2-line-281-alik-dendy",
+      "next": "line-281",
+      "chapterId": "viotsidelli"
+    },
+    "scene-g2-line-307": {
+      "type": "scene",
+      "asset": "g2-line-307-propusk-v-zhizn",
+      "next": "line-307",
+      "chapterId": "viotsidelli"
+    },
+    "scene-g2-line-316": {
+      "type": "scene",
+      "asset": "g2-line-316-zavesti-zhiguli",
+      "next": "line-316",
+      "chapterId": "viotsidelli"
+    },
+    "scene-g2-line-329": {
+      "type": "scene",
+      "asset": "g2-line-329-yarik-s-dengami",
+      "next": "line-329",
+      "chapterId": "viotsidelli"
+    },
+    "copy-c0acd6b7-0": {
+      "type": "scene",
+      "asset": "g2-line-307-propusk-v-zhizn",
+      "next": "line-297",
+      "chapterId": "viotsidelli"
+    },
+    "scene-34440fd8": {
+      "type": "scene",
+      "asset": "g2-line-335-veyp-atb",
+      "next": "line-335",
+      "chapterId": "viotsidelli"
+    },
+    "scene-3d666560": {
+      "type": "scene",
+      "asset": "g2-line-337-dmitriev-za-uglom",
+      "next": "line-340",
+      "chapterId": "viotsidelli"
+    },
+    "text-bea2ca2f": {
+      "type": "text",
+      "text": "Поздравляем, это всё что от вас осталось",
+      "next": "copy-fb77c1d4-0",
+      "chapterId": "viotsidelli"
+    },
+    "scene-ab4f639a": {
+      "type": "scene",
+      "asset": "thats_all",
+      "next": "text-bea2ca2f",
+      "chapterId": "viotsidelli"
+    },
+    "copy-fb77c1d4-0": {
+      "type": "scene",
+      "asset": "g2-line-343-ne-zametili",
+      "next": "line-339",
+      "chapterId": "viotsidelli"
+    },
+    "text-e3e97e62": {
+      "type": "text",
+      "text": "Вы выпили ещё одну рюмку лимончеллы. \"Пиздец это что Акашев?\" пошутил Ярик и показал вам за спину. Вы обернулись",
+      "next": "line-449",
+      "chapterId": "dalee"
+    },
+    "scene-1da459fb": {
+      "type": "scene",
+      "asset": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2",
+      "next": "line-439",
+      "chapterId": "dalee"
+    },
+    "text-d3edef9b": {
+      "type": "text",
+      "text": "Алик вроде тоже не против проветриться",
+      "next": "line-464",
+      "chapterId": "dalee"
+    },
+    "scene-bf5f7d10": {
+      "type": "scene",
+      "asset": "bg-durachimsya-v-kafe-oil",
+      "next": "text-d3edef9b",
+      "chapterId": "dalee"
+    },
+    "scene-85fe1741": {
+      "type": "scene",
+      "asset": "bg-yarik-polzet-v-tualet",
+      "next": "line-471",
+      "chapterId": "dalee"
+    },
+    "scene-4372be9b": {
+      "type": "scene",
+      "asset": "bg-alik-pomogaet-yariku-umytsya",
+      "next": "line-473",
+      "chapterId": "dalee"
+    },
+    "scene-1aaa7914": {
+      "type": "scene",
+      "asset": "bg-broken-toilet-oil-v2",
+      "next": "line-477",
+      "chapterId": "dalee"
+    },
+    "text-aab66a96": {
+      "type": "text",
+      "text": "Вы выглянули из окна, а там ваша жига, прям по полю, врезаясь в стога сена, после крутого виража на 270 градусов паркуется напрямо на парковке около гостиницы.",
+      "next": "scene-7b76af49",
+      "chapterId": "dalee"
+    },
+    "scene-7b76af49": {
+      "type": "scene",
+      "asset": "g3-line-488-yarik-polzet-v-gostinitsu",
+      "next": "line-488",
+      "chapterId": "dalee"
+    },
+    "scene-be8386f7": {
+      "type": "scene",
+      "asset": "g3-line-496-otvlech-ofitsiantov",
+      "next": "line-496",
+      "chapterId": "dalee"
+    },
+    "text-64429c45": {
+      "type": "text",
+      "text": "Алик сушил голову",
+      "next": "scene-5d6c0f94",
+      "chapterId": "dalee"
+    },
+    "scene-0dad35e5": {
+      "type": "scene",
+      "asset": "bg-spryatalsya-za-obogrevatelem-oil",
+      "next": "text-64429c45",
+      "chapterId": "dalee"
+    },
+    "scene-623f275a": {
+      "type": "scene",
+      "asset": "bg-son-na-podokonnike-oil",
+      "next": "text-9f37a8d1",
+      "chapterId": "dalee"
+    },
+    "text-9f37a8d1": {
+      "type": "text",
+      "text": "Аня ещё спала",
+      "next": "scene-0dad35e5",
+      "chapterId": "dalee"
+    },
+    "text-1a99d886": {
+      "type": "text",
+      "text": "А Серёга не выглядел как человек который ещё когда-нибудь сможет встать",
+      "next": "scene-3d7866cf",
+      "chapterId": "dalee"
+    },
+    "scene-5d6c0f94": {
+      "type": "scene",
+      "asset": "bg-otdyh-na-krovati-oil",
+      "next": "text-1a99d886",
+      "chapterId": "dalee"
+    },
+    "text-0793fb9b": {
+      "type": "text",
+      "text": "Вы с девками решили сходить проведать Ярика. Выяснилось что он ничего не помнит о вчерашнем дне. Оно и к лучшему.",
+      "next": "text-aec54af4",
+      "chapterId": "dalee"
+    },
+    "scene-3d7866cf": {
+      "type": "scene",
+      "asset": "g3-line-489-yarik-nichego-ne-pomnit",
+      "next": "text-0793fb9b",
+      "chapterId": "dalee"
+    },
+    "text-aec54af4": {
+      "type": "text",
+      "text": "Вы решили сходить на обед в столовую, в которой вас на время практики бесплатно кормят.",
+      "next": "line-507",
+      "chapterId": "dalee"
     }
   }
 }

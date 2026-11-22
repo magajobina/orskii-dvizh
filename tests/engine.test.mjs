@@ -95,3 +95,15 @@ for (const order of [['line-52', 'line-55'], ['line-55', 'line-52']]) {
     assert.equal(availableOptions(story, start(story, 'line-49')).length, 3);
   });
 }
+
+test('chapter name follows cross-chapter transitions and is restored by back', () => {
+  const current = start(story, story.chapters.find(chapter => chapter.id === 'viotsidelli').entry);
+  assert.equal(current.chapterId, 'viotsidelli');
+  const final = start(story, story.chapters.find(chapter => chapter.id === 'gostichkayarik').entry);
+  assert.equal(final.chapterId, 'gostichkayarik');
+  let state = start(story, 'line-50', 'bg-polina-anya');
+  state = advance(story, state);
+  const reply = choose(story, state, 'line-52');
+  assert.equal(reply.chapterId, 'startt');
+  assert.equal(back(reply).chapterId, 'startt');
+});

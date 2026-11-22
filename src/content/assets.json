@@ -155,9 +155,9 @@
     "height": 1600
   },
   "yarik-slomalya": {
-    "file": "yarik-slomalya.jpg",
-    "width": 1200,
-    "height": 1600
+    "file": "yarik-slomalya-s-rakovinoy.png",
+    "width": 1086,
+    "height": 1448
   },
   "paper": {
     "file": "paper.jpg",
@@ -171,5 +171,370 @@
   },
   "yarik-na-zhige": {
     "fallback": "bg-yarik-predlagaet-mashinu"
+  },
+  "bg-alik-yarik-v-trusah-v2": {
+    "file": "bg-alik-yarik-v-trusah-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-yarik-buhat-ili-letat": {
+    "file": "bg-yarik-buhat-ili-letat.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-alik-vaza-polnaya": {
+    "file": "bg-alik-vaza-polnaya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy-montazh": {
+    "file": "bg-akashevclass-za-partoy-montazh.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy": {
+    "file": "bg-akashevclass-za-partoy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-alikspit-eyes-open": {
+    "file": "bg-alikspit-eyes-open.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy-montazh-v2": {
+    "file": "bg-akashevclass-za-partoy-montazh-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy-v2": {
+    "file": "bg-akashevclass-za-partoy-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-shvabra-trusy": {
+    "file": "bg-shvabra-trusy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-shvabra-trusy-gryaznye": {
+    "file": "bg-shvabra-trusy-gryaznye.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-kot-palets": {
+    "file": "bg-akashevclass-kot-palets.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-281-alik-dendy": {
+    "file": "g2-line-281-alik-dendy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-287-sanya-ne-chokaetsya": {
+    "file": "g2-line-287-sanya-ne-chokaetsya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-298-yarik-zhiguli": {
+    "file": "g2-line-298-yarik-zhiguli.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-307-propusk-v-zhizn": {
+    "file": "g2-line-307-propusk-v-zhizn.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-316-zavesti-zhiguli": {
+    "file": "g2-line-316-zavesti-zhiguli.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-329-yarik-s-dengami": {
+    "file": "g2-line-329-yarik-s-dengami.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-331-bokovoy-veter": {
+    "file": "g2-line-331-bokovoy-veter.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-335-veyp-atb": {
+    "file": "g2-line-335-veyp-atb.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-337-dmitriev-za-uglom": {
+    "file": "g2-line-337-dmitriev-za-uglom.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-343-ne-zametili": {
+    "file": "g2-line-343-ne-zametili.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-348-prosto-posmotret": {
+    "file": "g2-line-348-prosto-posmotret.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "thats_all": {
+    "file": "thats_all.jpg",
+    "width": 657,
+    "height": 652
+  },
+  "bg-obnimayu-obogrevatel": {
+    "file": "bg-obnimayu-obogrevatel.png",
+    "width": 1085,
+    "height": 1449
+  },
+  "bg-obnimayu-obogrevatel-v2": {
+    "file": "bg-obnimayu-obogrevatel-v2.png",
+    "width": 1085,
+    "height": 1450
+  },
+  "bg-grafin-na-stole-oil": {
+    "file": "bg-grafin-na-stole-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-orsk-vokzal-oil": {
+    "file": "bg-orsk-vokzal-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-stoyanka-zima-kompaniya-oil": {
+    "file": "bg-stoyanka-zima-kompaniya-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-stoyanka-zima-kompaniya-oil-v2": {
+    "file": "bg-stoyanka-zima-kompaniya-oil-v2.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-veypy-v-kabine-oil": {
+    "file": "bg-veypy-v-kabine-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-son-na-podokonnike-oil": {
+    "file": "bg-son-na-podokonnike-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-atb-vid-sverhu-oil": {
+    "file": "bg-atb-vid-sverhu-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-korobki-na-golove-oil": {
+    "file": "bg-korobki-na-golove-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-vodka-v-korzine-oil": {
+    "file": "bg-vodka-v-korzine-oil.png",
+    "width": 1085,
+    "height": 1449
+  },
+  "bg-rukopozhatie-u-dveri-oil": {
+    "file": "bg-rukopozhatie-u-dveri-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-kompaniya-na-balkone-oil": {
+    "file": "bg-kompaniya-na-balkone-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-devushki-s-instruktorom-oil": {
+    "file": "bg-devushki-s-instruktorom-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-post-dong-aerodrom-oil": {
+    "file": "bg-post-dong-aerodrom-oil.png",
+    "width": 852,
+    "height": 1846
+  },
+  "bg-rytsar-s-kastryuley-oil": {
+    "file": "bg-rytsar-s-kastryuley-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-durachimsya-v-kafe-oil": {
+    "file": "bg-durachimsya-v-kafe-oil.png",
+    "width": 1085,
+    "height": 1450
+  },
+  "bg-druzya-na-balkone-noch-oil": {
+    "file": "bg-druzya-na-balkone-noch-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-krylo-nad-oblakami-oil": {
+    "file": "bg-krylo-nad-oblakami-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-kosmeticheskie-maski-oil": {
+    "file": "bg-kosmeticheskie-maski-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-bashnya-iz-butylok-oil": {
+    "file": "bg-bashnya-iz-butylok-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-spryatalsya-za-obogrevatelem-oil": {
+    "file": "bg-spryatalsya-za-obogrevatelem-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-obed-s-kotom-oil": {
+    "file": "bg-obed-s-kotom-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-orsk-na-ladoni-oil": {
+    "file": "bg-orsk-na-ladoni-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina": {
+    "file": "bg-limonchella-anya-polina.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-alik-v2": {
+    "file": "bg-limonchella-anya-polina-alik-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-alik-v3": {
+    "file": "bg-limonchella-anya-polina-alik-v3.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-yarik-pustye-grafiny": {
+    "file": "bg-limonchella-anya-polina-yarik-pustye-grafiny.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2": {
+    "file": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-yarik-polzet-v-tualet": {
+    "file": "bg-yarik-polzet-v-tualet.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-alik-pomogaet-yariku-umytsya": {
+    "file": "bg-alik-pomogaet-yariku-umytsya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-broken-toilet-oil": {
+    "file": "bg-broken-toilet-oil.png",
+    "width": 1323,
+    "height": 1189
+  },
+  "bg-broken-toilet-oil-v2": {
+    "file": "bg-broken-toilet-oil-v2.png",
+    "width": 1323,
+    "height": 1189
+  },
+  "g3-line-475-otkaz-nog": {
+    "file": "g3-line-475-otkaz-nog.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-496-otvlech-ofitsiantov": {
+    "file": "g3-line-496-otvlech-ofitsiantov.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-486-zhiga-cherez-pole": {
+    "file": "g3-line-486-zhiga-cherez-pole.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-488-yarik-polzet-v-gostinitsu": {
+    "file": "g3-line-488-yarik-polzet-v-gostinitsu.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-489-yarik-nichego-ne-pomnit": {
+    "file": "g3-line-489-yarik-nichego-ne-pomnit.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-yarik-litsom-vniz-u-tualeta": {
+    "file": "bg-yarik-litsom-vniz-u-tualeta.png",
+    "width": 1323,
+    "height": 1189
+  },
+  "pidor-yarik-traurnaya-lenta": {
+    "file": "pidor-yarik-traurnaya-lenta.png",
+    "width": 1254,
+    "height": 1254
+  },
+  "bg-stoyanka-instruktor-rugaet": {
+    "file": "bg-stoyanka-instruktor-rugaet.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-otdyh-na-krovati-oil": {
+    "file": "bg-otdyh-na-krovati-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-508-stolovaya-kisel": {
+    "file": "g4-line-508-stolovaya-kisel.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-512-ochered-na-fapy": {
+    "file": "g4-line-512-ochered-na-fapy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-520-za-shkafom": {
+    "file": "g4-line-520-za-shkafom.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-540-akashev-nashel": {
+    "file": "g4-line-540-akashev-nashel.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-548-fapy-sdany": {
+    "file": "g4-line-548-fapy-sdany.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-tualet-siyaniye-akashev": {
+    "file": "g4-tualet-siyaniye-akashev.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-za-shkafom-nashel-siyaniye": {
+    "file": "g4-za-shkafom-nashel-siyaniye.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-class-siyaniye-zaval": {
+    "file": "g4-class-siyaniye-zaval.png",
+    "width": 1086,
+    "height": 1448
   }
 }

@@ -1,4 +1,4 @@
-import { StrictMode, useEffect, useRef, useState } from 'react';
+import { lazy, StrictMode, Suspense, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { advance, availableOptions, back, choose, start } from './engine/engine';
 import type { Chapter, Story } from './engine/engine';
@@ -10,7 +10,15 @@ import '@fontsource-variable/golos-text';
 import '@fontsource-variable/oswald';
 import './styles.css';
 
-const story = data as Story;
+let story = data as Story;
+const developmentParams = new URLSearchParams(location.search);
+if (import.meta.env.DEV && developmentParams.has('playtest')) {
+  try {
+    const saved = JSON.parse(localStorage.getItem('orsk.editor.playtest') ?? 'null');
+    if (saved?.version === 1 && saved.nodes && saved.chapters) story = saved as Story;
+  } catch { /* Leave the regular game available. */ }
+}
+if (import.meta.hot && !developmentParams.has('editor')) import.meta.hot.on('orsk-story-saved', () => location.reload());
 const themes = [
   { id: 'cinema', name: 'Кино' },
   { id: 'cold', name: 'Прохлада' },
@@ -33,8 +41,10 @@ function ChapterDialog({ onSelect, onClose }: { onSelect: (chapter: Chapter) => 
 
 function App() {
   const [theme, setTheme] = useState<Theme>(themes.some(item => item.id === requestedTheme) ? requestedTheme as Theme : 'cinema');
-  const [playing, setPlaying] = useState(Boolean(params.get('scene')));
+  const [playing, setPlaying] = useState(Boolean(params.get('scene')) || (import.meta.env.DEV && params.has('playtest')));
   const [state, setState] = useState(() => {
+    const test = import.meta.env.DEV ? params.get('playtest') : null;
+    if (test && story.nodes[test]) return start(story, test, params.get('asset') ?? story.cover);
     if (params.get('scene') === 'balcony') return start(story, 'line-50', 'bg-polina-anya');
     const chapter = story.chapters.find(chapter => chapter.id === params.get('scene'));
     return start(story, chapter?.entry, chapter?.image);
@@ -80,9 +90,9 @@ function App() {
         <div className="technical-drawing propeller-drawing" style={{ maskImage: `url(${propellerDrawing})` }} />
       </div>
       <button className="menu-button" onClick={() => setPlaying(false)}>Главное меню</button>
-      <section className="dialogue" aria-label="Реплика"><p aria-live="polite">{text}</p><span className="continue-mark" aria-hidden="true">{node.type === 'text' ? '▾' : ''}</span></section>
+      <section className="dialogue" aria-label="Реплика"><p aria-live="polite">{text}</p><span className="continue-mark" aria-hidden="true">{node.type === 'text' ? '▾' : ''}</span><button className="back-button" disabled={state.history.length === 0} onClick={() => setState(back)}>Назад</button></section>
       {node.type === 'choice' && <div className="choice-scrim"><div className="choices" role="group" aria-label="Варианты ответа">{options.map(option => <button key={option.id} onClick={() => setState(state => choose(story, state, option.id))}>{option.text}</button>)}</div></div>}
-      <button className="back-button" disabled={state.history.length === 0} onClick={() => setState(back)}>Назад</button>
+      <span className="chapter-label">{story.chapters.find(chapter => chapter.id === state.chapterId)?.title ?? ''}</span>
     </main> : <main className="home-screen">
       <div className="cover-stage"><img src={imageURL(story.cover)} alt="Авиационная карта Орска и навигационные линейки" fetchPriority="high" /></div>
       <section className="home-menu"><h1>ОРСКИЙ<span>ДВИЖ<span className="title-period">.</span></span></h1>
@@ -101,4 +111,5 @@ function App() {
     {chaptersOpen && <ChapterDialog onSelect={openChapter} onClose={() => setChaptersOpen(false)} />}
   </div>;
 }
-createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>);
+const LocalEditor = import.meta.env.DEV ? lazy(() => import('./editor/Editor')) : null;
+createRoot(document.getElementById('root')!).render(<StrictMode>{import.meta.env.DEV && params.has('editor') && LocalEditor ? <Suspense fallback={<p style={{ color: '#eee', padding: 30 }}>Загружаю редактор…</p>}><LocalEditor /></Suspense> : <App />}</StrictMode>);

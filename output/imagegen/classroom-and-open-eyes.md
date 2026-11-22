@@ -1,0 +1,31 @@
+# Акашев за партой и Алик с открытыми глазами
+
+Создано встроенным image_gen (навык imagegen). Все результаты сохранены отдельными PNG в `src/assets/illustrations/`, оригиналы не заменялись, сюжет и расстановка сцен не менялись. Новые записи ассетов добавлены в галерею; галерея показывает обратный порядок добавления.
+
+- `bg-akashevclass-za-partoy-montazh.png` — нарочитый фотомонтаж, исходное лицо выглядывает из-за парты.
+- `bg-akashevclass-za-partoy.png` — тот же класс, персонаж вписан в сцену.
+- `bg-alikspit-eyes-open.png` — копия спящего Алика с широко открытыми глазами.
+
+## Фотомонтаж — промпт
+
+Use case: identity-preserve compositing, humorous intentionally obvious photo montage for a Russian aviation-student visual novel.
+Image 1 is the EXACT person to insert: a bald middle-aged adult man in a gray collared top, with dark expressive eyebrows, the specific amused crooked closed-mouth smile and head tilt. Preserve his actual supplied face and full bald head EXACTLY, including its existing soft painterly filter; do not invent a merely similar man.
+Create a warm modest Soviet-era aviation classroom seen from a seated student's eye level, wooden two-person desks in rows, pale yellow / olive walls, a dark green chalkboard and a faded schematic aircraft diagram in the background, warm window light. No students or extra people needed. No new slogans or readable text.
+The man from image 1 is PEEKING UP FROM BEHIND the nearest wooden classroom desk, as if crouched behind it: the solid desk front occludes his torso, while his whole bald head and a little collar/shoulder are visible just ABOVE the tabletop, looking toward the viewer. Put him near the center with the same slight tilted head and very specific face. Deliberately make the insertion a funny obvious PHOTOSHOP CUTOUT: retain the actual photographed/painterly portrait look and mildly mismatched cool blue edge lighting against the warm classroom, slightly oversized head, a faint cutout edge, as if someone literally pasted that supplied face behind the desk. Do NOT put a rectangular portrait/poster on the desk or wall; this is a person composited into the scene and occluded by furniture. Keep recognizability of the source more important than realistic blending.
+Overall warm yellow-gold colors, softened contours, smudged photographic oil-filter, broad blended color patches, simplified fine textures, gentle posterization. No super-sharp digital render, no cartoon, no crisp detailed brushstrokes, no clean product photography. Strong soft filtered-photo look. Full portrait format approximately 3:4, room visible around the head and desk, no text or UI.
+
+## Цельная сцена — промпт
+
+Use case: identity-preserve illustrated scene integration.
+Image 1 is the exact FACE AND IDENTITY reference: the bald middle-aged man from the original game portrait, with his distinctive eyebrows, head tilt, actual facial geometry and sly closed-mouth smile. Preserve that particular person, not a generic bald man.
+Image 2 is the CLASSROOM LAYOUT / COMPOSITION reference only: same warm modest aviation classroom, window on left, wood desks, green board, faded aircraft schematic. It currently contains a deliberately oversized pasted cutout head. Make a SECOND version where the SAME man is naturally rendered as part of the classroom, NOT a collage or pasted sticker. The man's head is NORMAL HUMAN SCALE relative to desk and chair, reduce its current oversized cutout appearance substantially, include a little neck and gray collared shirt/shoulders, with body hidden behind the front desk. He crouches low and peeks up over the front wooden desk, looking directly toward us, retaining the same very recognizable face and subtle mischievous smile from image 1. His chin/lower torso is partly occluded by the desk. No floating detached head.
+Render him with matching warm classroom light, soft integrated contact shadows and the same slightly blurred artistic filtered-photo style as the background. NO cool blue cutout halo, no edge outline, no pasted portrait, no change of identity, no cartoon. Keep age and real facial proportions, do not beautify or sharpen his face.
+The visual should feel like a photograph with a warm slightly smeared oil-photo filter, not a crisp detailed digital painting: soft broad color patches, simplified fine textures, gently posterized light, warm gold / muted olive, slight soft-focus diffusion. Room and face BOTH softly resolved. No detailed impasto, excessive painted brushstrokes, new slogans, captions or extra people. Preserve classroom layout and full portrait 3:4 framing from image 2; output one complete scene.
+
+## Открытые глаза — промпт
+
+Extremely small local edit of image 1: the existing warm filtered photograph of an ADULT man lying in bed wearing black headphones, with a phone on the pillow. OPEN HIS TWO EYES WIDE. That is the ONLY change.
+Image 2 is ONLY a reference for this same man's natural pale blue-gray/green iris color and actual eye shape. Do not copy its pose, hair, eyebrows, face expression, clothes or background.
+Keep the original rotated/diagonal orientation of the man's head and the whole source image exactly as image 1; do not rotate the scene upright, reframe or zoom. His eyelids now open wide in a funny suddenly-awake stare, showing natural round irises/pupils and some whites, looking toward the camera. Eyes stay anatomically seated in the existing sockets with the same spacing, brows and facial proportions. Do not make giant cartoon googly eyes or distorted eyeballs.
+CRITICAL preserve the exact person's original identity, nose, cheeks, mouth shape and already slightly open mouth, teeth, ears, hair, head angle, headphones and headband, hand and wrist, dark shirt, blanket folds, pillow, phone position and screen, bed, colors, lighting and every other object. Do not turn this into a different facial expression beyond the open eyelids; do not add a smile or change his mouth.
+Preserve the original warm golden soft smeared photographic oil filter, lightly posterized broad color shapes and softened fine detail. Newly opened eyes should be as softly filtered as the rest, not high-detail sharp pasted eyes. No new text, no other edits. Output the full same portrait photograph, with only both eyes now visibly wide open.
