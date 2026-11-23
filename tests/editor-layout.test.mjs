@@ -78,3 +78,61 @@ test('choice loops and a shared target do not duplicate cards or break constrain
   assertAnswerOrder(result);
   for (const point of Object.values(result.layout.positions)) assert.ok(Number.isFinite(point.x) && Number.isFinite(point.y));
 });
+
+function longBranches() {
+  const doc = branching();
+  // Insert each column in a different order, as happens after manual editing.
+  for (const id of ['b', 'c', 'a']) doc.story.nodes[`reply-${id}`] = { type: 'text', text: id, next: 'merge', chapterId: 'one' };
+  for (const id of ['c', 'a', 'b']) doc.story.nodes[`picture-${id}`] = { type: 'scene', asset: 'cover', next: `reply-${id}`, chapterId: 'one' };
+  for (const id of ['a', 'b', 'c']) doc.story.nodes[id].next = `picture-${id}`;
+  return doc;
+}
+
+function center(doc, id) {
+  return doc.layout.positions[id].y + cardHeight(doc.story.nodes[id]) / 2;
+}
+
+function assertNoOverlap(doc, chapter = 'one') {
+  const ids = Object.keys(doc.story.nodes).filter(id => doc.story.nodes[id].chapterId === chapter);
+  for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
+    const a = doc.layout.positions[ids[i]], b = doc.layout.positions[ids[j]];
+    const separated = Math.abs(a.x - b.x) >= 250 || a.y + cardHeight(doc.story.nodes[ids[i]]) <= b.y || b.y + cardHeight(doc.story.nodes[ids[j]]) <= a.y;
+    assert.ok(separated, `overlap: ${ids[i]} / ${ids[j]}`);
+  }
+}
+
+test('branch order and straight continuations survive every column, not just the first answers', () => {
+  const original = longBranches();
+  for (const order of [['a', 'b', 'c'], ['c', 'a', 'b']]) {
+    const doc = structuredClone(original);
+    doc.story.nodes.menu.options = order.map(id => ({ id, text: id, next: id }));
+    const result = autoLayout(doc, 'one');
+    for (const prefix of ['', 'picture-', 'reply-']) {
+      for (let i = 1; i < order.length; i++) assert.ok(center(result, prefix + order[i - 1]) < center(result, prefix + order[i]), `${prefix} must follow answer order`);
+    }
+    for (const id of order) {
+      assert.equal(center(result, id), center(result, `picture-${id}`));
+      assert.equal(center(result, `picture-${id}`), center(result, `reply-${id}`));
+    }
+    assertNoOverlap(result);
+    assert.deepEqual(result.story, doc.story);
+    assert.deepEqual(autoLayout(result, 'one').layout.positions, result.layout.positions);
+  }
+});
+
+test('nested branches, unequal lengths, shared joins and loops keep separate lanes without overlaps', () => {
+  const doc = longBranches();
+  doc.story.nodes['picture-a'] = { type: 'choice', chapterId: 'one', options: [
+    { id: 'upper', text: 'Верх', next: 'nested-upper' }, { id: 'lower', text: 'Низ', next: 'nested-lower' },
+  ] };
+  doc.story.nodes['nested-lower'] = { type: 'text', text: 'Низ', next: 'reply-a', chapterId: 'one' };
+  doc.story.nodes['nested-upper'] = { type: 'text', text: 'Верх', next: 'extra', chapterId: 'one' };
+  doc.story.nodes.extra = { type: 'text', text: 'Длиннее', next: 'reply-a', chapterId: 'one' };
+  doc.story.nodes['reply-c'].next = 'menu';
+  const result = autoLayout(doc, 'one');
+  assert.ok(center(result, 'nested-upper') < center(result, 'nested-lower'));
+  assert.ok(center(result, 'nested-lower') < center(result, 'reply-b'));
+  assert.ok(center(result, 'reply-a') < center(result, 'merge'));
+  assertNoOverlap(result);
+  assert.deepEqual(result.story, doc.story);
+});

@@ -33,27 +33,51 @@ export function autoLayout(document: Document, chapterId?: string): Document {
     }
   }
   for (const [id, node] of entries) for (const edge of outgoing(node)) {
-    if (ids.has(edge.target) && !backEdges.has(`${id}::${edge.handle}`)) graph.setEdge(id, edge.target, {}, edge.handle);
+    if (ids.has(edge.target) && !backEdges.has(`${id}::${edge.handle}`)) graph.setEdge(id, edge.target, { weight: node.type === 'choice' ? 1 : 8 }, edge.handle);
   }
-  // In LR layout Dagre's left/right ordering constraints become top/bottom.
-  // Shared targets and contradictory orders cannot all be separated, so only
-  // add acyclic constraints between distinct continuations of each menu.
+  // First determine forward columns. Then carry each answer's lane through
+  // its whole continuation, rather than constraining only the first target.
+  dagre.layout(graph);
+  const lanes = new Map<string, number[]>();
+  const ordered = [...ids].sort((a, b) => graph.node(a).x - graph.node(b).x || graph.node(a).y - graph.node(b).y);
+  for (const id of ordered) {
+    const incoming = (graph.inEdges(id) ?? []).map(edge => {
+      const source = document.story.nodes[edge.v];
+      const lane = lanes.get(edge.v) ?? [];
+      if (source.type !== 'choice') return lane;
+      // Several answers may intentionally lead to the same block. Keep that
+      // block in the lane of its first answer instead of treating it as a join.
+      return [...lane, source.options.findIndex(option => option.next === id)];
+    });
+    // A shared continuation belongs to the common parent lane, not whichever
+    // answer happened to be visited first. Return edges are already excluded.
+    const common = [...(incoming[0] ?? [])];
+    for (const lane of incoming.slice(1)) {
+      let length = 0;
+      while (length < common.length && common[length] === lane[length]) length++;
+      common.length = length;
+    }
+    lanes.set(id, common);
+  }
+  const columns = new Map<number, string[]>();
+  for (const id of ordered) {
+    const x = graph.node(id).x;
+    if (!columns.has(x)) columns.set(x, []);
+    columns.get(x)!.push(id);
+  }
   const constraints: { left: string; right: string }[] = [];
-  const below = new Map<string, Set<string>>();
-  function reaches(from: string, target: string, seen = new Set<string>()): boolean {
-    if (from === target) return true;
-    if (seen.has(from)) return false;
-    seen.add(from);
-    return [...(below.get(from) ?? [])].some(id => reaches(id, target, seen));
-  }
-  for (const [id, node] of entries) if (node.type === 'choice') {
-    const targets = [...new Set(node.options.map(option => option.next).filter(target => ids.has(target) && target !== id))];
-    for (let i = 0; i < targets.length - 1; i++) {
-      const left = targets[i], right = targets[i + 1];
-      if (reaches(right, left)) continue;
-      constraints.push({ left, right });
-      if (!below.has(left)) below.set(left, new Set());
-      below.get(left)!.add(right);
+  for (const column of columns.values()) {
+    column.sort((a, b) => {
+      const upper = lanes.get(a)!, lower = lanes.get(b)!;
+      for (let i = 0; i < Math.min(upper.length, lower.length); i++) {
+        if (upper[i] !== lower[i]) return upper[i] - lower[i];
+      }
+      return upper.length - lower.length || graph.node(a).y - graph.node(b).y;
+    });
+    // One total order per column cannot create contradictory constraints.
+    // In LR layout Dagre's left/right constraints mean top/bottom.
+    for (let i = 1; i < column.length; i++) {
+      constraints.push({ left: column[i - 1], right: column[i] });
     }
   }
   dagre.layout(graph, { constraints });
