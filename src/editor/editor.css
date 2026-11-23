@@ -106,3 +106,14 @@
 .outline-resizer::after { content: ''; position: absolute; top: 45%; left: 2px; width: 2px; height: 38px; border-radius: 2px; background: #526a60; }
 .outline-resizer:hover, .outline-resizer:focus-visible, .resizing-outline .outline-resizer { background: #526a60; outline: none; }
 .resizing-outline, .resizing-outline * { cursor: col-resize !important; user-select: none; }
+.library-tabs, .library-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.library-tabs button[aria-pressed=true] { background: #3a5144; border-color: #a6c5ad; }
+.editor-gallery > .editor-muted { margin-bottom: 14px; }
+.library-message { white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 12px; color: #c4d6c8; font-size: 12px; }
+.gallery-grid > article, .audio-library > article { display: grid; gap: 8px; padding: 12px; border: 1px solid #405047; background: #192326; min-width: 0; border-radius: 4px; }
+.gallery-grid > article.current, .audio-library > article.current { border-color: #bad5bb; background: #2c4032; }
+.gallery-grid > article > button { display: block; text-align: center; }
+.audio-library { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; margin-top: 20px; }
+.audio-library strong { font-size: 13px; overflow-wrap: anywhere; }
+.audio-library small { color: #91aa9a; font-size: 11px; overflow-wrap: anywhere; }
+.audio-library audio { width: 100%; min-width: 0; }

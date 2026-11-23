@@ -1,7 +1,7 @@
 import type { Plugin } from 'vite';
 import type { IncomingMessage } from 'node:http';
 import { createEditorStore } from './editor-store.ts';
-import assets from '../src/content/assets.json';
+import { createMediaStore, MAX_MEDIA_BYTES } from './media-store.ts';
 
 async function body(request: IncomingMessage): Promise<Record<string, unknown>> {
   if (!request.headers['content-type']?.startsWith('application/json')) throw Object.assign(Error('Нужен JSON.'), { status: 415 });
@@ -19,8 +19,12 @@ async function body(request: IncomingMessage): Promise<Record<string, unknown>> 
 export function storyEditorPlugin(): Plugin {
   return {
     name: 'orsk-local-story-editor', apply: 'serve',
+    // Uploads are refreshed through the library event/API. A glob-triggered
+    // reload here would discard the open inspector, selection and undo stack.
+    config: () => ({ server: { watch: { ignored: ['**/src/assets/illustrations/**', '**/src/assets/audio/**'] } } }),
     configureServer(server) {
-      const store = createEditorStore(server.config.root, Object.keys(assets));
+      const media = createMediaStore(server.config.root);
+      const store = createEditorStore(server.config.root, async () => Object.keys((await media.catalog()).images));
       server.middlewares.use(async (request, response, next) => {
         const path = request.url?.split('?')[0] ?? '';
         if (!path.startsWith('/__editor/')) return next();
@@ -34,7 +38,19 @@ export function storyEditorPlugin(): Plugin {
             if (request.headers['x-orsk-editor'] !== '1' || (request.headers.origin && new URL(request.headers.origin).host !== host)) throw Object.assign(Error('Запрос из другого источника запрещён.'), { status: 403 });
           }
           let result: unknown;
-          if (path === '/__editor/project' && request.method === 'GET') {
+          if (path === '/__editor/media' && request.method === 'GET') result = await media.catalog();
+          else if (path === '/__editor/media' && request.method === 'POST') {
+            if (request.headers['content-type'] !== 'application/octet-stream') throw Object.assign(Error('Нужен файл.'), { status: 415 });
+            const query = new URL(request.url!, `http://${host}`).searchParams;
+            const chunks: Buffer[] = []; let size = 0;
+            for await (const chunk of request) {
+              size += chunk.length;
+              if (size > MAX_MEDIA_BYTES) throw Object.assign(Error('Файл больше 64 МиБ.'), { status: 413 });
+              chunks.push(Buffer.from(chunk));
+            }
+            result = await media.upload(query.get('kind') as 'image' | 'audio', query.get('name') ?? '', Buffer.concat(chunks), Number(query.get('width')), Number(query.get('height')));
+            server.ws.send({ type: 'custom', event: 'orsk-media-changed', data: {} });
+          } else if (path === '/__editor/project' && request.method === 'GET') {
             const project = await store.read(); result = { document: project.document, revision: project.revision };
           } else if (path === '/__editor/project' && request.method === 'PUT') {
             const input = await body(request); result = await store.save(input.document, String(input.revision ?? ''));
@@ -51,6 +67,10 @@ export function storyEditorPlugin(): Plugin {
       });
     },
     handleHotUpdate(context) {
+      if (/\/src\/content\/(assets|audio)\.json$/.test(context.file.replaceAll('\\', '/'))) {
+        context.server.ws.send({ type: 'custom', event: 'orsk-media-changed', data: {} });
+        return [];
+      }
       if (/\/src\/content\/(story|editor-layout)\.json$/.test(context.file.replaceAll('\\', '/'))) {
         context.server.ws.send({ type: 'custom', event: 'orsk-story-saved', data: {} });
         return [];

@@ -12,7 +12,7 @@ type Props = {
   document: Document; selected?: string; selectedCount: number; issues: Issue[];
   edit: (fn: (doc: Document) => void, group?: string) => void;
   rename: (id: string, next: string) => void; endGroup: () => void; focus: (id: string) => void;
-  browse: (current: string, pick: (id: string) => void) => void; play: (id: string) => void;
+  browse: (current: string, pick: (id: string) => void, kind?: 'image' | 'audio') => void; play: (id: string) => void;
 };
 
 export function Inspector({ document, selected, selectedCount, issues, edit, rename, endGroup, focus, browse, play, openStoryRequest }: Props) {
@@ -44,7 +44,7 @@ export function Inspector({ document, selected, selectedCount, issues, edit, ren
         <button className="editor-play" disabled={issues.some(i => i.severity === 'error')} onClick={() => play(selected)}>Играть с этого блока</button>
         {node.type === 'text' && <><label className="editor-field">Текст реплики<BufferedTextarea key={selected} rows={8} value={node.text} onChange={value => change(n => { if (n.type === 'text') n.text = value; }, 'text')} onBlur={endGroup} /></label>
         <label className="editor-field">Задержка появления текста, мс<input type="number" min="0" step="1" value={node.delayMs ?? 0} onChange={e => { const value = Number(e.target.value); if (Number.isFinite(value) && value >= 0) change(n => { if (n.type === 'text') { if (value) n.delayMs = Math.round(value); else delete n.delayMs; } }, 'delayMs'); }} onBlur={endGroup} /></label></>}
-        {node.type === 'text' && <><label className="editor-field">Аудио при появлении реплики<select value={node.audio ?? ''} onChange={e => change(n => { if (n.type === 'text') { if (e.target.value) n.audio = e.target.value; else delete n.audio; } })}><option value="">Без звука</option>{Object.entries(audioAssets).map(([id, asset]) => <option key={id} value={id}>{asset.title}</option>)}</select></label>{node.audio && <audio key={node.audio} controls preload="none" src={audioURL(node.audio)} aria-label="Прослушать выбранный звук" />}</>}
+        {node.type === 'text' && <><label className="editor-field">Аудио при появлении реплики<select value={node.audio ?? ''} onChange={e => change(n => { if (n.type === 'text') { if (e.target.value) n.audio = e.target.value; else delete n.audio; } })}><option value="">Без звука</option>{Object.entries(audioAssets).map(([id, asset]) => <option key={id} value={id}>{asset.title}</option>)}</select></label><button className="wide-button" onClick={() => browse(node.audio ?? '', id => change(n => { if (n.type === 'text') n.audio = id; }), 'audio')}>Открыть аудиотеку / добавить звук</button>{node.audio && <audio key={node.audio} controls preload="none" src={audioURL(node.audio)} aria-label="Прослушать выбранный звук" />}</>}
         {node.type === 'scene' && <><h3>Иллюстрация</h3>{assetField(node.asset, id => change(n => { if (n.type === 'scene') n.asset = id; }))}</>}
         {node.type === 'scene' && <ShakePreview asset={node.asset} shake={node.shake} onChange={shake => change(n => { if (n.type === 'scene') { if (shake) n.shake = shake; else delete n.shake; } })} />}
         {'next' in node && link('Следующий блок', node.next, value => change(n => { if ('next' in n) n.next = value; }, 'next'))}

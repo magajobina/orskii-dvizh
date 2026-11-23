@@ -4,7 +4,7 @@ import { createHash, randomUUID } from 'node:crypto';
 import { parseDocument, validateStory } from '../src/editor/model.ts';
 import type { Document } from '../src/editor/model.ts';
 
-export function createEditorStore(root: string, assetIds: string[]) {
+export function createEditorStore(root: string, assetIds: string[] | (() => Promise<string[]>)) {
   const storyPath = join(root, 'src/content/story.json');
   const layoutPath = join(root, 'src/content/editor-layout.json');
   const directory = join(root, '.editor-backups');
@@ -46,7 +46,7 @@ export function createEditorStore(root: string, assetIds: string[]) {
   }
   async function doSave(input: unknown, revision: string) {
     const document = parseDocument(input);
-    const errors = validateStory(document.story, assetIds).filter(issue => issue.severity === 'error');
+    const errors = validateStory(document.story, typeof assetIds === 'function' ? await assetIds() : assetIds).filter(issue => issue.severity === 'error');
     if (errors.length) throw Object.assign(Error(errors.map(issue => `${issue.nodeId ?? 'Сюжет'}: ${issue.message}`).join('\n')), { status: 422 });
     const current = await read();
     if (current.revision !== revision) throw Object.assign(Error('JSON проекта изменён снаружи. Сначала экспортируйте свой черновик и перезагрузите редактор.'), { status: 409 });

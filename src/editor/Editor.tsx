@@ -4,7 +4,8 @@ import type { CSSProperties } from 'react';
 import type { Connection, Edge, ReactFlowInstance } from '@xyflow/react';
 import type { Node as StoryNode } from '../engine/engine';
 import source from '../content/story.json';
-import registry from '../content/assets.json';
+import { imageAssets } from '../content/assets';
+import { useLibraryRevision, watchLibrary } from './library';
 import { FlowCard } from './FlowCard';
 import type { StoryFlowNode } from './FlowCard';
 import { Gallery } from './Gallery';
@@ -17,7 +18,6 @@ import '@xyflow/react/style.css';
 import './editor.css';
 
 const nodeTypes = { story: FlowCard };
-const assetIds = Object.keys(registry);
 const DRAFT_KEY = 'orsk.editor.draft.v1';
 type Backup = { id: string; label: string; createdAt: string; nodes: number; broken?: boolean };
 type Draft = { savedAt: string; document: Document };
@@ -37,6 +37,8 @@ const dateLabel = (iso: string) => iso ? new Date(iso).toLocaleString('ru-RU', {
 const token = () => crypto.randomUUID().slice(0, 8);
 
 export default function Editor() {
+  const libraryRevision = useLibraryRevision();
+  useEffect(watchLibrary, []);
   const initial = useMemo(() => ensureLayout(parseDocument(source)), []);
   const [history, dispatch] = useReducer(historyReducer, { past: [], present: initial, future: [] });
   const doc = history.present;
@@ -81,11 +83,11 @@ export default function Editor() {
   const [message, setMessage] = useState('Загружаю проект…');
   const [draftStatus, setDraftStatus] = useState('');
   const [pendingDraft, setPendingDraft] = useState<Draft | null>(null);
-  const [gallery, setGallery] = useState<{ current: string; pick: (id: string) => void } | null>(null);
+  const [gallery, setGallery] = useState<{ current?: string; pick?: (id: string) => void; kind?: 'image' | 'audio' } | null>(null);
   const [backupsOpen, setBackupsOpen] = useState(false);
   const [backups, setBackups] = useState<Backup[]>([]);
   const [backupLabel, setBackupLabel] = useState('');
-  const issues = useMemo(() => validateStory(doc.story, assetIds), [doc.story]);
+  const issues = useMemo(() => validateStory(doc.story, Object.keys(imageAssets)), [doc.story, libraryRevision]);
   const errors = issues.filter(i => i.severity === 'error');
   const dirty = JSON.stringify(doc) !== saved.current;
 
@@ -223,7 +225,7 @@ export default function Editor() {
   async function save() {
     if (busy || loading) return;
     const document = docRef.current;
-    const errors = validateStory(document.story, assetIds).filter(i => i.severity === 'error');
+    const errors = validateStory(document.story, Object.keys(imageAssets)).filter(i => i.severity === 'error');
     if (errors.length) { setMessage(`Сначала исправьте ошибки: ${errors.length}. Они перечислены в панели «Проверка».`); return; }
     setBusy(true);
     try {
@@ -347,7 +349,7 @@ export default function Editor() {
   return <div className={`story-editor${resizingOutline ? ' resizing-outline' : ''}`} style={{ '--outline-width': `${outlineWidth}px` } as CSSProperties} ref={root} tabIndex={-1}
     onPointerDownCapture={() => window.dispatchEvent(new Event('orsk-editor-flush'))}>
     <header className="editor-header"><div><h1>Редактор сюжета</h1><span>{Object.keys(doc.story.nodes).length} блоков · {dirty ? 'Есть изменения' : 'Файл проекта открыт'}</span></div>
-      <div className="editor-file-actions"><a href="/" target="_blank" rel="noreferrer">Игра</a><button disabled={loading || busy} onClick={() => { setBackupsOpen(!backupsOpen); void refreshBackups(); }}>Бэкапы</button><button disabled={loading} onClick={() => download('orsk-story.json', docRef.current.story)}>Экспорт JSON</button><button disabled={loading || busy} onClick={() => file.current?.click()}>Импорт</button><button className="save-project" disabled={loading || busy || errors.length > 0} onClick={() => void save()}>{busy ? 'Сохраняю…' : 'Сохранить в проект'}</button></div>
+      <div className="editor-file-actions"><a href="/" target="_blank" rel="noreferrer">Игра</a><button onClick={() => setGallery({})}>Библиотека</button><button disabled={loading || busy} onClick={() => { setBackupsOpen(!backupsOpen); void refreshBackups(); }}>Бэкапы</button><button disabled={loading} onClick={() => download('orsk-story.json', docRef.current.story)}>Экспорт JSON</button><button disabled={loading || busy} onClick={() => file.current?.click()}>Импорт</button><button className="save-project" disabled={loading || busy || errors.length > 0} onClick={() => void save()}>{busy ? 'Сохраняю…' : 'Сохранить в проект'}</button></div>
     </header>
     <div className="editor-toolbar"><select className="compact-chapter-select" aria-label="Текущая глава" value={activeChapter} onChange={event => openChapter(event.target.value)}><option value="">Нераспределённые</option>{doc.story.chapters.map(chapter => <option key={chapter.id} value={chapter.id}>{chapter.title}</option>)}</select>
       <button title="Создать главу, изменить названия, картинки и порядок глав в стартовом меню" onClick={() => setOpenStoryRequest(request => request + 1)}>Главы и меню</button>
@@ -380,12 +382,12 @@ export default function Editor() {
         </ReactFlow>
         {loading && <div className="editor-loading">Загружаю сюжет…</div>}
       </div>
-      <Inspector openStoryRequest={openStoryRequest} document={doc} selected={primaryId} selectedCount={selected.length} issues={issues} edit={edit} endGroup={() => dispatch({ type: 'end-group' })} focus={focus} browse={(current, pick) => setGallery({ current, pick })} play={play}
+      <Inspector openStoryRequest={openStoryRequest} document={doc} selected={primaryId} selectedCount={selected.length} issues={issues} edit={edit} endGroup={() => dispatch({ type: 'end-group' })} focus={focus} browse={(current, pick, kind = 'image') => setGallery({ current, pick, kind })} play={play}
         rename={(id, next) => { try { commit(renameNode(docRef.current, id, next)); setSelected([next]); setPrimary(next); } catch (error) { notify(error); } }} />
     </div>
     <footer className="editor-status"><span role="status">{message}</span><span>{errors.length ? `${errors.length} ошибок · ` : ''}{draftStatus}</span><small>Пробел + drag: холст · Ctrl + колесо: масштаб · Shift: несколько блоков</small></footer>
     <input type="file" accept="application/json,.json" hidden ref={file} onChange={async event => { const selected = event.target.files?.[0]; event.target.value = ''; if (!selected) return; try { if (selected.size > 8 * 1024 * 1024) throw Error('Файл больше 8 МиБ.'); await replaceDocument(parseDocument(JSON.parse(await selected.text())), 'импортом'); } catch (error) { notify(error); } }} />
-    {gallery && <Gallery current={gallery.current} onPick={id => { gallery.pick(id); setGallery(null); }} onClose={() => setGallery(null)} />}
+    {gallery && <Gallery current={gallery.current} kind={gallery.kind} onPick={gallery.pick ? id => { gallery.pick!(id); setGallery(null); } : undefined} onClose={() => setGallery(null)} />}
     {backupsOpen && <aside className="backup-drawer" aria-label="Резервные копии"><div className="editor-dialog-title"><h2>Бэкапы сюжета</h2><button aria-label="Закрыть бэкапы" onClick={() => setBackupsOpen(false)}>×</button></div><p>Весь сюжет, главы, связи и расположение блоков. Перед сохранением и восстановлением создаётся автоматическая копия.</p><input placeholder="Название копии" aria-label="Название бэкапа" value={backupLabel} onChange={e => setBackupLabel(e.target.value)} /><button disabled={busy} className="wide-button" onClick={() => void createBackup()}>Создать бэкап</button><button className="wide-button" onClick={() => download(`orsk-backup-${Date.now()}.json`, { format: 'orsk-story-backup', version: 1, createdAt: new Date().toISOString(), label: backupLabel || 'Экспорт', document: docRef.current })}>Скачать полную копию</button><div className="backup-list">{backups.map(backup => <article key={backup.id}><h3>{backup.label}</h3><p>{dateLabel(backup.createdAt)} · {backup.nodes} блоков</p><div><button disabled={busy || backup.broken} onClick={() => void restore(backup.id)}>Восстановить</button><button disabled={backup.broken} onClick={async () => { try { download(backup.id, await api(`backups/${backup.id}`)); } catch (error) { notify(error); } }}>Скачать</button></div></article>)}{!backups.length && <p>Пока нет копий.</p>}</div></aside>}
   </div>;
 }
