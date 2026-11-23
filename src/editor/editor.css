@@ -9,6 +9,11 @@
 .story-editor input, .story-editor textarea, .story-editor select { width: 100%; padding: 9px 10px; border: 1px solid var(--editor-line); border-radius: 4px; background: #141d20; color: var(--editor-text); font: inherit; outline: none; }
 .story-editor input:focus, .story-editor textarea:focus, .story-editor select:focus { border-color: var(--editor-accent); }
 .story-editor textarea { resize: vertical; min-height: 74px; line-height: 1.65; }
+.shake-options { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }
+.shake-options button[aria-pressed=true] { border-color: var(--editor-accent); background: #365146; }
+.shake-preview { overflow: hidden; background: #151f22; margin: 10px 0; }
+.shake-preview img { display: block; width: 100%; height: 180px; object-fit: contain; }
+.editor-inspector audio { width: 100%; margin: 8px 0 16px; }
 .editor-header { min-height: 80px; padding: 14px 23px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--editor-line); background: #1b2427; }
 .editor-header h1 { font-size: 20px; font-weight: 600; }
 .editor-header > div > span { display: block; color: var(--editor-muted); font-size: 12px; margin-top: 3px; }

@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { advance, availableOptions, back, choose, start } from './engine/engine';
 import type { Chapter, Story } from './engine/engine';
 import data from './content/story.json';
+import { useMedia } from './engine/useMedia';
+import { useTypewriter } from './engine/useTypewriter';
 import { imageFilename, imageURL } from './content/assets';
 import aircraftDrawing from './assets/decorations/da40.png';
 import propellerDrawing from './assets/decorations/propeller.png';
@@ -50,7 +52,10 @@ function App() {
     return start(story, chapter?.entry, chapter?.image);
   });
   const [chaptersOpen, setChaptersOpen] = useState(false);
+  const [returning, setReturning] = useState(false);
   const screen = useRef<HTMLElement>(null);
+  const artStage = useRef<HTMLDivElement>(null);
+  useMedia(story, state, playing, artStage);
   const node = story.nodes[state.current];
   const options = availableOptions(story, state);
   const textId = node.type === 'text' ? state.current : node.type === 'choice'
@@ -58,6 +63,7 @@ function App() {
     : undefined;
   const textNode = textId ? story.nodes[textId] : undefined;
   const text = textNode?.type === 'text' ? textNode.text : node.type === 'end' ? 'Конец' : '';
+  const typed = useTypewriter(text, state, playing && node.type === 'text' && !returning, textNode?.type === 'text' ? textNode.delayMs ?? 0 : 0);
   const visibleImage = playing ? state.scene : story.cover;
 
   useEffect(() => {
@@ -71,27 +77,38 @@ function App() {
   useEffect(() => { if (playing && !chaptersOpen) screen.current?.focus({ preventScroll: true }); }, [state.current, playing, chaptersOpen]);
 
   function openChapter(chapter?: Chapter) {
+    setReturning(false);
     setState(start(story, chapter?.entry, chapter?.image));
     setChaptersOpen(false);
     setPlaying(true);
   }
+  function next() {
+    if (typed.pending) { typed.complete(); return; }
+    setReturning(false);
+    setState(state => advance(story, state));
+  }
+  function goBack() {
+    if (!state.history.length) return;
+    setReturning(true);
+    setState(back);
+  }
   return <div className={`novel theme-${theme}`}>
     <div className="theme-switcher" role="group" aria-label="Оформление">{themes.map(item => <button key={item.id} aria-pressed={theme === item.id} onClick={() => setTheme(item.id)}>{item.name}</button>)}</div>
     {playing ? <main ref={screen} className="game-screen" tabIndex={0} aria-label="Игра"
-      onClick={event => { if (!(event.target as Element).closest('button,dialog')) setState(state => advance(story, state)); }}
+      onClick={event => { if (!(event.target as Element).closest('button,dialog')) next(); }}
       onKeyDown={event => {
         if ((event.target as Element).closest('button,dialog')) return;
-        if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); setState(state => advance(story, state)); }
-        if (event.key === 'ArrowLeft') { event.preventDefault(); setState(back); }
+        if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); next(); }
+        if (event.key === 'ArrowLeft') { event.preventDefault(); goBack(); }
       }}>
-      <div className="art-stage"><img src={imageURL(state.scene)} alt="Иллюстрация текущей сцены" draggable={false} /></div>
+      <div ref={artStage} className="art-stage"><img src={imageURL(state.scene)} alt="Иллюстрация текущей сцены" draggable={false} /></div>
       <div className="technical-decorations" aria-hidden="true">
         <div className="technical-drawing aircraft-drawing" style={{ maskImage: `url(${aircraftDrawing})` }} />
         <div className="technical-drawing propeller-drawing" style={{ maskImage: `url(${propellerDrawing})` }} />
       </div>
       <button className="menu-button" onClick={() => setPlaying(false)}>Главное меню</button>
-      <section className="dialogue" aria-label="Реплика"><p aria-live="polite">{text}</p><span className="continue-mark" aria-hidden="true">{node.type === 'text' ? '▾' : ''}</span><button className="back-button" disabled={state.history.length === 0} onClick={() => setState(back)}>Назад</button></section>
-      {node.type === 'choice' && <div className="choice-scrim"><div className="choices" role="group" aria-label="Варианты ответа">{options.map(option => <button key={option.id} onClick={() => setState(state => choose(story, state, option.id))}>{option.text}</button>)}</div></div>}
+      <section className="dialogue" aria-label="Реплика"><p aria-label={text}>{typed.text}</p><span className="continue-mark" aria-hidden="true">{node.type === 'text' && !typed.pending ? '▾' : ''}</span><button className="back-button" disabled={state.history.length === 0} onClick={goBack}>Назад</button></section>
+      {node.type === 'choice' && <div className="choice-scrim"><div className="choices" role="group" aria-label="Варианты ответа">{options.map(option => <button key={option.id} onClick={() => { setReturning(false); setState(state => choose(story, state, option.id)); }}>{option.text}</button>)}</div></div>}
       <span className="chapter-label">{story.chapters.find(chapter => chapter.id === state.chapterId)?.title ?? ''}</span>
     </main> : <main className="home-screen">
       <div className="cover-stage"><img src={imageURL(story.cover)} alt="Авиационная карта Орска и навигационные линейки" fetchPriority="high" /></div>

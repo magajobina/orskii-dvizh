@@ -1,0 +1,37 @@
+{
+  "door-knock": {
+    "file": "door-knock.mp3",
+    "title": "Стук в дверь (три удара)",
+    "source": "https://mildlyuseless.com/res/foley-door-knock",
+    "license": "CC0 1.0",
+    "author": "Mildly Useless"
+  },
+  "wet-fart": {
+    "file": "wet-fart.mp3",
+    "title": "Комическое обсирание",
+    "source": "https://soundbible.com/808-Wet-Fart.html",
+    "license": "CC BY 3.0",
+    "author": "Mike Koenig"
+  },
+  "boom-door": {
+    "file": "удар-в-дверь.mp3",
+    "title": "Удар в дверь",
+    "source": "https://soundbible.com/808-Wet-Fart.html",
+    "license": "CC BY 3.0",
+    "author": "Mike Koenig"
+  },
+  "axe-door": {
+    "file": "топором-ломают-дверь.mp3",
+    "title": "Топор ломает дверь",
+    "source": "https://soundbible.com/808-Wet-Fart.html",
+    "license": "CC BY 3.0",
+    "author": "Mike Koenig"
+  },
+  "tom-scared": {
+    "file": "tom_ispugalsya.mp3",
+    "title": "Том орёт",
+    "source": "https://soundbible.com/808-Wet-Fart.html",
+    "license": "CC BY 3.0",
+    "author": "Mike Koenig"
+  }
+}

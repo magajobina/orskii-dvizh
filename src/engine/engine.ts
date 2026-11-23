@@ -1,13 +1,14 @@
 export type Option = { id: string; text: string; next: string; once?: boolean };
+export type Shake = { variant: 'tremble' | 'impact' | 'sway'; durationMs: number };
 export type Node = (
-  | { type: 'text'; text: string; next: string }
-  | { type: 'scene'; asset: string; next: string }
+  | { type: 'text'; text: string; next: string; audio?: string; delayMs?: number }
+  | { type: 'scene'; asset: string; next: string; shake?: Shake }
   | { type: 'jump'; next: string }
   | { type: 'choice'; options: Option[]; prompt?: string }
   | { type: 'end' }) & { chapterId?: string };
 export type Chapter = { id: string; title: string; entry: string; image: string };
 export type Story = { version: number; entry: string; cover: string; chapters: Chapter[]; nodes: Record<string, Node> };
-export type Frame = { current: string; scene: string; hiddenOptions: Record<string, string[]>; chapterId?: string };
+export type Frame = { current: string; scene: string; hiddenOptions: Record<string, string[]>; chapterId?: string; sceneNode?: string; sceneEvent?: number };
 export type State = Frame & { history: Frame[] };
 
 function settle(story: Story, initial: Frame): Frame {
@@ -16,7 +17,11 @@ function settle(story: Story, initial: Frame): Frame {
     const node = story.nodes[frame.current];
     if (!node) throw new Error(`Unknown story node: ${frame.current}`);
     if (node.chapterId) frame.chapterId = node.chapterId;
-    if (node.type === 'scene') frame.scene = node.asset;
+    if (node.type === 'scene') {
+      frame.scene = node.asset;
+      frame.sceneNode = frame.current;
+      frame.sceneEvent = (frame.sceneEvent ?? 0) + 1;
+    }
     if (node.type !== 'scene' && node.type !== 'jump') return frame;
     frame.current = node.next;
   }

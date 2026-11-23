@@ -65,6 +65,7 @@ export default function Editor() {
   const [primary, setPrimary] = useState<string>();
   const [selectedEdges, setSelectedEdges] = useState<Edge[]>([]);
   const [query, setQuery] = useState('');
+  const [openStoryRequest, setOpenStoryRequest] = useState(0);
   const [outlineWidth, setOutlineWidth] = useState(() => {
     try { return Math.max(170, Math.min(600, Number(localStorage.getItem('orsk.editor.outline-width')) || 210)); } catch { return 210; }
   });
@@ -168,7 +169,15 @@ export default function Editor() {
     const minY = Math.min(0, ...visible.map(([id]) => doc.layout.positions[id]?.y ?? 0));
     setNodes(previous => {
       const selection = new Set(previous.filter(node => node.selected).map(node => node.id));
-      const local: StoryFlowNode[] = visible.map(([id, node]) => ({ id, type: 'story', position: doc.layout.positions[id] ?? { x: 0, y: 0 }, selected: selection.has(id), data: { node, entry: id === doc.story.entry, invalid: invalid.has(id) } }));
+      const existing = new Map(previous.map(node => [node.id, node]));
+      const local: StoryFlowNode[] = visible.map(([id, node]) => {
+        const old = existing.get(id);
+        const position = doc.layout.positions[id] ?? { x: 0, y: 0 };
+        const entry = id === doc.story.entry;
+        const hasError = invalid.has(id);
+        if (old && old.position.x === position.x && old.position.y === position.y && old.data.entry === entry && old.data.invalid === hasError && JSON.stringify(old.data.node) === JSON.stringify(node)) return old;
+        return { id, type: 'story', position, selected: selection.has(id), data: { node, entry, invalid: hasError } };
+      });
       return [...local, ...external.map((id, index): StoryFlowNode => ({ id: `@external:${id}`, type: 'story', position: { x: maxX, y: minY + index * 160 }, draggable: false, data: { node: doc.story.nodes[id], entry: false, invalid: false, external: id, chapterTitle: doc.story.chapters.find(chapter => chapter.id === doc.story.nodes[id].chapterId)?.title } }))];
     });
     setEdges(previous => {
@@ -335,11 +344,13 @@ export default function Editor() {
   const filtered = Object.entries(doc.story.nodes).filter(([, node]) => Boolean(query) || (node.chapterId ?? '') === activeChapter).filter(([id, node]) => `${id} ${node.type === 'text' ? node.text : node.type === 'scene' ? node.asset : node.type === 'choice' ? node.options.map(o => o.text).join(' ') : ''}`.toLowerCase().includes(query.toLowerCase()));
   const primaryId = primary && doc.story.nodes[primary] ? primary : selected.find(id => doc.story.nodes[id]);
 
-  return <div className={`story-editor${resizingOutline ? ' resizing-outline' : ''}`} style={{ '--outline-width': `${outlineWidth}px` } as CSSProperties} ref={root} tabIndex={-1}>
+  return <div className={`story-editor${resizingOutline ? ' resizing-outline' : ''}`} style={{ '--outline-width': `${outlineWidth}px` } as CSSProperties} ref={root} tabIndex={-1}
+    onPointerDownCapture={() => window.dispatchEvent(new Event('orsk-editor-flush'))}>
     <header className="editor-header"><div><h1>Редактор сюжета</h1><span>{Object.keys(doc.story.nodes).length} блоков · {dirty ? 'Есть изменения' : 'Файл проекта открыт'}</span></div>
       <div className="editor-file-actions"><a href="/" target="_blank" rel="noreferrer">Игра</a><button disabled={loading || busy} onClick={() => { setBackupsOpen(!backupsOpen); void refreshBackups(); }}>Бэкапы</button><button disabled={loading} onClick={() => download('orsk-story.json', docRef.current.story)}>Экспорт JSON</button><button disabled={loading || busy} onClick={() => file.current?.click()}>Импорт</button><button className="save-project" disabled={loading || busy || errors.length > 0} onClick={() => void save()}>{busy ? 'Сохраняю…' : 'Сохранить в проект'}</button></div>
     </header>
     <div className="editor-toolbar"><select className="compact-chapter-select" aria-label="Текущая глава" value={activeChapter} onChange={event => openChapter(event.target.value)}><option value="">Нераспределённые</option>{doc.story.chapters.map(chapter => <option key={chapter.id} value={chapter.id}>{chapter.title}</option>)}</select>
+      <button title="Создать главу, изменить названия, картинки и порядок глав в стартовом меню" onClick={() => setOpenStoryRequest(request => request + 1)}>Главы и меню</button>
       <div className="editor-add-buttons">{(Object.keys(kindNames) as StoryNode['type'][]).filter(type => type !== 'jump').map(type => <button key={type} draggable onDragStart={event => event.dataTransfer.setData('application/orsk-node', type)} onClick={() => add(type)}>+ {kindNames[type]}</button>)}</div>
       <div className="editor-tools"><button title="Отменить (Ctrl+Z)" aria-label="Отменить" disabled={!history.past.length} onClick={() => dispatch({ type: 'undo' })}>↶</button><button title="Повторить (Ctrl+Y)" aria-label="Повторить" disabled={!history.future.length} onClick={() => dispatch({ type: 'redo' })}>↷</button><button disabled={!selected.length} onClick={() => copySelection()}>Копировать</button><button disabled={!selected.length} onClick={() => copySelection(true)}>Вырезать</button><button onClick={() => void pasteFromClipboard()}>Вставить</button><button disabled={!selected.length && !selectedEdges.length} onClick={removeSelection}>Удалить</button><button title="Автоматически расположить блоки текущей главы; сюжет не изменится" onClick={() => { commit(autoLayout(docRef.current, activeChapter)); setMessage('Глава разложена автоматически. Изменение можно отменить.'); }}>Разложить</button><button onClick={() => { void flow.current?.fitView({ padding: 60, duration: 200 }); }}>Вся схема</button><button title="Найти начальный блок игры на схеме; это не запуск прохождения" onClick={() => focus(doc.story.entry)}>Старт</button></div>
     </div>
@@ -369,7 +380,7 @@ export default function Editor() {
         </ReactFlow>
         {loading && <div className="editor-loading">Загружаю сюжет…</div>}
       </div>
-      <Inspector document={doc} selected={primaryId} selectedCount={selected.length} issues={issues} edit={edit} endGroup={() => dispatch({ type: 'end-group' })} focus={focus} browse={(current, pick) => setGallery({ current, pick })} play={play}
+      <Inspector openStoryRequest={openStoryRequest} document={doc} selected={primaryId} selectedCount={selected.length} issues={issues} edit={edit} endGroup={() => dispatch({ type: 'end-group' })} focus={focus} browse={(current, pick) => setGallery({ current, pick })} play={play}
         rename={(id, next) => { try { commit(renameNode(docRef.current, id, next)); setSelected([next]); setPrimary(next); } catch (error) { notify(error); } }} />
     </div>
     <footer className="editor-status"><span role="status">{message}</span><span>{errors.length ? `${errors.length} ошибок · ` : ''}{draftStatus}</span><small>Пробел + drag: холст · Ctrl + колесо: масштаб · Shift: несколько блоков</small></footer>

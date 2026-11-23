@@ -1,18 +1,33 @@
 import { useEffect, useState } from 'react';
 import type { Node } from '../engine/engine';
 import { imageURL } from '../content/assets';
+import { audioAssets, audioURL } from '../content/audio';
+import { ShakePreview } from './ShakePreview';
+import { BufferedTextarea } from './BufferedTextarea';
 import type { Document, Issue } from './model';
 import { kindNames } from './model';
 
 type Props = {
+  openStoryRequest: number;
   document: Document; selected?: string; selectedCount: number; issues: Issue[];
   edit: (fn: (doc: Document) => void, group?: string) => void;
   rename: (id: string, next: string) => void; endGroup: () => void; focus: (id: string) => void;
   browse: (current: string, pick: (id: string) => void) => void; play: (id: string) => void;
 };
 
-export function Inspector({ document, selected, selectedCount, issues, edit, rename, endGroup, focus, browse, play }: Props) {
+export function Inspector({ document, selected, selectedCount, issues, edit, rename, endGroup, focus, browse, play, openStoryRequest }: Props) {
   const [tab, setTab] = useState('block');
+  useEffect(() => { if (openStoryRequest) setTab('story'); }, [openStoryRequest]);
+  const addChapter = () => edit(doc => {
+    const id = `chapter-${crypto.randomUUID().slice(0, 8)}`;
+    const entry = `${id}-start`;
+    const end = `${id}-end`;
+    doc.story.nodes[entry] = { type: 'text', text: 'Новая глава', next: end, chapterId: id };
+    doc.story.nodes[end] = { type: 'end', chapterId: id };
+    doc.layout.positions[entry] = { x: 100, y: 100 };
+    doc.layout.positions[end] = { x: 450, y: 100 };
+    doc.story.chapters.push({ id, title: 'Новая глава', entry, image: doc.story.cover });
+  });
   const [newId, setNewId] = useState(selected ?? '');
   useEffect(() => { setNewId(selected ?? ''); }, [selected]);
   const node = selected ? document.story.nodes[selected] : undefined;
@@ -27,8 +42,11 @@ export function Inspector({ document, selected, selectedCount, issues, edit, ren
         <label className="editor-field">ID блока<div className="inline-field"><input value={newId} onChange={e => setNewId(e.target.value)} /><button disabled={newId === selected} onClick={() => rename(selected, newId)}>Применить</button></div></label>
         <label className="editor-field">Глава<select value={node.chapterId ?? ''} onChange={e => change(n => { n.chapterId = e.target.value || undefined; })}><option value="">Нераспределённые</option>{document.story.chapters.map(chapter => <option key={chapter.id} value={chapter.id}>{chapter.title}</option>)}</select></label>
         <button className="editor-play" disabled={issues.some(i => i.severity === 'error')} onClick={() => play(selected)}>Играть с этого блока</button>
-        {node.type === 'text' && <label className="editor-field">Текст реплики<textarea rows={8} value={node.text} onChange={e => change(n => { if (n.type === 'text') n.text = e.target.value; }, 'text')} onBlur={endGroup} /></label>}
+        {node.type === 'text' && <><label className="editor-field">Текст реплики<BufferedTextarea key={selected} rows={8} value={node.text} onChange={value => change(n => { if (n.type === 'text') n.text = value; }, 'text')} onBlur={endGroup} /></label>
+        <label className="editor-field">Задержка появления текста, мс<input type="number" min="0" step="1" value={node.delayMs ?? 0} onChange={e => { const value = Number(e.target.value); if (Number.isFinite(value) && value >= 0) change(n => { if (n.type === 'text') { if (value) n.delayMs = Math.round(value); else delete n.delayMs; } }, 'delayMs'); }} onBlur={endGroup} /></label></>}
+        {node.type === 'text' && <><label className="editor-field">Аудио при появлении реплики<select value={node.audio ?? ''} onChange={e => change(n => { if (n.type === 'text') { if (e.target.value) n.audio = e.target.value; else delete n.audio; } })}><option value="">Без звука</option>{Object.entries(audioAssets).map(([id, asset]) => <option key={id} value={id}>{asset.title}</option>)}</select></label>{node.audio && <audio key={node.audio} controls preload="none" src={audioURL(node.audio)} aria-label="Прослушать выбранный звук" />}</>}
         {node.type === 'scene' && <><h3>Иллюстрация</h3>{assetField(node.asset, id => change(n => { if (n.type === 'scene') n.asset = id; }))}</>}
+        {node.type === 'scene' && <ShakePreview asset={node.asset} shake={node.shake} onChange={shake => change(n => { if (n.type === 'scene') { if (shake) n.shake = shake; else delete n.shake; } })} />}
         {'next' in node && link('Следующий блок', node.next, value => change(n => { if ('next' in n) n.next = value; }, 'next'))}
         {node.type === 'choice' && <>
           {link('Реплика-подпись (необязательно)', node.prompt ?? '', value => change(n => { if (n.type === 'choice') n.prompt = value || undefined; }, 'prompt'))}
@@ -46,18 +64,20 @@ export function Inspector({ document, selected, selectedCount, issues, edit, ren
         {issues.filter(issue => issue.nodeId === selected).map((issue, i) => <p className={`inline-issue ${issue.severity}`} key={i}>{issue.message}</p>)}
       </>)}
       {tab === 'story' && <>
-        <h2>Параметры сюжета</h2>
+        <h2>Главы и стартовое меню</h2>
+        <p className="editor-muted">Список «Выбрать главу» в игре берётся отсюда. Названия, картинки и порядок совпадают. После правок нажмите «Сохранить в проект».</p>
+        <button className="wide-button" onClick={addChapter}>+ Добавить главу</button>
         {link('Начало игры', document.story.entry, value => edit(doc => { doc.story.entry = value; }, 'story-entry'))}
         <h3>Обложка</h3>{assetField(document.story.cover, id => edit(doc => { doc.story.cover = id; }))}
         <h3>Главы</h3>
         {document.story.chapters.map((chapter, index) => <section className="option-editor" key={index}>
-          <div className="option-editor-actions"><b>Глава {index + 1}</b><button aria-label={`Удалить главу ${index + 1}`} onClick={() => edit(doc => { const id = doc.story.chapters[index].id; for (const node of Object.values(doc.story.nodes)) if (node.chapterId === id) delete node.chapterId; doc.story.chapters.splice(index, 1); })}>×</button></div>
+          <div className="option-editor-actions"><b>Глава {index + 1}</b><span><button title="Выше в стартовом меню" aria-label={`Поднять главу ${index + 1}`} disabled={index === 0} onClick={() => edit(doc => { [doc.story.chapters[index - 1], doc.story.chapters[index]] = [doc.story.chapters[index], doc.story.chapters[index - 1]]; })}>↑</button><button title="Ниже в стартовом меню" aria-label={`Опустить главу ${index + 1}`} disabled={index === document.story.chapters.length - 1} onClick={() => edit(doc => { [doc.story.chapters[index + 1], doc.story.chapters[index]] = [doc.story.chapters[index], doc.story.chapters[index + 1]]; })}>↓</button><button aria-label={`Удалить главу ${index + 1}`} onClick={() => edit(doc => { const id = doc.story.chapters[index].id; for (const node of Object.values(doc.story.nodes)) if (node.chapterId === id) delete node.chapterId; doc.story.chapters.splice(index, 1); })}>×</button></span></div>
           <label className="editor-field">Название<input value={chapter.title} onChange={e => edit(doc => { doc.story.chapters[index].title = e.target.value; }, `chapter-${index}-title`)} onBlur={endGroup} /></label>
           <label className="editor-field">ID главы<input value={chapter.id} onChange={e => edit(doc => { const old = doc.story.chapters[index].id; for (const node of Object.values(doc.story.nodes)) if (node.chapterId === old) node.chapterId = e.target.value; doc.story.chapters[index].id = e.target.value; }, `chapter-${index}-id`)} onBlur={endGroup} /></label>
           {link('Первый блок', chapter.entry, value => edit(doc => { doc.story.chapters[index].entry = value; }, `chapter-${index}-entry`))}
-          <button className="wide-button" onClick={() => browse(chapter.image, id => edit(doc => { doc.story.chapters[index].image = id; }))}>Иллюстрация главы</button>
+          {assetField(chapter.image, id => edit(doc => { doc.story.chapters[index].image = id; }))}
+          <button className="wide-button" onClick={() => { focus(chapter.entry); setTab('block'); }}>Открыть начало главы на схеме</button>
         </section>)}
-        <button className="wide-button" onClick={() => edit(doc => { const id = `chapter-${crypto.randomUUID().slice(0, 8)}`; const entry = `${id}-start`; doc.story.nodes[entry] = { type: 'text', text: 'Новая глава', next: Object.keys(doc.story.nodes).find(key => doc.story.nodes[key].type === 'end') ?? '', chapterId: id }; doc.layout.positions[entry] = { x: 100, y: 100 }; doc.story.chapters.push({ id, title: 'Новая глава', entry, image: doc.story.cover }); })}>Добавить главу</button>
       </>}
       {tab === 'issues' && <><h2>Проверка сюжета</h2><p className="editor-muted">Ошибки блокируют запись в файл. Предупреждения помогают найти забытые блоки.</p>{!issues.length && <p className="validation-ok">Ошибок нет.</p>}{issues.map((issue, i) => <button className={`issue-button ${issue.severity}`} key={i} onClick={() => { if (issue.nodeId) { focus(issue.nodeId); setTab('block'); } }}><b>{issue.nodeId ?? 'Сюжет'}</b><span>{issue.message}</span></button>)}</>}
     </div>

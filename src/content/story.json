@@ -7,7 +7,7 @@
       "id": "startt",
       "title": "Приезд в Орск",
       "entry": "line-38",
-      "image": "bg-polina-anya"
+      "image": "bg-orsk-tower1"
     },
     {
       "id": "viotsidelli",
@@ -19,13 +19,13 @@
       "id": "dalee",
       "title": "Самолёт и «Трава»",
       "entry": "line-361",
-      "image": "limonchella"
+      "image": "bg-limonchella-anya-polina-alik-v3"
     },
     {
       "id": "gostichkayarik",
       "title": "Сдача ФАПов",
       "entry": "line-507",
-      "image": "stolovaya"
+      "image": "g4-line-508-stolovaya-kisel"
     }
   ],
   "nodes": {
@@ -67,8 +67,8 @@
     },
     "line-45": {
       "type": "text",
-      "text": "Вашему взору открылась бескрайняя степь и небольшое здание аэропорта с возвышающейся на фоне всего диспетчерской вышкой.",
-      "next": "line-47",
+      "text": "С балкона вашему взору открылась бескрайняя степь и небольшое здание аэропорта с возвышающейся на фоне всего диспетчерской вышкой. ",
+      "next": "text-961caf6f",
       "chapterId": "startt"
     },
     "line-43": {
@@ -79,7 +79,7 @@
     },
     "line-41": {
       "type": "text",
-      "text": "Вы поднялись на третий этаж кирпичного здания, это была ваша гостиница. Вы быстро закинули вещи в комнату, и решили выйти на общий балкон.",
+      "text": "Вы поднялись на третий этаж гостиницы, быстро закинули вещи в комнату, и решили выйти на общий балкон.",
       "next": "line-43",
       "chapterId": "startt"
     },
@@ -92,7 +92,7 @@
     "line-38": {
       "type": "text",
       "text": "Вы приехали на практику в Орск. Это ваша первая летная практика, вы в предвкушении чего-то особенного.",
-      "next": "line-39",
+      "next": "scene-39d8171a",
       "chapterId": "startt"
     },
     "line-67": {
@@ -109,7 +109,7 @@
     },
     "line-95": {
       "type": "text",
-      "text": "Пиздец, ты сюда бухать приехал или летать?",
+      "text": "Пиздец, ты сюда летать приехал или бухать?",
       "next": "copy-8ee1c762-0",
       "chapterId": "startt"
     },
@@ -162,7 +162,7 @@
     "line-118": {
       "type": "text",
       "text": "На вас напал цыганский табор",
-      "next": "line-140",
+      "next": "scene-204869a6",
       "chapterId": "startt"
     },
     "line-117": {
@@ -174,7 +174,7 @@
     "line-124": {
       "type": "text",
       "text": "Вас утащили черти в преисподнюю",
-      "next": "line-140",
+      "next": "scene-204869a6",
       "chapterId": "startt"
     },
     "line-123": {
@@ -186,7 +186,7 @@
     "line-130": {
       "type": "text",
       "text": "Теперь вы живёте в конуре с Альбертом",
-      "next": "line-140",
+      "next": "scene-204869a6",
       "chapterId": "startt"
     },
     "line-113": {
@@ -205,7 +205,7 @@
         {
           "id": "line-128",
           "text": "Алика от псины",
-          "next": "line-130"
+          "next": "scene-cdbb3326"
         }
       ],
       "chapterId": "startt"
@@ -857,31 +857,35 @@
     "line-524": {
       "type": "text",
       "text": "Вы проиграли",
-      "next": "line-560",
+      "next": "scene-fa0c99dd",
       "chapterId": "gostichkayarik"
     },
     "line-522": {
       "type": "text",
       "text": "Акашев заглянул в кабинет и нашел вас",
-      "next": "line-524",
+      "next": "choice-a980d33c",
       "chapterId": "gostichkayarik"
     },
     "line-521": {
       "type": "scene",
-      "asset": "siyaniye",
+      "asset": "g4-za-shkafom-akashev-fotomontazh-oil",
       "next": "line-522",
-      "chapterId": "gostichkayarik"
+      "chapterId": "gostichkayarik",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 300
+      }
     },
     "line-520": {
       "type": "text",
-      "text": "В последнее мгновение вы успели зашмыгнуть в открытую дверь какого-то кабинета, там вы увидели шкаф и спрятались за ним. Сидя в засаде и слушая приближающиеся шаги своего ночного кошмара вы пытались учить оставшиеся главы ФАПа, но тут...",
-      "next": "line-521",
+      "text": "В последнее мгновение вы успели зашмыгнуть в открытую дверь какого-то кабинета, там вы увидели шкаф и спрятались за ним",
+      "next": "text-e06f8c98",
       "chapterId": "gostichkayarik"
     },
     "line-519": {
       "type": "text",
       "text": "Последнего человека выносят из Его кабинета на носилках, и вы в ужасе начинаете убегать куда нибудь, лишь бы ваша жизнь затянулась ещё на несколько мгновений, как вы услышали что Акашев вышел из своего кабинета...",
-      "next": "line-520",
+      "next": "scene-67e0459e",
       "chapterId": "gostichkayarik"
     },
     "line-518": {
@@ -890,21 +894,10 @@
       "next": "line-519",
       "chapterId": "gostichkayarik"
     },
-    "line-533": {
-      "type": "choice",
-      "options": [
-        {
-          "id": "line-535",
-          "text": "Отмотать день на сегодняшнее утро",
-          "next": "line-507"
-        }
-      ],
-      "chapterId": "gostichkayarik"
-    },
     "line-534": {
       "type": "text",
       "text": "Вы проиграли",
-      "next": "line-533",
+      "next": "scene-fa0c99dd",
       "chapterId": "gostichkayarik"
     },
     "line-532": {
@@ -915,14 +908,18 @@
     },
     "line-531": {
       "type": "scene",
-      "asset": "siyaniye",
+      "asset": "g4-class-siyaniye-zaval",
       "next": "line-532",
-      "chapterId": "gostichkayarik"
+      "chapterId": "gostichkayarik",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 1000
+      }
     },
     "line-530": {
       "type": "text",
-      "text": "Вы пошли в учебный класс в надежде на хороший исход. Вы не могли сосредоточиться из-за слишком громкого плача людей, которые уже побывали у Акешева. \"Кажется все уже сдали, но я ещё ничего не успел выучить\"...",
-      "next": "line-531",
+      "text": "Вы пошли в учебный класс в надежде на хороший исход. Вы не могли сосредоточиться из-за слишком громкого плача людей, которые уже побывали у Акешева.",
+      "next": "text-922ab898",
       "chapterId": "gostichkayarik"
     },
     "line-548": {
@@ -933,13 +930,13 @@
     },
     "line-547": {
       "type": "text",
-      "text": "Вас спасла ваша молитва, состоящая из первых пяти глав 136го ФАПа. Он закрыл дверь, и судя по тому что вы ещё живы, вы отсрочили свою смерть на некоторое время. После этого вы пошли в класс, и заплакали вместе со всеми...",
-      "next": "line-548",
+      "text": "Вас спасла ваша молитва, состоящая из первых пяти глав 136го ФАПа. Он ушёл.\nИ судя по тому что вы ещё живы, вы отсрочили свою смерть на некоторое время.",
+      "next": "scene-052dd4ee",
       "chapterId": "gostichkayarik"
     },
     "line-546": {
       "type": "text",
-      "text": "Акашев за пару дней запомнил всех 60 студентов по вашим ФИО, фоткам и датам рождения бабушек, он знает где вы находитесь даже не глядя на вас, и, конечно, он всегда знает где вас найти...",
+      "text": "Акашев за пару дней запомнил все 60 студентов по вашим ФИО, фоткам и датам рождения бабушек, он знает где вы находитесь даже не глядя на вас, и, конечно, он всегда знает где вас найти...",
       "next": "line-547",
       "chapterId": "gostichkayarik"
     },
@@ -947,7 +944,8 @@
       "type": "text",
       "text": "Вы бешено высрали все главы ФАПа, словно читая молитву лицом к лицу со смертью, рассказали всё что было нужно.",
       "next": "line-546",
-      "chapterId": "gostichkayarik"
+      "chapterId": "gostichkayarik",
+      "audio": "wet-fart"
     },
     "line-542": {
       "type": "choice",
@@ -955,27 +953,15 @@
         {
           "id": "line-544",
           "text": "Бешено высрать",
-          "next": "line-545"
+          "next": "scene-c7b3c43c"
         }
       ],
       "chapterId": "gostichkayarik"
     },
     "line-543": {
       "type": "text",
-      "text": "Вы решили пойти сидеть в туалет, единственное место где сейчас было тихо. Благодаря господа за тишину, вы быстро читали нужные главы ФАПа, как в туалет заглянул Акешев",
-      "next": "line-542",
-      "chapterId": "gostichkayarik"
-    },
-    "line-541": {
-      "type": "scene",
-      "asset": "siyaniye",
-      "next": "line-543",
-      "chapterId": "gostichkayarik"
-    },
-    "line-540": {
-      "type": "text",
-      "text": "Вы решили пойти сидеть в туалет, единственное место где сейчас было тихо. Благодаря господа за тишину, вы быстро читали нужные главы ФАПа, как в туалет заглянул Акешев",
-      "next": "line-541",
+      "text": "Вы решили пойти сидеть в туалет - единственное место где сейчас было тихо. Благодаря господа за тишину, вы быстро читали нужные главы ФАПа.",
+      "next": "text-032cbd53",
       "chapterId": "gostichkayarik"
     },
     "line-514": {
@@ -984,17 +970,19 @@
         {
           "id": "line-517",
           "text": "Остаться стоять в очереди",
-          "next": "line-518"
+          "next": "line-518",
+          "once": true
         },
         {
           "id": "line-529",
           "text": "Пойти в класс и попытаться учить там",
-          "next": "line-530"
+          "next": "scene-568917ec",
+          "once": true
         },
         {
           "id": "line-539",
           "text": "Уйти в туалет",
-          "next": "line-540"
+          "next": "scene-8bef9c94"
         }
       ],
       "chapterId": "gostichkayarik"
@@ -1008,19 +996,13 @@
     "line-511": {
       "type": "text",
       "text": "Когда вы зашли в АТБ вы увидели что половина людей стоит в очереди в Его кабинет и боится, вторая половина уже сдала и сидела плакала в классе. Вы поняли что вам будет вообще пиздец если вы не справитесь с этим заданием за сегодня, и принялись бешено учить нужные главы ФАПа.",
-      "next": "line-512",
-      "chapterId": "gostichkayarik"
-    },
-    "line-510": {
-      "type": "text",
-      "text": "Поздравляем, это ваше первое утро без похмелья. Будильник впервые смог вас разбудить. Вы почистили зубы и пошли в АТБ учить, а затем сдавать Акашеву ФАПы.",
-      "next": "line-511",
+      "next": "scene-fa0c99dd",
       "chapterId": "gostichkayarik"
     },
     "line-509": {
       "type": "text",
-      "text": "Во время разговоров за трапезой вы ушлышали что-то про \"сдавать Акашеву 136й ФАП (федеральные авиационные правила) наизусть завтра\", охуели от такой новости, и поняли, что вы единственный из всех кто об этом не знал. Времени до завтра оставалось не так много, а учитывая то, что вы умираете от похмелья, учить сегодня не вариант. \"Надеюсь он просто про меня забудет\" - думали вы до конца этого дня.",
-      "next": "line-510",
+      "text": "Во время разговоров за трапезой вы ушлышали что-то про \"сдавать Акашеву 136й ФАП наизусть через час\", охуели от такой новости, и поняли, что вы единственный из всех кто об этом не знал. Времени нихуя, а учитывая то, что вы умираете от похмелья, сохранить очко сегодня не вариант. \"Надеюсь он просто про меня забудет\" - думали вы по пути в АТБ.",
+      "next": "scene-bf19006f",
       "chapterId": "gostichkayarik"
     },
     "line-508": {
@@ -1031,18 +1013,14 @@
     },
     "line-507": {
       "type": "scene",
-      "asset": "stolovaya",
+      "asset": "g4-line-508-stolovaya-kisel",
       "next": "line-508",
-      "chapterId": "gostichkayarik"
-    },
-    "line-560": {
-      "type": "end",
       "chapterId": "gostichkayarik"
     },
     "line-558": {
       "type": "text",
       "text": "хуй залупа",
-      "next": "line-560",
+      "next": "end-a52a7b10",
       "chapterId": "gostichkayarik"
     },
     "scene-055daf5c": {
@@ -1295,6 +1273,249 @@
       "text": "Вы решили сходить на обед в столовую, в которой вас на время практики бесплатно кормят.",
       "next": "line-507",
       "chapterId": "dalee"
+    },
+    "scene-bf19006f": {
+      "type": "scene",
+      "asset": "g4-line-512-ochered-bez-nosilok",
+      "next": "line-511",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-fa0c99dd": {
+      "type": "scene",
+      "asset": "g4-line-512-ochered-na-fapy",
+      "next": "line-512",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-67e0459e": {
+      "type": "scene",
+      "asset": "g4-line-520-za-shkafom",
+      "next": "line-520",
+      "chapterId": "gostichkayarik"
+    },
+    "text-e06f8c98": {
+      "type": "text",
+      "text": "Сидя в засаде и слушая приближающиеся шаги своего ночного кошмара вы пытались учить оставшиеся главы ФАПа, но тут...",
+      "next": "line-521",
+      "chapterId": "gostichkayarik"
+    },
+    "choice-a980d33c": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-a980d33c-answer-1",
+          "text": "Нажми чтоб срать",
+          "next": "scene-58608d4f"
+        }
+      ],
+      "chapterId": "gostichkayarik"
+    },
+    "text-ffa05a5e": {
+      "type": "text",
+      "text": "Не помогло (",
+      "next": "scene-d67ab832",
+      "chapterId": "gostichkayarik",
+      "audio": "wet-fart"
+    },
+    "scene-58608d4f": {
+      "type": "scene",
+      "asset": "g4-za-shkafom-obosralsya",
+      "next": "text-ffa05a5e",
+      "chapterId": "gostichkayarik",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 500
+      }
+    },
+    "scene-d67ab832": {
+      "type": "scene",
+      "asset": "kot-raketa",
+      "next": "line-524",
+      "chapterId": "gostichkayarik"
+    },
+    "end-a52a7b10": {
+      "type": "end",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-568917ec": {
+      "type": "scene",
+      "asset": "g4-class-zaval-bez-akasheva",
+      "next": "line-530",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-8bef9c94": {
+      "type": "scene",
+      "asset": "g4-tualet-uchit-fapy",
+      "next": "line-543",
+      "chapterId": "gostichkayarik"
+    },
+    "text-032cbd53": {
+      "type": "text",
+      "text": "У вас появляется надежда что вы впервые не будете выебаны в этих Орских степях и глотаете главы одну за другой",
+      "next": "scene-35b46039",
+      "chapterId": "gostichkayarik"
+    },
+    "text-13a3766e": {
+      "type": "text",
+      "text": "Сейчас бы глотнуть лимончеллы в траве с девками...",
+      "next": "scene-54e6b056",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-35b46039": {
+      "type": "scene",
+      "asset": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2",
+      "next": "text-13a3766e",
+      "chapterId": "gostichkayarik"
+    },
+    "text-6ac29839": {
+      "type": "text",
+      "text": "ой",
+      "next": "scene-48236bce",
+      "chapterId": "gostichkayarik",
+      "audio": "door-knock"
+    },
+    "scene-54e6b056": {
+      "type": "scene",
+      "asset": "g4-tualet-uchit-fapy",
+      "next": "text-6ac29839",
+      "chapterId": "gostichkayarik",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 200
+      }
+    },
+    "scene-100f3839": {
+      "type": "scene",
+      "asset": "g4-line-540-akashev-nashel",
+      "next": "text-12510d4f",
+      "chapterId": "gostichkayarik",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 300
+      }
+    },
+    "text-12510d4f": {
+      "type": "text",
+      "text": "бляяяяя",
+      "next": "choice-b5f4f6bf",
+      "chapterId": "gostichkayarik",
+      "audio": "axe-door"
+    },
+    "scene-2cfd282a": {
+      "type": "scene",
+      "asset": "g4-tualet-siyaniye-akashev",
+      "next": "text-f319f170",
+      "chapterId": "gostichkayarik",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 1000
+      }
+    },
+    "text-f319f170": {
+      "type": "text",
+      "text": "...",
+      "next": "line-542",
+      "chapterId": "gostichkayarik",
+      "audio": "tom-scared"
+    },
+    "choice-b5f4f6bf": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-b5f4f6bf-answer-1",
+          "text": "бляяяяяяяяяя",
+          "next": "scene-2cfd282a"
+        }
+      ],
+      "chapterId": "gostichkayarik"
+    },
+    "scene-c7b3c43c": {
+      "type": "scene",
+      "asset": "g4-tualet-siyaniye-obosralsya",
+      "next": "line-545",
+      "chapterId": "gostichkayarik"
+    },
+    "text-e0863705": {
+      "type": "text",
+      "text": "После этого вы пошли в класс, и легли в кучу вместе со всеми...",
+      "next": "line-548",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-052dd4ee": {
+      "type": "scene",
+      "asset": "g4-class-zaval-bez-akasheva-vi",
+      "next": "text-e0863705",
+      "chapterId": "gostichkayarik"
+    },
+    "text-6c67bf75": {
+      "type": "text",
+      "text": "...",
+      "next": "scene-100f3839",
+      "chapterId": "gostichkayarik",
+      "audio": "boom-door"
+    },
+    "scene-48236bce": {
+      "type": "scene",
+      "asset": "g4-tualet-uchit-fapy",
+      "next": "text-6c67bf75",
+      "chapterId": "gostichkayarik",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 600
+      }
+    },
+    "text-922ab898": {
+      "type": "text",
+      "text": "С каждой минутой становилось всё тише, а куча тел прошедших через это всё выше.",
+      "next": "scene-caac98be",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-caac98be": {
+      "type": "scene",
+      "asset": "g4-class-zaval-nosilki",
+      "next": "text-5d841286",
+      "chapterId": "gostichkayarik"
+    },
+    "text-5d841286": {
+      "type": "text",
+      "text": "Ребята принесли последнего, и воцарилась гробовая тишина. \"Кажется все уже сдали, но я ещё ничего не успел выучить\"...",
+      "next": "line-531",
+      "chapterId": "gostichkayarik"
+    },
+    "text-e1f41486": {
+      "type": "text",
+      "text": "Волоча за собой тяжелый чемодан вы направлялись к кирпичному зданию, которое станет вашим домом на ближайшие месяцы",
+      "next": "line-39",
+      "chapterId": "startt"
+    },
+    "scene-39d8171a": {
+      "type": "scene",
+      "asset": "panorama-gostinitsa-studenty-oil",
+      "next": "text-e1f41486",
+      "chapterId": "startt"
+    },
+    "text-961caf6f": {
+      "type": "text",
+      "text": "Может ремонт у здания аэропорта и гостиницы был не самый лучший, но для вас они выглядели прекрасно, ведь это то место, где вы впервые узнаете что такое летать за штурвалом самолёта, а не в его пассажирской кабине.",
+      "next": "line-47",
+      "chapterId": "startt"
+    },
+    "text-ea49824e": {
+      "type": "text",
+      "text": "Вы бухали весь день и всю ночь",
+      "next": "line-140",
+      "chapterId": "startt"
+    },
+    "scene-cdbb3326": {
+      "type": "scene",
+      "asset": "bg-alik-v-konure-fotomontazh",
+      "next": "line-130",
+      "chapterId": "startt"
+    },
+    "scene-204869a6": {
+      "type": "scene",
+      "asset": "bg-komnata-buhali-noch",
+      "next": "text-ea49824e",
+      "chapterId": "startt"
     }
   }
 }

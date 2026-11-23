@@ -51,7 +51,10 @@ export function parseDocument(input: unknown): Document {
     if (node.chapterId !== undefined && (typeof node.chapterId !== 'string' || !validId(node.chapterId))) throw Error(`${id}: некорректный ID главы.`);
     if (['text', 'scene', 'jump'].includes(String(node.type)) && typeof node.next !== 'string') throw Error(`${id}: переход должен быть строкой.`);
     if (node.type === 'text' && typeof node.text !== 'string') throw Error(`${id}: нет текста.`);
+    if (node.type === 'text' && node.delayMs !== undefined && (!finite(node.delayMs) || node.delayMs < 0)) throw Error(`${id}: некорректная задержка текста.`);
     if (node.type === 'scene' && typeof node.asset !== 'string') throw Error(`${id}: нет ID иллюстрации.`);
+    if (node.type === 'text' && node.audio !== undefined && (typeof node.audio !== 'string' || !validId(node.audio))) throw Error(`${id}: некорректный ID аудио.`);
+    if (node.type === 'scene' && node.shake !== undefined && (!object(node.shake) || !['tremble', 'impact', 'sway'].includes(String(node.shake.variant)) || !finite(node.shake.durationMs) || node.shake.durationMs < 1)) throw Error(`${id}: некорректные параметры тряски.`);
     if (node.type === 'choice') {
       if (!Array.isArray(node.options) || node.options.length > 100) throw Error(`${id}: некорректные варианты.`);
       for (const o of node.options) if (!object(o) || typeof o.id !== 'string' || !validId(o.id) || typeof o.text !== 'string' || typeof o.next !== 'string' || (o.once !== undefined && typeof o.once !== 'boolean')) throw Error(`${id}: некорректный вариант ответа.`);
