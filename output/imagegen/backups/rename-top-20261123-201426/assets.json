@@ -1,0 +1,845 @@
+{
+  "back-orskroom": {
+    "file": "back-orskroom.png",
+    "width": 1280,
+    "height": 720
+  },
+  "bg-akashevclass": {
+    "file": "bg-akashevclass.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "bg-alik-yarik-v-trusah": {
+    "file": "bg-alik-yarik-v-trusah.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "bg-alikspit": {
+    "file": "bg-alikspit.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "bg-komnata-buhali-noch": {
+    "file": "bg-komnata-buhali-noch.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "bg-komnata-buhat1": {
+    "file": "bg-komnata-buhat1.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "bg-orsk-tower1": {
+    "file": "bg-orsk-tower1.jpg",
+    "width": 1200,
+    "height": 1601
+  },
+  "bg-orsk-vid1": {
+    "file": "bg-orsk-vid1.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "bg-orskroom": {
+    "file": "bg-orskroom.png",
+    "width": 1280,
+    "height": 720
+  },
+  "bg-polina-anya": {
+    "file": "bg-polina-anya.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "bg-preispodnyaa": {
+    "file": "bg-preispodnyaa.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "bg-start": {
+    "file": "bg-start.jpg",
+    "width": 512,
+    "height": 352
+  },
+  "bg-tsigani-anya": {
+    "file": "bg-tsigani-anya.png",
+    "width": 1200,
+    "height": 1600
+  },
+  "bg-vilam-dver": {
+    "file": "bg-vilam-dver.jpg",
+    "width": 1312,
+    "height": 1751
+  },
+  "bg-yarik-pivo": {
+    "file": "bg-yarik-pivo.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "bg-yarik-predlagaet-mashinu": {
+    "file": "bg-yarik-predlagaet-mashinu.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "dendy": {
+    "file": "dendy.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "devki-zhdut": {
+    "file": "devki-zhdut.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "devki-zhiga": {
+    "file": "devki-zhiga.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "eto-akashev": {
+    "file": "eto-akashev.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "limonchella": {
+    "file": "limonchella.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "litso-alik1": {
+    "file": "litso-alik1.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "litso-alik2": {
+    "file": "litso-alik2.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "main-menu": {
+    "file": "main-menu.png",
+    "width": 1200,
+    "height": 1600
+  },
+  "moet-samolet": {
+    "file": "moet-samolet.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "polet": {
+    "file": "polet.jpg",
+    "width": 1200,
+    "height": 1601
+  },
+  "sazhaet-samolet": {
+    "file": "sazhaet-samolet.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "siyaniye": {
+    "file": "siyaniye.png",
+    "width": 1200,
+    "height": 1600
+  },
+  "stolovaya": {
+    "file": "stolovaya.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "stoyanka": {
+    "file": "stoyanka.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "vishli-poparit": {
+    "file": "vishli-poparit.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "yarik-slomalya": {
+    "file": "yarik-slomalya-s-rakovinoy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "paper": {
+    "file": "paper.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "pidor-yarik": {
+    "file": "pidor-yarik.jpg",
+    "width": 499,
+    "height": 500
+  },
+  "yarik-na-zhige": {
+    "fallback": "bg-yarik-predlagaet-mashinu"
+  },
+  "bg-alik-yarik-v-trusah-v2": {
+    "file": "bg-alik-yarik-v-trusah-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-yarik-buhat-ili-letat": {
+    "file": "bg-yarik-buhat-ili-letat.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-alik-vaza-polnaya": {
+    "file": "bg-alik-vaza-polnaya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy-montazh": {
+    "file": "bg-akashevclass-za-partoy-montazh.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy": {
+    "file": "bg-akashevclass-za-partoy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-alikspit-eyes-open": {
+    "file": "bg-alikspit-eyes-open.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy-montazh-v2": {
+    "file": "bg-akashevclass-za-partoy-montazh-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-za-partoy-v2": {
+    "file": "bg-akashevclass-za-partoy-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-shvabra-trusy": {
+    "file": "bg-shvabra-trusy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-shvabra-trusy-gryaznye": {
+    "file": "bg-shvabra-trusy-gryaznye.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-akashevclass-kot-palets": {
+    "file": "bg-akashevclass-kot-palets.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-281-alik-dendy": {
+    "file": "g2-line-281-alik-dendy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-287-sanya-ne-chokaetsya": {
+    "file": "g2-line-287-sanya-ne-chokaetsya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-298-yarik-zhiguli": {
+    "file": "g2-line-298-yarik-zhiguli.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-307-propusk-v-zhizn": {
+    "file": "g2-line-307-propusk-v-zhizn.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-316-zavesti-zhiguli": {
+    "file": "g2-line-316-zavesti-zhiguli.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-329-yarik-s-dengami": {
+    "file": "g2-line-329-yarik-s-dengami.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-331-bokovoy-veter": {
+    "file": "g2-line-331-bokovoy-veter.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-335-veyp-atb": {
+    "file": "g2-line-335-veyp-atb.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-337-dmitriev-za-uglom": {
+    "file": "g2-line-337-dmitriev-za-uglom.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-343-ne-zametili": {
+    "file": "g2-line-343-ne-zametili.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g2-line-348-prosto-posmotret": {
+    "file": "g2-line-348-prosto-posmotret.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "thats_all": {
+    "file": "thats_all.jpg",
+    "width": 657,
+    "height": 652
+  },
+  "bg-obnimayu-obogrevatel": {
+    "file": "bg-obnimayu-obogrevatel.png",
+    "width": 1085,
+    "height": 1449
+  },
+  "bg-obnimayu-obogrevatel-v2": {
+    "file": "bg-obnimayu-obogrevatel-v2.png",
+    "width": 1085,
+    "height": 1450
+  },
+  "bg-grafin-na-stole-oil": {
+    "file": "bg-grafin-na-stole-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-orsk-vokzal-oil": {
+    "file": "bg-orsk-vokzal-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-stoyanka-zima-kompaniya-oil": {
+    "file": "bg-stoyanka-zima-kompaniya-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-stoyanka-zima-kompaniya-oil-v2": {
+    "file": "bg-stoyanka-zima-kompaniya-oil-v2.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-veypy-v-kabine-oil": {
+    "file": "bg-veypy-v-kabine-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-son-na-podokonnike-oil": {
+    "file": "bg-son-na-podokonnike-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-atb-vid-sverhu-oil": {
+    "file": "bg-atb-vid-sverhu-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-korobki-na-golove-oil": {
+    "file": "bg-korobki-na-golove-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-vodka-v-korzine-oil": {
+    "file": "bg-vodka-v-korzine-oil.png",
+    "width": 1085,
+    "height": 1449
+  },
+  "bg-rukopozhatie-u-dveri-oil": {
+    "file": "bg-rukopozhatie-u-dveri-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-kompaniya-na-balkone-oil": {
+    "file": "bg-kompaniya-na-balkone-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-devushki-s-instruktorom-oil": {
+    "file": "bg-devushki-s-instruktorom-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-post-dong-aerodrom-oil": {
+    "file": "bg-post-dong-aerodrom-oil.png",
+    "width": 1254,
+    "height": 1254
+  },
+  "bg-rytsar-s-kastryuley-oil": {
+    "file": "bg-rytsar-s-kastryuley-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-durachimsya-v-kafe-oil": {
+    "file": "bg-durachimsya-v-kafe-oil.png",
+    "width": 1085,
+    "height": 1450
+  },
+  "bg-druzya-na-balkone-noch-oil": {
+    "file": "bg-druzya-na-balkone-noch-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-krylo-nad-oblakami-oil": {
+    "file": "bg-krylo-nad-oblakami-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-kosmeticheskie-maski-oil": {
+    "file": "bg-kosmeticheskie-maski-oil.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-bashnya-iz-butylok-oil": {
+    "file": "bg-bashnya-iz-butylok-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-spryatalsya-za-obogrevatelem-oil": {
+    "file": "bg-spryatalsya-za-obogrevatelem-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-obed-s-kotom-oil": {
+    "file": "bg-obed-s-kotom-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-orsk-na-ladoni-oil": {
+    "file": "bg-orsk-na-ladoni-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina": {
+    "file": "bg-limonchella-anya-polina.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-alik-v2": {
+    "file": "bg-limonchella-anya-polina-alik-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-alik-v3": {
+    "file": "bg-limonchella-anya-polina-alik-v3.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-yarik-pustye-grafiny": {
+    "file": "bg-limonchella-anya-polina-yarik-pustye-grafiny.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2": {
+    "file": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-yarik-polzet-v-tualet": {
+    "file": "bg-yarik-polzet-v-tualet.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-alik-pomogaet-yariku-umytsya": {
+    "file": "bg-alik-pomogaet-yariku-umytsya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-broken-toilet-oil": {
+    "file": "bg-broken-toilet-oil.png",
+    "width": 1323,
+    "height": 1189
+  },
+  "bg-broken-toilet-oil-v2": {
+    "file": "bg-broken-toilet-oil-v2.png",
+    "width": 1323,
+    "height": 1189
+  },
+  "g3-line-475-otkaz-nog": {
+    "file": "g3-line-475-otkaz-nog.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-496-otvlech-ofitsiantov": {
+    "file": "g3-line-496-otvlech-ofitsiantov.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-486-zhiga-cherez-pole": {
+    "file": "g3-line-486-zhiga-cherez-pole.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-488-yarik-polzet-v-gostinitsu": {
+    "file": "g3-line-488-yarik-polzet-v-gostinitsu.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g3-line-489-yarik-nichego-ne-pomnit": {
+    "file": "g3-line-489-yarik-nichego-ne-pomnit.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-yarik-litsom-vniz-u-tualeta": {
+    "file": "bg-yarik-litsom-vniz-u-tualeta.png",
+    "width": 1323,
+    "height": 1189
+  },
+  "pidor-yarik-traurnaya-lenta": {
+    "file": "pidor-yarik-traurnaya-lenta.png",
+    "width": 1254,
+    "height": 1254
+  },
+  "bg-stoyanka-instruktor-rugaet": {
+    "file": "bg-stoyanka-instruktor-rugaet.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-otdyh-na-krovati-oil": {
+    "file": "bg-otdyh-na-krovati-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-508-stolovaya-kisel": {
+    "file": "g4-line-508-stolovaya-kisel.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-512-ochered-na-fapy": {
+    "file": "g4-line-512-ochered-na-fapy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-520-za-shkafom": {
+    "file": "g4-line-520-za-shkafom.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-540-akashev-nashel": {
+    "file": "g4-line-540-akashev-nashel.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-548-fapy-sdany": {
+    "file": "g4-line-548-fapy-sdany.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-tualet-siyaniye-akashev": {
+    "file": "g4-tualet-siyaniye-akashev.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-za-shkafom-nashel-siyaniye": {
+    "file": "g4-za-shkafom-nashel-siyaniye.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-class-siyaniye-zaval": {
+    "file": "g4-class-siyaniye-zaval.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-za-shkafom-akashev-fotomontazh": {
+    "file": "g4-za-shkafom-akashev-fotomontazh.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-za-shkafom-akashev-fotomontazh-oil": {
+    "file": "g4-za-shkafom-akashev-fotomontazh-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-line-512-ochered-bez-nosilok": {
+    "file": "g4-line-512-ochered-bez-nosilok.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-za-shkafom-obosralsya": {
+    "file": "g4-za-shkafom-obosralsya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "kot-raketa": {
+    "file": "в-кота-летит-ракета-кот.gif",
+    "width": 640,
+    "height": 620
+  },
+  "g4-class-zaval-bez-akasheva": {
+    "file": "g4-class-zaval-bez-akasheva.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-class-zaval-bez-akasheva-vi": {
+    "file": "g4-class-zaval-bez-akasheva-vi.png",
+    "width": 931,
+    "height": 1246
+  },
+  "g4-tualet-uchit-fapy": {
+    "file": "g4-tualet-uchit-fapy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-tualet-siyaniye-obosralsya": {
+    "file": "g4-tualet-siyaniye-obosralsya.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-tualet-molitva": {
+    "file": "g4-tualet-molitva.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-tualet-molitva-bez-golovy": {
+    "file": "g4-tualet-molitva-bez-golovy.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "g4-class-zaval-nosilki": {
+    "file": "g4-class-zaval-nosilki.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "panorama-gostinitsa-oil": {
+    "file": "panorama-gostinitsa-oil.png",
+    "width": 1691,
+    "height": 930
+  },
+  "panorama-gostinitsa-studenty-oil": {
+    "file": "panorama-gostinitsa-studenty-oil.png",
+    "width": 1691,
+    "height": 930
+  },
+  "bg-alik-v-konure-fotomontazh": {
+    "file": "bg-alik-v-konure-fotomontazh.png",
+    "width": 1195,
+    "height": 1316
+  },
+  "Guga": {
+    "file": "Guga.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-kirill-zhaloba": {
+    "file": "bg-rektorat-kirill-zhaloba.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-rektor-udar-po-stolu": {
+    "file": "bg-rektorat-rektor-udar-po-stolu.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-kirill-zhaloba-v2": {
+    "file": "bg-rektorat-kirill-zhaloba-v2.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-rektor-udar-po-stolu-v2": {
+    "file": "bg-rektorat-rektor-udar-po-stolu-v2.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-kirill-zhaloba-v3": {
+    "file": "bg-rektorat-kirill-zhaloba-v3.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-sovet": {
+    "file": "bg-rektorat-sovet.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-prepod-rasskaz": {
+    "file": "bg-rektorat-prepod-rasskaz.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-ukaz-dvoe": {
+    "file": "bg-rektorat-ukaz-dvoe.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-ukaz-tayna": {
+    "file": "bg-rektorat-ukaz-tayna.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-prepod-rasskaz-v2": {
+    "file": "bg-rektorat-prepod-rasskaz-v2.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-rektorat-ukaz-tayna-v2": {
+    "file": "bg-rektorat-ukaz-tayna-v2.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "saraiskii": {
+    "file": "saraiskii.jpg",
+    "width": 430,
+    "height": 539
+  },
+  "bg-rektorat-saraiskii-govorit": {
+    "file": "bg-rektorat-saraiskii-govorit.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "aleshkov-upscale-soft-v1": {
+    "file": "aleshkov-upscale-soft-v1.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "aleshkov-face-variant-1": {
+    "file": "aleshkov-face-variant-1.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "aleshkov-face-variant-2": {
+    "file": "aleshkov-face-variant-2.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "aleshkov-face-variant-3": {
+    "file": "aleshkov-face-variant-3.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "aleshkov-face-variant-4": {
+    "file": "aleshkov-face-variant-4.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "aleshkov-portret": {
+    "file": "aleshkov-portret.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "gegam-fullbody": {
+    "file": "gegam-fullbody.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "bg-orsk-tower-noch": {
+    "file": "bg-orsk-tower-noch.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-utro-ershik-zuby": {
+    "file": "bg-utro-ershik-zuby.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-stolovaya-hleb-maslo-kofe": {
+    "file": "bg-stolovaya-hleb-maslo-kofe.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-atb-zinenko-prishel": {
+    "file": "bg-atb-zinenko-prishel.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-da40-rassvet-kabina-v1": {
+    "file": "bg-da40-rassvet-kabina-v1.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-da40-rassvet-kabina-v2": {
+    "file": "bg-da40-rassvet-kabina-v2.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-da40-rassvet-kabina-v1-ispravleno": {
+    "file": "bg-da40-rassvet-kabina-v1-ispravleno.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-alikspit-eyes-open-noch": {
+    "file": "bg-alikspit-eyes-open-noch.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-da40-vzlet-na-svetly": {
+    "file": "bg-da40-vzlet-na-svetly.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-da40-zinenko-rybak": {
+    "file": "bg-da40-zinenko-rybak.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-svetly-perekur-zinenko-ermolaev": {
+    "file": "bg-svetly-perekur-zinenko-ermolaev.png",
+    "width": 1448,
+    "height": 1086
+  },
+  "bg-da40-vozvrashchenie-den": {
+    "file": "bg-da40-vozvrashchenie-den.png",
+    "width": 1672,
+    "height": 941
+  },
+  "serega-shtani": {
+    "file": "serega-shtani.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "1pUcnhDCsediQZvenBurD2pZUFXuRRpaLioiJqfqEaqKwCcDC3ZzWmWl5dgpiMU29O3QkmG3RfliCs6qR6k3EMgN": {
+    "file": "1pUcnhDCsediQZvenBurD2pZUFXuRRpaLioiJqfqEaqKwCcDC3ZzWmWl5dgpiMU29O3QkmG3RfliCs6qR6k3EMgN.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "35LwktMhKT8Biiv638q0XldvIStkbbsBd4TnmN_vSbsg7NTiGhYISUnwQZ4WBnlhjiLpoSE4rMs8RaFJMkPnBWEm": {
+    "file": "35LwktMhKT8Biiv638q0XldvIStkbbsBd4TnmN_vSbsg7NTiGhYISUnwQZ4WBnlhjiLpoSE4rMs8RaFJMkPnBWEm.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "7FLuLn5woI_iUC7-qSAvSJsVOd9ualbj_CkJ5hfpKGKZ75yWkqGDRivO1famtIWtOondWy8UPWprhq74f2M0Tgf0d5GEsA": {
+    "file": "7FLuLn5woI_iUC7-qSAvSJsVOd9ualbj_CkJ5hfpKGKZ75yWkqGDRivO1famtIWtOondWy8UPWprhq74f2M0Tgf0d5GEsA.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "Cbai1D0p_ZA_4rPVaz-Sdscj9grmLmRA80YDcaB2dHx6SQmvcfhNxgPXP086nPCcimHLxJuBZfusqoNNj4RouCq0": {
+    "file": "Cbai1D0p_ZA_4rPVaz-Sdscj9grmLmRA80YDcaB2dHx6SQmvcfhNxgPXP086nPCcimHLxJuBZfusqoNNj4RouCq0.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "cUNubQLZ3L156RICtvv3pQXka5pXYIGxU_T8s9zP8rJ92gSXNP-WzlPxnSKQ7brHis1YKL-Tk6OxY35KWq05baCB": {
+    "file": "cUNubQLZ3L156RICtvv3pQXka5pXYIGxU_T8s9zP8rJ92gSXNP-WzlPxnSKQ7brHis1YKL-Tk6OxY35KWq05baCB.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "jBN_5cVwcZqR5ZmqpQeUBXZgxJ5tz7haI6eZ12mvwC7TcVIV3NuqPGcOHeu5y0i1Tm1ls_bwHbipaC6Zt0pMOZgY": {
+    "file": "jBN_5cVwcZqR5ZmqpQeUBXZgxJ5tz7haI6eZ12mvwC7TcVIV3NuqPGcOHeu5y0i1Tm1ls_bwHbipaC6Zt0pMOZgY.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "vyNCxSJla1WCkxoE_TjQxgtnbFL7GKkkLj4WMANQxstFjjzlCvdcGfMHz1gdfLW-y5U-wBQeojVAqeIfejp42G8m": {
+    "file": "vyNCxSJla1WCkxoE_TjQxgtnbFL7GKkkLj4WMANQxstFjjzlCvdcGfMHz1gdfLW-y5U-wBQeojVAqeIfejp42G8m.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "WG640nkIOCm5I8KIDp4bC_W8cE5Socf7ataZSfSngSYgkAuf0BBoh4_wUI9STt9HoaHaujZQkwtY2eDqU3MxIJpG": {
+    "file": "WG640nkIOCm5I8KIDp4bC_W8cE5Socf7ataZSfSngSYgkAuf0BBoh4_wUI9STt9HoaHaujZQkwtY2eDqU3MxIJpG.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "Yo9TmpBs9CXmubt4BfWdsDFwSt7uDPFOupHGxi01bCkProihOgZU5R5YFnYNMxt9rXqHWH4o0bueii1vSe9qWCU2YgM2-Q": {
+    "file": "Yo9TmpBs9CXmubt4BfWdsDFwSt7uDPFOupHGxi01bCkProihOgZU5R5YFnYNMxt9rXqHWH4o0bueii1vSe9qWCU2YgM2-Q.jpg",
+    "width": 1312,
+    "height": 1750
+  },
+  "bg-uborka-dvor-metla-oil": {
+    "file": "bg-uborka-dvor-metla-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-da40-noch-fak-oil": {
+    "file": "bg-da40-noch-fak-oil.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "bg-kirpichnoe-zdanie-balkony-oil": {
+    "file": "bg-kirpichnoe-zdanie-balkony-oil.png",
+    "width": 1086,
+    "height": 1448
+  }
+}

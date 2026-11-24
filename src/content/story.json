@@ -26,6 +26,12 @@
       "title": "Сдача ФАПов",
       "entry": "line-507",
       "image": "g4-line-508-stolovaya-kisel"
+    },
+    {
+      "id": "chapter-63e8615e",
+      "title": "Попа болит",
+      "entry": "scene-2d2832d6",
+      "image": "bg-veypy-v-kabine-oil"
     }
   ],
   "nodes": {
@@ -103,7 +109,7 @@
     },
     "line-77": {
       "type": "text",
-      "text": "Давайте не будем расстраивать Алика, т.к. он всё равно проиграет в эту игру.",
+      "text": "Давайте не будем расстраивать Алика, т.к. он всё равно проиграет в эту игру",
       "next": "line-49",
       "chapterId": "startt"
     },
@@ -279,13 +285,18 @@
       "type": "text",
       "text": "Вы выламываете нахуй дверь, пробегаете мимо КПП на перрон, и заглядываете в класс, в котором уже было полно народу.",
       "next": "line-152",
-      "chapterId": "startt"
+      "chapterId": "startt",
+      "audio": "boom-door"
     },
     "line-148": {
       "type": "scene",
       "asset": "bg-vilam-dver",
       "next": "line-150",
-      "chapterId": "startt"
+      "chapterId": "startt",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 100
+      }
     },
     "line-146": {
       "type": "text",
@@ -295,7 +306,7 @@
     },
     "line-142": {
       "type": "text",
-      "text": "Вы решили закончить пьянку и прилечь отдохнуть, ведь через пару часов вам уже нужно идти в АТБ на наземную подготовку.",
+      "text": "В 6 утра вы решили закончить пьянку и прилечь отдохнуть, ведь через пару часов вам уже нужно идти в АТБ на наземную подготовку.",
       "next": "scene-eb0c27fc",
       "chapterId": "startt"
     },
@@ -428,14 +439,14 @@
       "type": "choice",
       "options": [
         {
-          "id": "line-300",
-          "text": "Согласиться и скинуться на жигули",
-          "next": "scene-g2-line-329"
-        },
-        {
           "id": "line-304",
           "text": "Не соглашаться, жигули хуйня",
           "next": "scene-g2-line-307"
+        },
+        {
+          "id": "line-300",
+          "text": "Согласиться и скинуться на жигули",
+          "next": "scene-g2-line-329"
         }
       ],
       "chapterId": "viotsidelli"
@@ -467,7 +478,7 @@
     "line-287": {
       "type": "text",
       "text": "Наконец-то! Первый полёт не за горами, он будет уже завтра. Вы были безумно счастливы и всю ночь праздновали удачную сдачу зачёта. Саня Ларионов тоже праздновал, но пил не чокаясь.",
-      "next": "line-289",
+      "next": "scene-94147699",
       "chapterId": "viotsidelli"
     },
     "line-286": {
@@ -520,7 +531,7 @@
     },
     "line-276": {
       "type": "scene",
-      "asset": "stoyanka",
+      "asset": "bg-stoyanka-instruktor-rugaet",
       "next": "line-277",
       "chapterId": "viotsidelli"
     },
@@ -579,7 +590,7 @@
     },
     "line-333": {
       "type": "text",
-      "text": "вы уже заходите на посадку, как Зиненко спрашивает у вас: \"угол наклона глиссады два градуса сорок минут о чём это\". \"Действительно, о чем же это?\" - подумали вы, и не успели понять вопрос как он посадил за вас самолёт.",
+      "text": "Вы уже заходите на посадку, как Зиненко спрашивает у вас: \"угол наклона глиссады два градуса сорок минут о чём это\". \"Действительно, о чем же это?\" - подумали вы, и не успели понять вопрос, как он посадил за вас самолёт.",
       "next": "scene-34440fd8",
       "chapterId": "viotsidelli"
     },
@@ -604,7 +615,7 @@
     "line-329": {
       "type": "text",
       "text": "Ярик забирает ваши деньги и скрывается на горизонте.",
-      "next": "line-330",
+      "next": "text-83bae724",
       "chapterId": "viotsidelli"
     },
     "line-373": {
@@ -637,7 +648,7 @@
         {
           "id": "line-383",
           "text": "Согласиться ебашить лимончеллу",
-          "next": "scene-1da459fb"
+          "next": "line-439"
         }
       ],
       "chapterId": "dalee"
@@ -650,13 +661,13 @@
     },
     "line-366": {
       "type": "scene",
-      "asset": "bg-limonchella-anya-polina-alik-v3",
+      "asset": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2",
       "next": "line-370",
       "chapterId": "dalee"
     },
     "line-365": {
       "type": "text",
-      "text": "Так как вы быстро отмыли самолёт у вас было время. Вы зашли за жигой и поехали на ней в самое культурное место Орска - в бар Трава.",
+      "text": "Ещё немного попроёбывавшись вы зашли за жигой и поехали на ней в самое культурное место Орска - в бар Трава.",
       "next": "line-366",
       "chapterId": "dalee"
     },
@@ -668,7 +679,7 @@
     },
     "line-363": {
       "type": "text",
-      "text": "Вы уже было решили кто какую часть самолета станет мыть, но тут вы вспомнили первое правило практики, так что вы просто вылили на самолёт ведро воды, а оставшееся время потратили на то чтобы покурить с техниками. Вы были полны решимости сплавить все сегодняшние проблемы завтрашнему себе.",
+      "text": "Вы уже было решали кто какую часть самолета станет мыть, но тут вы вспомнили первое правило практики, так что вы просто вылили на самолёт ведро воды, а оставшееся время потратили на то чтобы покурить с техниками. Вы были полны решимости сплавить все сегодняшние проблемы завтрашнему себе.",
       "next": "line-364",
       "chapterId": "dalee"
     },
@@ -680,7 +691,7 @@
     },
     "line-361": {
       "type": "text",
-      "text": "Тут не было правильного ответа, ведь вы все в любом случае в наказание пойдёте драить самолёт с мылом. Ещё это похоже на то, что весь ваш план поехать за жигой и в бар накрылся пиздой.",
+      "text": "Тут не было правильного ответа, ведь вы все в любом случае в наказание пойдёте драить самолёт с мылом",
       "next": "line-362",
       "chapterId": "dalee"
     },
@@ -721,7 +732,7 @@
     "line-488": {
       "type": "text",
       "text": "Из неё вываливается Ярик и ползёт в гостиницу. Вы захотели посмотреть это шоу до конца и смотрели че будет. Он полз через кусты, ворота, по шершавому освальту но не останавливался. Через некоторое время всё же добрался до входа, а там ему помогли добраться до своей комнаты ваши одногруппники. Вы решили посмотреть что будет утром, допили всё оставшееся и пошли спать.",
-      "next": "line-498",
+      "next": "scene-b93a7bea",
       "chapterId": "dalee"
     },
     "line-487": {
@@ -763,7 +774,7 @@
     "line-497": {
       "type": "text",
       "text": "У вас было мало времени на вынос черта, но план сработал и вы благополучно провели спасательную операцию и вытащили Ярика на улицу, вызвали такси и свалили в гостиницу спать.",
-      "next": "line-498",
+      "next": "scene-b93a7bea",
       "chapterId": "dalee"
     },
     "line-496": {
@@ -778,7 +789,7 @@
         {
           "id": "line-482",
           "text": "Оставить Ярика и убежать",
-          "next": "line-483"
+          "next": "scene-6dee2b2d"
         },
         {
           "id": "line-495",
@@ -924,8 +935,8 @@
     },
     "line-548": {
       "type": "text",
-      "text": "Так прошла вся эта неделя, выходные впервые были мрачными, вы сдавали ФАПы и страдали, иногда летали и сдавали ФАПы, вас ебали и вы сосали, и наконец, только к концу следующей недели вы, вместе со всеми, сдали весь 136 ФАП.",
-      "next": "line-558",
+      "text": "Так прошла вся эта неделя, за выходные вы впервые не нажрались в щи, вы сдавали ФАПы и страдали, ещё иногда летали и сдавали ФАПы, вас ебали и вы сосали, и наконец, только к концу следующей недели вы, вместе со всеми, сдали весь 136 ФАП.",
+      "next": "scene-f4f541f6",
       "chapterId": "gostichkayarik"
     },
     "line-547": {
@@ -937,7 +948,7 @@
     "line-546": {
       "type": "text",
       "text": "Акашев за пару дней запомнил все 60 студентов по вашим ФИО, фоткам и датам рождения бабушек, он знает где вы находитесь даже не глядя на вас, и, конечно, он всегда знает где вас найти...",
-      "next": "line-547",
+      "next": "scene-48245b26",
       "chapterId": "gostichkayarik"
     },
     "line-545": {
@@ -989,7 +1000,7 @@
     },
     "line-512": {
       "type": "text",
-      "text": "Пока вы стояли в очереди и учили вас постоянно отвлекали крики людей, которых выносили на носилках из Его кабинета одного за другим. Очередь уже подходила к концу, а вы всё ещё не выучили даже половины из того что нужно было рассказать. Может стоит куда-то уйти...",
+      "text": "Пока вы стояли в очереди и учили, вас постоянно отвлекали крики людей, которых выносили на носилках из Его кабинета одного за другим. Очередь уже подходила к концу, а вы всё ещё не выучили даже половины из того что нужно было рассказать. Может стоит куда-то уйти...",
       "next": "line-514",
       "chapterId": "gostichkayarik"
     },
@@ -1015,12 +1026,6 @@
       "type": "scene",
       "asset": "g4-line-508-stolovaya-kisel",
       "next": "line-508",
-      "chapterId": "gostichkayarik"
-    },
-    "line-558": {
-      "type": "text",
-      "text": "хуй залупа",
-      "next": "end-a52a7b10",
       "chapterId": "gostichkayarik"
     },
     "scene-055daf5c": {
@@ -1132,13 +1137,13 @@
     },
     "scene-34440fd8": {
       "type": "scene",
-      "asset": "g2-line-335-veyp-atb",
+      "asset": "g2-line-335-veyp-atb-real",
       "next": "line-335",
       "chapterId": "viotsidelli"
     },
     "scene-3d666560": {
       "type": "scene",
-      "asset": "g2-line-337-dmitriev-za-uglom",
+      "asset": "g2-line-337-dmitriev-za-uglom-real",
       "next": "line-340",
       "chapterId": "viotsidelli"
     },
@@ -1156,25 +1161,19 @@
     },
     "copy-fb77c1d4-0": {
       "type": "scene",
-      "asset": "g2-line-343-ne-zametili",
+      "asset": "g2-line-343-ne-zametili-real",
       "next": "line-339",
       "chapterId": "viotsidelli"
     },
     "text-e3e97e62": {
       "type": "text",
-      "text": "Вы выпили ещё одну рюмку лимончеллы. \"Пиздец это что Акашев?\" пошутил Ярик и показал вам за спину. Вы обернулись",
+      "text": "Вы выпили ещё одну рюмку лимончеллы. \"Пиздец это что Акашев?\" - пошутил Ярик и показал вам за спину. Вы обернулись",
       "next": "line-449",
-      "chapterId": "dalee"
-    },
-    "scene-1da459fb": {
-      "type": "scene",
-      "asset": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2",
-      "next": "line-439",
       "chapterId": "dalee"
     },
     "text-d3edef9b": {
       "type": "text",
-      "text": "Алик вроде тоже не против проветриться",
+      "text": "Сидящий рядом с вами Алик вроде тоже не против проветриться",
       "next": "line-464",
       "chapterId": "dalee"
     },
@@ -1332,10 +1331,6 @@
       "next": "line-524",
       "chapterId": "gostichkayarik"
     },
-    "end-a52a7b10": {
-      "type": "end",
-      "chapterId": "gostichkayarik"
-    },
     "scene-568917ec": {
       "type": "scene",
       "asset": "g4-class-zaval-bez-akasheva",
@@ -1430,14 +1425,14 @@
     },
     "scene-c7b3c43c": {
       "type": "scene",
-      "asset": "g4-tualet-siyaniye-obosralsya",
+      "asset": "g4-tualet-molitva",
       "next": "line-545",
       "chapterId": "gostichkayarik"
     },
     "text-e0863705": {
       "type": "text",
       "text": "После этого вы пошли в класс, и легли в кучу вместе со всеми...",
-      "next": "line-548",
+      "next": "scene-75499ac0",
       "chapterId": "gostichkayarik"
     },
     "scene-052dd4ee": {
@@ -1465,7 +1460,7 @@
     },
     "text-922ab898": {
       "type": "text",
-      "text": "С каждой минутой становилось всё тише, а куча тел прошедших через это всё выше.",
+      "text": "С каждой минутой становилось всё тише, а куча тел ребят которые прошли через это становилась всё выше.",
       "next": "scene-caac98be",
       "chapterId": "gostichkayarik"
     },
@@ -1483,7 +1478,7 @@
     },
     "text-e1f41486": {
       "type": "text",
-      "text": "Волоча за собой тяжелый чемодан вы направлялись к кирпичному зданию, которое станет вашим домом на ближайшие месяцы",
+      "text": "Волоча за собой тяжелый чемодан вы направлялись к кирпичному зданию, которое станет вашим домом на ближайшие месяцы.",
       "next": "line-39",
       "chapterId": "startt"
     },
@@ -1501,8 +1496,8 @@
     },
     "text-ea49824e": {
       "type": "text",
-      "text": "Вы бухали весь день и всю ночь",
-      "next": "line-140",
+      "text": "Вы бухали весь день и всю ночь:",
+      "next": "scene-f92e24d2",
       "chapterId": "startt"
     },
     "scene-cdbb3326": {
@@ -1516,6 +1511,1071 @@
       "asset": "bg-komnata-buhali-noch",
       "next": "text-ea49824e",
       "chapterId": "startt"
+    },
+    "scene-f92e24d2": {
+      "type": "scene",
+      "asset": "bg-rukopozhatie-u-dveri-oil",
+      "next": "text-ed33a18f",
+      "chapterId": "startt"
+    },
+    "text-ed33a18f": {
+      "type": "text",
+      "text": "Здоровались через двери",
+      "next": "scene-b3c34d1f",
+      "chapterId": "startt"
+    },
+    "scene-b3c34d1f": {
+      "type": "scene",
+      "asset": "bg-druzya-na-balkone-noch-oil",
+      "next": "text-ab6708d0",
+      "chapterId": "startt"
+    },
+    "text-ab6708d0": {
+      "type": "text",
+      "text": "Тусили на балконе",
+      "next": "scene-77e265a7",
+      "chapterId": "startt"
+    },
+    "scene-77e265a7": {
+      "type": "scene",
+      "asset": "bg-kosmeticheskie-maski-oil",
+      "next": "text-594ea252",
+      "chapterId": "startt"
+    },
+    "text-594ea252": {
+      "type": "text",
+      "text": "Наносили сперму улитки на лицо",
+      "next": "line-140",
+      "chapterId": "startt"
+    },
+    "scene-94147699": {
+      "type": "scene",
+      "asset": "bg-alikspit-eyes-open",
+      "next": "line-289",
+      "chapterId": "viotsidelli"
+    },
+    "text-83bae724": {
+      "type": "text",
+      "text": "Ну, ладно, тачка тут нужна, всё-таки аэропорт в одиннадцати километрах от города. Пора идти на свой первый полёт.",
+      "next": "line-330",
+      "chapterId": "viotsidelli"
+    },
+    "scene-6dee2b2d": {
+      "type": "scene",
+      "asset": "bg-yarik-litsom-vniz-u-tualeta",
+      "next": "line-483",
+      "chapterId": "dalee"
+    },
+    "scene-b93a7bea": {
+      "type": "scene",
+      "asset": "bg-alikspit-eyes-open",
+      "next": "line-498",
+      "chapterId": "dalee"
+    },
+    "scene-48245b26": {
+      "type": "scene",
+      "asset": "g4-tualet-molitva-bez-golovy",
+      "next": "line-547",
+      "chapterId": "gostichkayarik"
+    },
+    "scene-75499ac0": {
+      "type": "scene",
+      "asset": "g4-line-548-fapy-sdany",
+      "next": "line-548",
+      "chapterId": "gostichkayarik"
+    },
+    "chapter-63e8615e-start": {
+      "type": "text",
+      "text": "И так продолжалить бы ваши злоключения и пиздострадания вечно, если бы не один инцидент, доливший финальную каплю в и без того полную слёз чашу.",
+      "next": "scene-2d2832d6",
+      "chapterId": "chapter-63e8615e"
+    },
+    "chapter-63e8615e-end": {
+      "type": "end",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-2d2832d6": {
+      "type": "scene",
+      "asset": "bg-rektorat-kirill-zhaloba-v3",
+      "next": "text-6bb8ad04",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-6bb8ad04": {
+      "type": "text",
+      "text": "Один студент по имени Кирилл в один прекрасный день решил отчислиться и накатать жалобы во все инстанции на весь этот пиздос что тут происходит, на то что тут всех ебут, ещё и с минимальным количеством смазки.",
+      "next": "text-97e0d986",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-97e0d986": {
+      "type": "text",
+      "text": "«Даже не плюнут, прям на сухую» - говорит он в ректорате. ",
+      "next": "text-77c56829",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-77c56829": {
+      "type": "text",
+      "text": "Подумал ректор об этом, подумал что не очень хорошо что студенты один за другим отчисляются, надо решить как-то вопросик. ",
+      "next": "scene-0831e00e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-f6e2579d": {
+      "type": "scene",
+      "asset": "bg-rektorat-prepod-rasskaz-v2",
+      "next": "text-670f3c61",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-670f3c61": {
+      "type": "text",
+      "text": "«Очередной студент пришел отчисляться, говорит даже сидеть не может после такого. Говорит даже привык не сидеть больше. С открытыми глазами спит, а руками очко закрывает»",
+      "next": "scene-4a66b95c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-1c46879d": {
+      "type": "text",
+      "text": "Собрали совет, подняли всех самых главных кто там у них вообще есть, типа, боссы универа, самого ректального ректора позвали. Ну и преподавателей заодно тоже. Сидят короче, думают.",
+      "next": "scene-f6e2579d",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-0831e00e": {
+      "type": "scene",
+      "asset": "bg-rektorat-sovet",
+      "next": "text-1c46879d",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-f4f541f6": {
+      "type": "scene",
+      "asset": "Guga",
+      "next": "chapter-63e8615e-start",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-00a69a8e": {
+      "type": "text",
+      "text": "«Даа» - заговорил Сарайский - «таких сразу видно - всю пару стоят. И такое ещё где-то пару месяцев после практики»",
+      "next": "text-60e67ec1",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-60e67ec1": {
+      "type": "text",
+      "text": "«Я один раз, извините, в туалет зашел, а там один стоит срёт. Я спросил чё стоя срёшь, видно же твоё лицо скукоженное. А он мне - «я вообще-то дрочу». Сразу ясно - срака болит, даже врать приходится. Как же их там запугали, что они дрочкой прикрываются.",
+      "next": "scene-7b1a7134",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-94e36c4c": {
+      "type": "text",
+      "text": "Под шумы ахов и охов встаёт самый самый ректальный ректор, и произносит: «пора действовать».",
+      "next": "scene-c72d66df",
+      "chapterId": "chapter-63e8615e",
+      "delayMs": 500
+    },
+    "text-65ffbd28": {
+      "type": "text",
+      "text": "Достает ручку из подручницы, бумагу из подбумажника, и издаёт некоторый указ, указывая пальцами на двоих присутствующих в зале: двоих людей, кто своей аурой может помериться только с самим Акашевым...",
+      "next": "scene-9402047d",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-4a66b95c": {
+      "type": "scene",
+      "asset": "bg-rektorat-saraiskii-govorit",
+      "next": "text-00a69a8e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-7b1a7134": {
+      "type": "scene",
+      "asset": "bg-rektorat-rektor-udar-po-stolu-v2",
+      "next": "text-94e36c4c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-c72d66df": {
+      "type": "scene",
+      "asset": "bg-rektorat-ukaz-tayna-v2",
+      "next": "text-65ffbd28",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-0ac1c8b7": {
+      "type": "text",
+      "text": "А тем временем в Орске...",
+      "next": "text-c6e81af9",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-9402047d": {
+      "type": "scene",
+      "asset": "bg-orsk-tower-noch",
+      "next": "text-0ac1c8b7",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-c6e81af9": {
+      "type": "text",
+      "text": "Сегодня по плану секс на Светлом. Звучит круто, но вставать приходится ещё ночью.",
+      "next": "scene-b9d04094",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-f7262b6a": {
+      "type": "text",
+      "text": "Ночь - прекрасное время чтоб проснуться, и всего через час с самым первым ебучим лучём солнца уже ебашить куда-то.",
+      "next": "scene-54721f27",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-a927cb5c": {
+      "type": "text",
+      "text": "С спросонья, после утреннего покака, вы вытерли жопу чьей-то зубной щеткой, а зубы туалетным ёршиком, хоть и было жестковато.",
+      "next": "scene-0516d722",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-de47a1fc": {
+      "type": "text",
+      "text": "Заправились в столовке хлебом с квадратным куском масла, который хрен размажешь, бахнули так называемый кофе, который больше похож на отработку из двигателя, и побежали в АТБ дрочить НЛ-ку.",
+      "next": "scene-1c400919",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-1f1db446": {
+      "type": "text",
+      "text": "Вскоре прибыл Зиненко и сказал чтоб вы пиздовали в самолёт, чтоб пока что слушали АТИС, и молились чтоб сегодня всё прошло гладко ))))",
+      "next": "scene-288963b8",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-dbdc64ec": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-dbdc64ec-answer-1",
+          "text": "Накрутить частоту 777.666",
+          "next": "text-5fec933a",
+          "once": true
+        },
+        {
+          "id": "choice-dbdc64ec-answer-2",
+          "text": "Накрутить частоту 122.700",
+          "next": "text-bf63bdd8",
+          "once": true
+        },
+        {
+          "id": "choice-dbdc64ec-answer-d320b952",
+          "text": "Накрутить частоту 125.900",
+          "next": "text-a83eb9a6"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-119bbd02": {
+      "type": "text",
+      "text": "Так, какая там частота у АТИС-а",
+      "next": "choice-dbdc64ec",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-b9d04094": {
+      "type": "scene",
+      "asset": "bg-alikspit-eyes-open-noch",
+      "next": "text-f7262b6a",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-54721f27": {
+      "type": "scene",
+      "asset": "bg-utro-ershik-zuby",
+      "next": "text-a927cb5c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-0516d722": {
+      "type": "scene",
+      "asset": "bg-stolovaya-hleb-maslo-kofe",
+      "next": "text-de47a1fc",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-1c400919": {
+      "type": "scene",
+      "asset": "bg-atb-zinenko-prishel",
+      "next": "text-1f1db446",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-288963b8": {
+      "type": "scene",
+      "asset": "bg-da40-rassvet-kabina-v1-ispravleno",
+      "next": "text-b6ccf5b0",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-b6ccf5b0": {
+      "type": "text",
+      "text": "Вы садитесь в холодный как лёд самолёт, и как дебик, с фонариком в руках, предварительно осмотратриваете его на предмет всякой поеботы, по типу отвалившейся лопасти или лужи масла на асфальте, залезаете внутрь, и надеваете холодные как лёд наушники.",
+      "next": "scene-82bf5c64",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-5fec933a": {
+      "type": "text",
+      "text": "А, так это не АТИС...\nНе сразу понял",
+      "next": "scene-82bf5c64",
+      "chapterId": "chapter-63e8615e",
+      "delayMs": 25000,
+      "audio": "pooped-in-airplanes-turbine"
+    },
+    "text-c77e1484": {
+      "type": "text",
+      "text": "Я ебал...     \nприятного романтического вечернего секса с Акашевым кому-то",
+      "next": "scene-82bf5c64",
+      "chapterId": "chapter-63e8615e",
+      "delayMs": 15000,
+      "audio": "vishka-hui-podmishka-2"
+    },
+    "text-bf63bdd8": {
+      "type": "text",
+      "text": "Бля, это же вышка, пока рано запрашиваться - подумали вы, как услышали в радиообмене:",
+      "next": "text-c77e1484",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-a83eb9a6": {
+      "type": "text",
+      "text": "Ну, АТИС послушали, теперь ждём Зиненку",
+      "next": "scene-1b665e43",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-d1410489": {
+      "type": "text",
+      "text": "Зиненко сел в самолёт, и теперь вы ждете той самой секунды с которой можно стартовать на вылет. Хоть вы и провели подготовку идеально, но первое правило практики никто не отменял, так что Зиненко коротал время ебя вас.\n",
+      "next": "scene-2a43849f",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-ada9a782": {
+      "type": "text",
+      "text": "Как только настала нужная минута Зиненко ебанул руды на взлетный режим, и вы через 5 секунд оказались на ВПП, а ещё через одну секунду уже на разбеге. И это всё попутно общаяясь с диспом Орск-вышки и щёлкая все тумблеры и кнопки с немыслимой для вас скоростью.",
+      "next": "scene-9fd01b15",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-2a43849f": {
+      "type": "scene",
+      "asset": "bg-da40-vzlet-na-svetly",
+      "next": "text-ada9a782",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-1b665e43": {
+      "type": "scene",
+      "asset": "bg-da40-noch-fak-oil",
+      "next": "text-e389d7e3",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-e389d7e3": {
+      "type": "text",
+      "text": "Пока делать нехуй вы показывали друг другу факи, чё время терять.",
+      "next": "scene-be61573e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-be61573e": {
+      "type": "scene",
+      "asset": "bg-da40-rassvet-kabina-v1",
+      "next": "text-d1410489",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-82bf5c64": {
+      "type": "scene",
+      "asset": "bg-da40-rassvet-kabina-v2",
+      "next": "text-119bbd02",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-9fd01b15": {
+      "type": "scene",
+      "asset": "bg-da40-zinenko-rybak",
+      "next": "text-c4de29ff",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-c4de29ff": {
+      "type": "text",
+      "text": "В принципе полёт прошёл не так плохо, вы даже попугали стадо коров и некоторых рыбаков.",
+      "next": "text-d2be084e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-d2be084e": {
+      "type": "text",
+      "text": "Даже смогли посадить самолёт так хорошо, что Зиненко вас похвалил.",
+      "next": "text-4efed2db",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-4efed2db": {
+      "type": "text",
+      "text": "Нет, не подумайте, вас всё равно ебали, но в этот раз приговаривая что посадка была неплохой. ",
+      "next": "scene-ca77ce35",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-ca77ce35": {
+      "type": "scene",
+      "asset": "bg-svetly-perekur-zinenko-ermolaev",
+      "next": "text-77b2277a",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-344ead84": {
+      "type": "text",
+      "text": "Интересная работа у местного диспетчера - весь день курить с прилетающими из Орска инструкторами - подумали вы.",
+      "next": "scene-8f0587ad",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-8f0587ad": {
+      "type": "scene",
+      "asset": "bg-da40-krylo-nad-rekoy",
+      "next": "text-268f6c4d",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-268f6c4d": {
+      "type": "text",
+      "text": "От души поссав в местном пятизвездочном туалете вы полетели обратно, созерцая красоту бескрайнего неба.",
+      "next": "scene-6dad278b",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-858af78e": {
+      "type": "text",
+      "text": "Однако, подлетая обратно, вы услышали что все борты в экстренном порядке сажают, и вам тоже стоит поторопиться, ведь летит борт из Санкт-Петербурга. ",
+      "next": "text-83436ffc",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-6dad278b": {
+      "type": "scene",
+      "asset": "sazhaet-samolet",
+      "next": "text-858af78e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-42e62741": {
+      "type": "text",
+      "text": "Вы садитесь и паркуетесь, и вместе со всеми вы выходите на перрон посмотреть как этот борт садится, паркуется, и как из него выходят двое...",
+      "next": "scene-af01e5f4",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-cf0b8c69": {
+      "type": "text",
+      "text": "Все вахуи",
+      "next": "text-02f979bc",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-02f979bc": {
+      "type": "text",
+      "text": "Оценка - удивительно! \nЧего не здороваетесь? А мы вообще-то вас спасать прилетели. Идём ебать Акашева за то что вам жизни не даёт, летать мешает, и трогает за хуй.",
+      "next": "text-073a42ae",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-af01e5f4": {
+      "type": "scene",
+      "asset": "bg-gegam-aleshkov-trap-v1",
+      "next": "text-cf0b8c69",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-073a42ae": {
+      "type": "text",
+      "text": "Вы идите пока в гостиницу, а мы с ним разберёмся. Срать стоя будет, сидеть не сможет.",
+      "next": "scene-d155521e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-6f2c070c": {
+      "type": "text",
+      "text": "Толпа разразилась овациями. Впервые за долгое время у всех появилась надежда на то что им дадут нормально полетать, что не будет больше недопуска к полётам из-за того что вы не знаете сколько болтов и гаек в цесне (хотя вы на ней даже не летаете).",
+      "next": "scene-c6da7cd9",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-d155521e": {
+      "type": "scene",
+      "asset": "bg-gegam-aleshkov-vstrecha-aplodismenty",
+      "next": "text-6f2c070c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-83436ffc": {
+      "type": "text",
+      "text": "Вы помните что большие борты тут прилетают не часто, но когда это происходит, ему расчищают дорогу от всяких мелких мошек, таких как вы.",
+      "next": "text-42e62741",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-d158fd59": {
+      "type": "text",
+      "text": "Из аэропорта в гостиницу вы возвращаетесь с невероятным энтузиазмом нажраться. Утром вас ещё могли не допустить к полётам за неправильную выражение лица, а теперь за вас вступились ОНИ.",
+      "next": "text-4b26fde1",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-4b26fde1": {
+      "type": "text",
+      "text": "Эта гулянка была легендарной",
+      "next": "scene-574164e2",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-c6da7cd9": {
+      "type": "scene",
+      "asset": "bg-studenty-begut-v-gostinitsu-oil",
+      "next": "text-d158fd59",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-574164e2": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-poyut-obnyavshis-oil-v2",
+      "next": "text-5cc4665a",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-5cc4665a": {
+      "type": "text",
+      "text": "...",
+      "next": "scene-aa28fbf7",
+      "chapterId": "chapter-63e8615e",
+      "audio": "orsk-praktika-audio-1"
+    },
+    "scene-aa28fbf7": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-gitara-na-podokonnike-oil",
+      "next": "text-34485584",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-34485584": {
+      "type": "text",
+      "text": "...",
+      "next": "scene-5b0d7690",
+      "chapterId": "chapter-63e8615e",
+      "audio": "orsk-praktika-audio-2"
+    },
+    "scene-5b0d7690": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-kompaniya-u-okna-oil",
+      "next": "text-5129dad6",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-5129dad6": {
+      "type": "text",
+      "text": "...",
+      "next": "scene-f524f256",
+      "chapterId": "chapter-63e8615e",
+      "audio": "orsk-praktika-audio-3"
+    },
+    "text-77b2277a": {
+      "type": "text",
+      "text": "Аэродром Светлого представлял из себя небольшую хибару, и раздоланную ВПП, посадка на которую черевата отрывом ваших маленьких дуймондовских колёсиков.",
+      "next": "text-344ead84",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-f524f256": {
+      "type": "scene",
+      "asset": "bg-alikspit-s-pustoy-butylkoy",
+      "next": "text-cdfc0b2b",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-cdfc0b2b": {
+      "type": "text",
+      "text": "И вот новое утро. Вы встаёте первым - аж в 8 утра, потому что щас обкакаетесь.",
+      "next": "scene-f8465053",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-f8465053": {
+      "type": "scene",
+      "asset": "bg-utro-zubnaya-shchetka-gryaznaya-oil",
+      "next": "text-072c01f7",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-072c01f7": {
+      "type": "text",
+      "text": "Спросонья вы покакали, спросонья почистили зубы той вчерашней щёткой, и на данный момент хочется есть, потому что вы со вчерашнего утра ничего не ели.",
+      "next": "scene-1e82eab0",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-90f0f0e9": {
+      "type": "text",
+      "text": "Как раз время завтрака, поэтому вы пошли в столовочку, в надежде что хотя бы сегодня там будет хороший завтрак.",
+      "next": "scene-73a2e9fe",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-1e82eab0": {
+      "type": "scene",
+      "asset": "bg-orsk-tower1",
+      "next": "text-90f0f0e9",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-73a2e9fe": {
+      "type": "scene",
+      "asset": "bg-terminal-pryachemsya-ot-troitsy-oil",
+      "next": "text-d8654171",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-d8654171": {
+      "type": "text",
+      "text": "По дороге видите как из АТБ через турникеты в терминал заходят Гегам, Алешков и Акашев. Вчера первые двое обещали сделать так, чтобы третий срал стоя, но они идут и о чём-то говорят.",
+      "next": "text-1ed75a1a",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-1ed75a1a": {
+      "type": "text",
+      "text": "Акашев: «Я же говорю: они только и делают что нажираются. А одна компашка вообще пару недель назад разъебала толкан в баре Трава».",
+      "next": "text-5cc5dc67",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-5cc5dc67": {
+      "type": "text",
+      "text": "Гегам: «Не верится что эти присосавшиеся к авиации на такое способны»",
+      "next": "text-7a7c0485",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-7a7c0485": {
+      "type": "text",
+      "text": "Акашев: «Го пожрём и проверим. Вы увидите всё своими глазами, и поймёте что я не воздухан».",
+      "next": "choice-56beda23",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-56beda23": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-56beda23-answer-1",
+          "text": "Бляяяяя",
+          "next": "choice-b2c44e3a"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-b2c44e3a": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-b2c44e3a-answer-1",
+          "text": "Надо бежать",
+          "next": "scene-00b31f65"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-00b31f65": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-utro-serega-korotkaya-strizhka-oil",
+      "next": "text-0ceae0ab",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-0ceae0ab": {
+      "type": "text",
+      "text": "Вы забегаете в комнату, а там пиздааа",
+      "next": "text-58106e6f",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-bbb6d0c3": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-bbb6d0c3-answer-1",
+          "text": "Собрать все бутылки",
+          "next": "scene-1429df72",
+          "once": false
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-58106e6f": {
+      "type": "text",
+      "text": "Нас идут насиловать, а тут такое. Надо прибраться срочно.",
+      "next": "choice-bbb6d0c3",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-aa5b5730": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-aa5b5730-answer-1",
+          "text": "Чела из травы тоже в пакет в целом",
+          "next": "scene-38949848"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-1429df72": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-butylki-v-paketah-oil",
+      "next": "text-aea05247",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-38949848": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-disko-v-pakete-oil",
+      "next": "text-2af0d930",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-69c6e68f": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-69c6e68f-answer-1",
+          "text": "И финальный штрих",
+          "next": "scene-eb3d06e8"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-eb3d06e8": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-pryachem-sledy-rle-oil",
+      "next": "text-5f4e1cdb",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-f9025cb7": {
+      "type": "text",
+      "text": "Другое дело.",
+      "next": "scene-e5b24fdb",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-6a2ccf49": {
+      "type": "text",
+      "text": "Бля только куда девать пакеты",
+      "next": "choice-e8a989e0",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-e8a989e0": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-e8a989e0-answer-1",
+          "text": "Выкинуть в окно",
+          "next": "scene-94c1fa1e",
+          "once": true
+        },
+        {
+          "id": "choice-e8a989e0-answer-0454e72f",
+          "text": "Спрятать в шкаф",
+          "next": "scene-26b06bd9",
+          "once": true
+        },
+        {
+          "id": "choice-e8a989e0-answer-2",
+          "text": "Бежать на улицу",
+          "next": "scene-dfda25d2",
+          "once": true
+        },
+        {
+          "id": "choice-e8a989e0-answer-c39a006b",
+          "text": "Хуй знает чё",
+          "next": "scene-b94e01b3"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-dfda25d2": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-bezhim-s-paketami-oil",
+      "next": "text-d78a7ddf",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-d78a7ddf": {
+      "type": "text",
+      "text": "Вы вылетаете на этаж с двумя огромными звенящими пакетами, бежите на первый этаж к выходу, а там...",
+      "next": "scene-a0ce16ae",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-12682636": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-12682636-answer-2",
+          "text": "Это мы стеклотару сдаём",
+          "next": "scene-604b15aa",
+          "once": true
+        },
+        {
+          "id": "choice-12682636-answer-1",
+          "text": "Я выгуливаю пакеты",
+          "next": "scene-d9df7e3b",
+          "once": true
+        },
+        {
+          "id": "choice-12682636-answer-3fad8dd4",
+          "text": "Это вам",
+          "next": "scene-77269f42"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-a0ce16ae": {
+      "type": "scene",
+      "asset": "bg-troitsa-na-poroge-gostinitsy-oil",
+      "next": "text-1066c676",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-1066c676": {
+      "type": "text",
+      "text": "\"Оценка - охуительно!\" - говорит Гегам.\n\"Чё в пакетах мазафака?\" - спрашивает Алешков.",
+      "next": "scene-eee678ff",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-b26b4bdd": {
+      "type": "text",
+      "text": "Бля чё сказать",
+      "next": "choice-12682636",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-11b24cbe": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-11b24cbe-answer-1",
+          "text": "Накрыть чела из травы одеялом",
+          "next": "scene-dda1387d"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-dda1387d": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-disko-pod-odeyalom-oil",
+      "next": "text-1a85abff",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-1a85abff": {
+      "type": "text",
+      "text": "...",
+      "next": "choice-aa5b5730",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-ed1f9a6f": {
+      "type": "text",
+      "text": "Вы бежите к себе в комнату на всех порах, эта тройца явно скоро до вас доберётся. Забегаете в комнату и открываете шкаф.",
+      "next": "scene-a235920b",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-26b06bd9": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-bezhim-s-paketami-oil",
+      "next": "text-ed1f9a6f",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-a235920b": {
+      "type": "scene",
+      "asset": "bg-gegam-v-shkafu-na-plechikah-v2-oil",
+      "next": "text-540537db",
+      "chapterId": "chapter-63e8615e",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 200
+      }
+    },
+    "text-540537db": {
+      "type": "text",
+      "text": "...",
+      "next": "scene-b9b9cbb3",
+      "chapterId": "chapter-63e8615e",
+      "audio": "jg-032316-sfx-horror-style-impact-3-2"
+    },
+    "scene-b9b9cbb3": {
+      "type": "scene",
+      "asset": "bg-shkaf-rezko-zakryvaem-oil",
+      "next": "text-ae3e8bf8",
+      "chapterId": "chapter-63e8615e",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 200
+      }
+    },
+    "text-ae3e8bf8": {
+      "type": "text",
+      "text": "...",
+      "next": "copy-fe8da9d0-0",
+      "chapterId": "chapter-63e8615e",
+      "audio": "boom-door"
+    },
+    "copy-fe8da9d0-0": {
+      "type": "scene",
+      "asset": "bg-shkaf-dlinnaya-ruka-gegama-oil",
+      "next": "text-8c7494a7",
+      "chapterId": "chapter-63e8615e"
+    },
+    "copy-fe8da9d0-1": {
+      "type": "text",
+      "text": "Вы сдохли",
+      "next": "scene-e5b24fdb",
+      "chapterId": "chapter-63e8615e",
+      "delayMs": 4000,
+      "audio": "wrong-try-again"
+    },
+    "scene-94c1fa1e": {
+      "type": "scene",
+      "asset": "bg-koridor-vybrasyvaem-pakety-v-okno-step-oil",
+      "next": "text-c63ec607",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-c63ec607": {
+      "type": "text",
+      "text": "Вы выбежали в коридор и швырнули мусор в окно в надежде что этого никто не слышал.",
+      "next": "text-e23f9a62",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-34fa945c": {
+      "type": "scene",
+      "asset": "bg-konteyner-v-okno-aleshkov-oil",
+      "next": "text-dcfcbe7d",
+      "chapterId": "chapter-63e8615e",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 1000
+      }
+    },
+    "text-dcfcbe7d": {
+      "type": "text",
+      "text": "...",
+      "next": "scene-ead49783",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-e23f9a62": {
+      "type": "text",
+      "text": "\"Ой, кажется там снаружи какие-то звуки\" - подумали вы и подошли поближе",
+      "next": "scene-34fa945c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-ead49783": {
+      "type": "scene",
+      "asset": "you-died",
+      "next": "text-f7e82011",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-f7e82011": {
+      "type": "text",
+      "text": "Поздравляем, вас разъебало",
+      "next": "scene-e5b24fdb",
+      "chapterId": "chapter-63e8615e",
+      "audio": "Macan-A.V.G---privikau"
+    },
+    "text-aea05247": {
+      "type": "text",
+      "text": "...",
+      "next": "choice-11b24cbe",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-2af0d930": {
+      "type": "text",
+      "text": "...",
+      "next": "choice-69c6e68f",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-5f4e1cdb": {
+      "type": "text",
+      "text": "...",
+      "next": "text-f9025cb7",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-e5b24fdb": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-pryachem-sledy-rle-oil",
+      "next": "text-6a2ccf49",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-8c7494a7": {
+      "type": "text",
+      "text": "...",
+      "next": "copy-fe8da9d0-1",
+      "chapterId": "chapter-63e8615e",
+      "audio": "zvuk-probivaniya-dveri"
+    },
+    "scene-604b15aa": {
+      "type": "scene",
+      "asset": "bg-troitsa-gegam-kulak-v-kameru-oil",
+      "next": "text-b29aa328",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-d9df7e3b": {
+      "type": "scene",
+      "asset": "bg-troitsa-aleshkov-noga-v-kameru-oil",
+      "next": "text-141fb8ee",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-77269f42": {
+      "type": "scene",
+      "asset": "bg-troitsa-akashev-bodrov-obrez-oil",
+      "next": "text-68f5051c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-b29aa328": {
+      "type": "text",
+      "text": "Новая реплика",
+      "next": "choice-12682636",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-141fb8ee": {
+      "type": "text",
+      "text": "Новая реплика",
+      "next": "choice-12682636",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-68f5051c": {
+      "type": "text",
+      "text": "Новая реплика",
+      "next": "scene-e5b24fdb",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-eee678ff": {
+      "type": "scene",
+      "asset": "bg-troitsa-na-poroge-gostinitsy-oil",
+      "next": "text-b26b4bdd",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-b94e01b3": {
+      "type": "scene",
+      "asset": "bg-gostinitsa-bezhim-s-paketami-oil",
+      "next": "text-a31bd442",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-a31bd442": {
+      "type": "text",
+      "text": "Вы вылетаете на этаж с двумя огромными звенящими пакетами, бежите вниз по лестнице, забегаете в подвал.",
+      "next": "scene-a0b6de74",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-d16e85d2": {
+      "type": "text",
+      "text": "Идёте в самый конец подвала, и открываете слава богу незапертую дверь.",
+      "next": "text-0cc28db5",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-a0b6de74": {
+      "type": "scene",
+      "asset": "main-menu",
+      "next": "text-d16e85d2",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-9116de5f": {
+      "type": "text",
+      "text": "А ты что там внизу делал? ",
+      "next": "text-ebd8a92e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-ebd8a92e": {
+      "type": "text",
+      "text": "\"Ничего\"",
+      "next": "text-b7e7dfc2",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-b7e7dfc2": {
+      "type": "text",
+      "text": "Совсем ничего?",
+      "next": "text-3f3b6ea0",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-3f3b6ea0": {
+      "type": "text",
+      "text": "\"Абсолютно ничего\"",
+      "next": "text-28f4a88c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-28f4a88c": {
+      "type": "text",
+      "text": "Ну тогда иди в комнату, присосавшийся к авиации!",
+      "next": "chapter-63e8615e-end",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-0cc28db5": {
+      "type": "text",
+      "text": "Блять, откуда",
+      "next": "scene-ef07a636",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-ef07a636": {
+      "type": "scene",
+      "asset": "main-menu",
+      "next": "text-ed64edfc",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-ed64edfc": {
+      "type": "text",
+      "text": "Впрочем похуй",
+      "next": "choice-45330b03",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-45330b03": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-45330b03-answer-1",
+          "text": "Швырнуть",
+          "next": "text-9116de5f"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
     }
   }
 }

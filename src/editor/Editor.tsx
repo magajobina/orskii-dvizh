@@ -11,6 +11,7 @@ import type { StoryFlowNode } from './FlowCard';
 import { Gallery } from './Gallery';
 import { Inspector } from './Inspector';
 import { autoLayout, ensureLayout } from './layout';
+import { insertBefore } from './insert';
 import { createCameraMemory } from './camera';
 import { connect, contextImage, historyReducer, kindNames, makeClip, outgoing, parseDocument, pasteClip, removeNodes, renameNode, validateStory } from './model';
 import type { Clip, Document, Point } from './model';
@@ -310,7 +311,7 @@ export default function Editor() {
   });
 
   function add(type: StoryNode['type'], point?: Point) {
-    const document = structuredClone(docRef.current);
+    let document = structuredClone(docRef.current);
     const id = `${type}-${token()}`;
     const end = Object.keys(document.story.nodes).find(key => document.story.nodes[key].type === 'end') ?? '';
     const node: StoryNode = type === 'text' ? { type, text: 'Новая реплика', next: end }
@@ -319,9 +320,14 @@ export default function Editor() {
       : type === 'choice' ? { type, options: [{ id: `${id}-answer-1`, text: 'Первый ответ', next: end }, { id: `${id}-answer-2`, text: 'Второй ответ', next: end }] }
       : { type: 'end' };
     const rect = canvas.current?.getBoundingClientRect();
-    document.story.nodes[id] = node;
-    node.chapterId = activeChapter || undefined;
-    document.layout.positions[id] = point ?? flow.current?.screenToFlowPosition({ x: (rect?.left ?? 0) + (rect?.width ?? 800) * .4, y: (rect?.top ?? 0) + 160 }) ?? { x: 100, y: 100 };
+    const anchor = !point && selected.length === 1 ? selected[0] : undefined;
+    if (anchor && document.story.nodes[anchor] && (node.type === 'text' || node.type === 'scene')) {
+      document = insertBefore(document, anchor, id, node);
+    } else {
+      document.story.nodes[id] = node;
+      node.chapterId = activeChapter || undefined;
+      document.layout.positions[id] = point ?? flow.current?.screenToFlowPosition({ x: (rect?.left ?? 0) + (rect?.width ?? 800) * .4, y: (rect?.top ?? 0) + 160 }) ?? { x: 100, y: 100 };
+    }
     commit(document); setPrimary(id); setSelected([id]);
     requestAnimationFrame(() => setNodes(nodes => nodes.map(node => ({ ...node, selected: node.id === id }))));
   }

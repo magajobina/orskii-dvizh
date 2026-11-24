@@ -4,15 +4,27 @@ import type { State, Story } from './engine';
 import { shakeAnimation } from './shake';
 import { audioURL } from '../content/audio';
 import { AudioPool, storyAudioURLs } from './audioPool';
+import { imageURL } from '../content/assets';
+import { ImagePreloader, storyImageURLs } from './imagePreloader';
 
 export function useMedia(story: Story, state: State, playing: boolean, stage: RefObject<HTMLDivElement | null>) {
   const latest = useRef(state); latest.current = state;
   const audioPool = useRef<AudioPool | null>(null);
   if (!audioPool.current) audioPool.current = new AudioPool();
+  const images = useRef<ImagePreloader | null>(null);
+  if (!images.current) images.current = new ImagePreloader();
   useEffect(() => {
     audioPool.current!.preload(storyAudioURLs(story, audioURL));
   }, [story]);
   useEffect(() => () => audioPool.current!.dispose(), []);
+  useEffect(() => {
+    if (playing) {
+      const currentImage = imageURL(state.scene);
+      images.current!.preload(storyImageURLs(story, state.current, imageURL).filter(url => url !== currentImage));
+    } else images.current!.pause();
+    return () => images.current!.pause();
+  }, [story, state.current, state.scene, playing]);
+  useEffect(() => () => images.current!.dispose(), []);
   useEffect(() => {
     if (!playing || !stage.current) return;
     const scene = latest.current.sceneNode ? story.nodes[latest.current.sceneNode] : undefined;

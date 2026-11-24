@@ -268,5 +268,360 @@
     "original": "panorama-gostinitsa-oil.png",
     "asset": "panorama-gostinitsa-studenty-oil",
     "generated": "exec-8d59e7bc-733b-41c5-8ae0-d5f6ce3e9b95.png"
+  },
+  {
+    "original": "new-rektorat-chapter",
+    "asset": "bg-rektorat-kirill-zhaloba",
+    "generated": "exec-c762388d-13b0-4df9-99a4-19ff87523604.png"
+  },
+  {
+    "original": "new-rektorat-chapter",
+    "asset": "bg-rektorat-rektor-udar-po-stolu",
+    "generated": "exec-ae79b7ae-e899-40a0-be15-9e684d2f1360.png"
+  },
+  {
+    "original": "bg-rektorat-kirill-zhaloba.png",
+    "asset": "bg-rektorat-kirill-zhaloba-v2",
+    "generated": "exec-d9dc50f2-c5da-435d-a140-12a54236f378.png"
+  },
+  {
+    "original": "bg-rektorat-rektor-udar-po-stolu.png",
+    "asset": "bg-rektorat-rektor-udar-po-stolu-v2",
+    "generated": "exec-0646f73d-22e0-4015-b0ac-7b768733e621.png"
+  },
+  {
+    "original": "bg-rektorat-kirill-zhaloba-v2.png",
+    "asset": "bg-rektorat-kirill-zhaloba-v3",
+    "generated": "exec-647727a5-5464-47b5-bf6f-9b7dd6a97d93.png"
+  },
+  {
+    "original": "new-rektorat-chapter",
+    "asset": "bg-rektorat-sovet",
+    "generated": "exec-5a0e7adf-5369-46fd-a20e-8f332e93edaa.png"
+  },
+  {
+    "original": "new-rektorat-chapter",
+    "asset": "bg-rektorat-prepod-rasskaz",
+    "generated": "exec-d5bf0102-6ce3-4528-ab44-6575522f6d8f.png"
+  },
+  {
+    "original": "new-rektorat-chapter",
+    "asset": "bg-rektorat-ukaz-dvoe",
+    "generated": "exec-ddbd185b-d1f2-4174-9667-e1dfeaa62171.png"
+  },
+  {
+    "original": "bg-rektorat-ukaz-dvoe.png",
+    "asset": "bg-rektorat-ukaz-tayna",
+    "generated": "exec-a8dc2a61-54a6-4853-96cd-2a6c0f5dc311.png"
+  },
+  {
+    "original": "bg-rektorat-prepod-rasskaz.png",
+    "asset": "bg-rektorat-prepod-rasskaz-v2",
+    "generated": "exec-0b04628e-3164-4317-8f35-aa19bc1637a8.png"
+  },
+  {
+    "original": "bg-rektorat-ukaz-tayna.png",
+    "asset": "bg-rektorat-ukaz-tayna-v2",
+    "generated": "exec-c3c2ac90-cf5d-4ba7-aba6-fdb6685c00bf.png"
+  },
+  {
+    "original": "saraiskii.jpg",
+    "asset": "bg-rektorat-saraiskii-govorit",
+    "generated": "exec-462e2bf6-694a-4f6e-ba8c-a73dacf047d2.png"
+  },
+  {
+    "original": "Алешков и Будяк.jpg",
+    "asset": "aleshkov-upscale-soft-v1",
+    "generated": "exec-8bdd1d9b-7b6b-4e1d-8e18-c3ffec98b00a.png"
+  },
+  {
+    "original": "Алешков и Будяк.jpg",
+    "asset": "aleshkov-face-variant-1",
+    "generated": "exec-11e467ed-af80-4223-8732-e80270bae75f.png"
+  },
+  {
+    "original": "Алешков и Будяк.jpg",
+    "asset": "aleshkov-face-variant-2",
+    "generated": "exec-a20654e9-0a58-4557-929e-1037aa8a8bd7.png"
+  },
+  {
+    "original": "Алешков и Будяк.jpg",
+    "asset": "aleshkov-face-variant-3",
+    "generated": "exec-b03e6267-2b5a-46db-ae61-c750d6b03a79.png"
+  },
+  {
+    "original": "Алешков и Будяк.jpg",
+    "asset": "aleshkov-face-variant-4",
+    "generated": "exec-9e6eb5bc-0cf2-4804-b0b4-8fa61bfa3efa.png"
+  },
+  {
+    "original": "newnew/gegam.jpg",
+    "asset": "gegam-fullbody",
+    "generated": "exec-0692d09e-daed-4a5e-8b79-4efbb694eb9a.png"
+  },
+  {
+    "original": "bg-orsk-tower1.jpg",
+    "asset": "bg-orsk-tower-noch",
+    "generated": "exec-78ac961b-7825-4c9e-93c2-2bbb1bc4265f.png"
+  },
+  {
+    "original": "bg-shvabra-trusy.png",
+    "asset": "bg-utro-ershik-zuby",
+    "generated": "exec-ab4a15eb-b210-4c66-9be5-daa91e874655.png"
+  },
+  {
+    "original": "stolovaya.jpg",
+    "asset": "bg-stolovaya-hleb-maslo-kofe",
+    "generated": "exec-19602efa-7687-4b37-8b9c-62978c8424c8.png"
+  },
+  {
+    "original": "bg-bashnya-iz-butylok-oil.png",
+    "asset": "bg-atb-zinenko-prishel",
+    "generated": "exec-68b971c4-1eff-406e-b7d5-6eba3cca4a72.png"
+  },
+  {
+    "original": "polet.jpg",
+    "asset": "bg-da40-rassvet-kabina-v1",
+    "generated": "exec-1e1b7d75-b7f5-486c-91cf-dc18c68a98ca.png"
+  },
+  {
+    "original": "polet.jpg",
+    "asset": "bg-da40-rassvet-kabina-v2",
+    "generated": "exec-5b0eec94-ec30-4e5c-b58c-5f0c31086a5b.png"
+  },
+  {
+    "original": "bg-da40-rassvet-kabina-v1.png",
+    "asset": "bg-da40-rassvet-kabina-v1-ispravleno",
+    "generated": "exec-7b53fe2e-a37a-4a3a-8ea5-d51202e0ac59.png"
+  },
+  {
+    "original": "bg-alikspit-eyes-open.png",
+    "asset": "bg-alikspit-eyes-open-noch",
+    "generated": "exec-267600c1-dc98-4843-b892-e412b76ca3b5.png"
+  },
+  {
+    "original": "polet.jpg",
+    "asset": "bg-da40-vzlet-na-svetly",
+    "generated": "exec-80f033c2-e66f-49d0-bb01-7db1fe88c05f.png"
+  },
+  {
+    "original": "polet.jpg",
+    "asset": "bg-da40-zinenko-rybak",
+    "generated": "exec-8582f243-985f-4b1b-9ee6-3fc260b458ee.png"
+  },
+  {
+    "original": "svetly-perekur",
+    "asset": "bg-svetly-perekur-zinenko-ermolaev",
+    "generated": "exec-adb9f005-fec0-40f5-ba45-a12652b6ed26.png"
+  },
+  {
+    "original": "da40-vozvrashchenie-den",
+    "asset": "bg-da40-vozvrashchenie-den",
+    "generated": "exec-6968e5df-5d0b-4bab-988b-d8a6ff436b04.png"
+  },
+  {
+    "original": "OcS7I71U5Fq6orssZXTRHvCb1p-fz_qWkBkaGj0LpGZMi7TlqCfMEiy587p1a6nUINoxM9hnXClS0fm4iug1yEY-.jpg",
+    "asset": "bg-uborka-dvor-metla-oil",
+    "generated": "exec-5f0f3dbd-447c-4c6f-ab88-83338fa6335d.png"
+  },
+  {
+    "original": "UtjWKJppLn8V316kjB116o0meSNtpgzufBq1_zgJmsEqy9vE5HmgaBoSTY3aEEjQVZgvtocoQ0Ez73XvmlK4fWjF.jpg",
+    "asset": "bg-da40-noch-fak-oil",
+    "generated": "exec-079d19f6-fa32-408f-8a6f-be39649fdc4c.png"
+  },
+  {
+    "original": "rIYlt8wWqHyuIDnhLT9qmdzaKC2c7d72cHRU79-oilEKDIZczRTnN2fAiAOLAaiKgCcd8MByXEKzMFcFtNA6GQSy.jpg",
+    "asset": "bg-kirpichnoe-zdanie-balkony-oil",
+    "generated": "exec-698818d1-a514-4556-89b1-c050b96ea66f.png"
+  },
+  {
+    "original": "g2-line-335-veyp-atb",
+    "asset": "g2-line-335-veyp-atb-real",
+    "generated": "exec-13470489-6ad7-46ab-91b9-617ef968f2b3.png"
+  },
+  {
+    "original": "g2-line-337-dmitriev-za-uglom",
+    "asset": "g2-line-337-dmitriev-za-uglom-real",
+    "generated": "exec-fca4fb82-4f4b-4a14-b75b-0de055a12fa6.png"
+  },
+  {
+    "original": "g2-line-343-ne-zametili",
+    "asset": "g2-line-343-ne-zametili-real",
+    "generated": "exec-6f1448aa-5ffb-4fe2-b2d8-857eed073d21.png"
+  },
+  {
+    "original": "gegam-aleshkov-trap-fotomontazh",
+    "asset": "bg-gegam-aleshkov-trap-oil",
+    "generated": "exec-dd931884-3f5b-49e4-bb50-63142f7c257e.png"
+  },
+  {
+    "original": "bg-gegam-aleshkov-trap-v1",
+    "asset": "bg-gegam-aleshkov-vstrecha-aplodismenty",
+    "generated": "exec-f34dee9b-9713-4782-9443-624602479393.png"
+  },
+  {
+    "original": "photo_2026-11-24_14-24-29.jpg",
+    "asset": "bg-gostinitsa-poyut-obnyavshis-oil",
+    "generated": "exec-a4bb8a0d-27ec-42b8-a046-6f41bed21ff5.png"
+  },
+  {
+    "original": "photo_2026-11-24_14-24-56.jpg",
+    "asset": "bg-gostinitsa-gitara-na-podokonnike-oil",
+    "generated": "exec-1a8cdfc6-ce16-4f55-b36b-c77f42c6f584.png"
+  },
+  {
+    "original": "photo_2026-11-24_14-25-01.jpg",
+    "asset": "bg-gostinitsa-kompaniya-s-arbuzom-oil",
+    "generated": "exec-9dc2e3d3-187f-4a4d-b8ca-c11f4c594313.png"
+  },
+  {
+    "original": "Screenshot 2026-11-24 143051.png",
+    "asset": "bg-gostinitsa-kompaniya-u-okna-oil",
+    "generated": "exec-f14dbd2f-cf02-46c5-baf0-846116c759b1.png"
+  },
+  {
+    "original": "bg-kirpichnoe-zdanie-balkony-oil",
+    "asset": "bg-studenty-begut-v-gostinitsu-oil",
+    "generated": "exec-6d72ae3d-7abf-4c24-afee-1979aa3d4e62.png"
+  },
+  {
+    "original": "photo_2026-11-24_14-24-29.jpg",
+    "asset": "bg-gostinitsa-poyut-obnyavshis-oil-v2",
+    "generated": "exec-5b070da9-ebb3-4b97-877b-8f79130d3cec.png"
+  },
+  {
+    "original": "bg-alikspit",
+    "asset": "bg-alikspit-s-pustoy-butylkoy",
+    "generated": "exec-1124b7b6-1586-465b-8672-dd8a21bae201.png"
+  },
+  {
+    "original": "bg-gostinitsa-gitara-na-podokonnike-oil",
+    "asset": "bg-gostinitsa-utro-posle-gulyanki-oil",
+    "generated": "exec-0807a356-e1ee-4be1-9906-2c7755d5df0d.png"
+  },
+  {
+    "original": "bg-utro-ershik-zuby",
+    "asset": "bg-utro-zubnaya-shchetka-gryaznaya-oil",
+    "generated": "exec-6518485b-741e-4cbe-881f-dd3ad7ed33b6.png"
+  },
+  {
+    "original": "terminal-troitsa",
+    "asset": "bg-terminal-pryachemsya-ot-troitsy-oil",
+    "generated": "exec-12c5242a-bb9b-4c0f-b7bb-5b1092d2d85d.png"
+  },
+  {
+    "original": "bg-gostinitsa-utro-posle-gulyanki-oil",
+    "asset": "bg-gostinitsa-utro-posle-gulyanki-oil-v2",
+    "generated": "exec-f1ce4e67-c37f-4133-8fea-c1e9047abdcd.png"
+  },
+  {
+    "original": "gostinitsa-utro-party-faces-fotomontazh",
+    "asset": "bg-gostinitsa-utro-posle-gulyanki-lica-oil",
+    "generated": "exec-25052727-1fbb-4da4-b955-6f8a178041ea.png"
+  },
+  {
+    "original": "bg-gostinitsa-utro-posle-gulyanki-oil-v2",
+    "asset": "bg-gostinitsa-utro-anya-polina-oil",
+    "generated": "exec-6eb5362d-2096-44ea-a167-27656e022bad.png"
+  },
+  {
+    "original": "gostinitsa-utro-fapy-faces-disko-montazh",
+    "asset": "bg-gostinitsa-utro-lica-i-disko-oil",
+    "generated": "exec-a609d315-371e-41dd-b4be-14da59018f36.png"
+  },
+  {
+    "original": "gostinitsa-utro-pravki",
+    "asset": "bg-gostinitsa-utro-polosataya-rubashka-oil",
+    "generated": "exec-856051ae-bf79-48cc-92fe-fdf5f993b2ca.png"
+  },
+  {
+    "original": "bg-gostinitsa-utro-polosataya-rubashka-oil",
+    "asset": "bg-gostinitsa-utro-serega-korotkaya-strizhka-oil",
+    "generated": "exec-620bfe85-a127-455c-bf8f-0fd256ce5ab1.png"
+  },
+  {
+    "original": "bg-gostinitsa-utro-serega-korotkaya-strizhka-oil",
+    "asset": "bg-gostinitsa-butylki-v-paketah-oil",
+    "generated": "exec-78ba4097-12db-49fe-b4db-c900ecee3e58.png"
+  },
+  {
+    "original": "bg-gostinitsa-butylki-v-paketah-oil",
+    "asset": "bg-gostinitsa-disko-v-pakete-oil",
+    "generated": "exec-fbd8a9f6-5e7d-4081-b09c-898940e32dd0.png"
+  },
+  {
+    "original": "bg-gostinitsa-disko-v-pakete-oil",
+    "asset": "bg-gostinitsa-pryachem-sledy-rle-oil",
+    "generated": "exec-33b6462c-e88e-4085-9b00-6ef6ae8813f5.png"
+  },
+  {
+    "original": "gostinitsa-bezhim-koridor",
+    "asset": "bg-gostinitsa-bezhim-s-paketami-oil",
+    "generated": "exec-59a4aa1d-2aef-4e8c-8851-31e2612eea50.png"
+  },
+  {
+    "original": "troitsa-porog",
+    "asset": "bg-troitsa-na-poroge-gostinitsy-oil",
+    "generated": "exec-a913f48b-3320-4cf1-a680-08e85df57289.png"
+  },
+  {
+    "original": "bg-gostinitsa-butylki-v-paketah-oil",
+    "asset": "bg-gostinitsa-disko-pod-odeyalom-oil",
+    "generated": "exec-bf7508c5-4195-40d7-98aa-fd107c67c725.png"
+  },
+  {
+    "original": "gegam-shkaf",
+    "asset": "bg-gegam-v-shkafu-na-plechikah-oil",
+    "generated": "exec-1db421ad-1a8c-472d-a173-15e6f3793be4.png"
+  },
+  {
+    "original": "koridor-okno",
+    "asset": "bg-koridor-vybrasyvaem-pakety-v-okno-oil",
+    "generated": "exec-72c172b4-f9d4-488a-895d-a0c8aa21c9e5.png"
+  },
+  {
+    "original": "koridor-okno-step",
+    "asset": "bg-koridor-vybrasyvaem-pakety-v-okno-step-oil",
+    "generated": "exec-f24506b1-6f97-4896-b223-b814a6830033.png"
+  },
+  {
+    "original": "gegam-shkaf-prostoy",
+    "asset": "bg-gegam-v-shkafu-na-plechikah-v2-oil",
+    "generated": "exec-b1ce782b-1440-4d1a-a1a8-9878387f29e6.png"
+  },
+  {
+    "original": "koridor-konteyner-aleshkov",
+    "asset": "bg-konteyner-v-okno-aleshkov-oil",
+    "generated": "exec-c4fee201-928b-4a30-9c6b-49a08f7842b3.png"
+  },
+  {
+    "original": "koridor-konteyner-akashev",
+    "asset": "bg-konteyner-v-okno-akashev-chikatilo-oil",
+    "generated": "exec-15c204d5-8d98-4bca-ae2a-85eda0318820.png"
+  },
+  {
+    "original": "gegam-shkaf-zakryvaem",
+    "asset": "bg-shkaf-rezko-zakryvaem-oil",
+    "generated": "exec-00a8fd6f-8615-462d-8a00-f98dfdf99f63.png"
+  },
+  {
+    "original": "gegam-shkaf-ruka-ispravleno",
+    "asset": "bg-shkaf-dlinnaya-ruka-gegama-oil",
+    "generated": "exec-6fc56976-4b14-4495-9657-76d2261a91da.png"
+  },
+  {
+    "original": "bg-troitsa-na-poroge-gostinitsy-oil",
+    "asset": "bg-troitsa-gegam-kulak-v-kameru-oil",
+    "generated": "exec-31ee4690-f83e-4ddd-ab85-44afeb45b0bb.png"
+  },
+  {
+    "original": "bg-troitsa-na-poroge-gostinitsy-oil",
+    "asset": "bg-troitsa-aleshkov-noga-v-kameru-oil",
+    "generated": "exec-e063610e-3028-4b3d-bc08-ce22d0903cc7.png"
+  },
+  {
+    "original": "bg-troitsa-na-poroge-gostinitsy-oil",
+    "asset": "bg-troitsa-akashev-bodrov-obrez-oil",
+    "generated": "exec-e0f21ec9-3d27-447e-83a7-8f5253cf264c.png"
   }
 ]

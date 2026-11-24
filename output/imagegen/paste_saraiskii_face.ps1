@@ -1,0 +1,31 @@
+Add-Type -AssemblyName System.Drawing
+$scene = [System.Drawing.Bitmap]::new('C:\Users\Saitama\.codex\generated_images\01a1fdb7-7ed7-7d72-86e7-e85ad81373fe\exec-05123f45-a802-4b23-9c52-4b6d0e456c0b.png')
+$portrait = [System.Drawing.Bitmap]::new((Resolve-Path -LiteralPath 'src/assets/illustrations/saraiskii.jpg').Path)
+$canvas = [System.Drawing.Graphics]::FromImage($scene)
+$canvas.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+$canvas.TranslateTransform(770,27)
+$canvas.ScaleTransform(1.12,1.12)
+$outline = [System.Drawing.Drawing2D.GraphicsPath]::new()
+$outline.AddBezier(204,28,140,28,96,73,88,151)
+$outline.AddBezier(88,151,83,170,85,182,83,185)
+$outline.AddBezier(83,185,57,172,70,248,88,271)
+$outline.AddBezier(88,271,100,325,155,394,221,413)
+$outline.AddBezier(221,413,282,410,331,351,344,283)
+$outline.AddBezier(344,283,359,270,364,237,348,231)
+$outline.AddBezier(348,231,365,138,335,62,286,37)
+$outline.AddBezier(286,37,264,26,230,24,204,28)
+$outline.CloseFigure()
+$canvas.SetClip($outline)
+$tone = [System.Drawing.Imaging.ColorMatrix]::new()
+$tone.Matrix00 = .76
+$tone.Matrix11 = .75
+$tone.Matrix22 = .74
+$attributes = [System.Drawing.Imaging.ImageAttributes]::new()
+$attributes.SetColorMatrix($tone)
+$canvas.DrawImage($portrait,[System.Drawing.Rectangle]::new(0,0,$portrait.Width,$portrait.Height),0,0,$portrait.Width,$portrait.Height,[System.Drawing.GraphicsUnit]::Pixel,$attributes)
+$attributes.Dispose()
+$canvas.Dispose()
+$outline.Dispose()
+$portrait.Dispose()
+$scene.Save((Join-Path (Get-Location) 'output/imagegen/saraiskii-rektorat-fotomontazh.png'),[System.Drawing.Imaging.ImageFormat]::Png)
+$scene.Dispose()
