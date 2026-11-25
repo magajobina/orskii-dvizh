@@ -50,6 +50,20 @@ export function storyEditorPlugin(): Plugin {
             }
             result = await media.upload(query.get('kind') as 'image' | 'audio', query.get('name') ?? '', Buffer.concat(chunks), Number(query.get('width')), Number(query.get('height')));
             server.ws.send({ type: 'custom', event: 'orsk-media-changed', data: {} });
+          } else if (path === '/__editor/media' && request.method === 'DELETE') {
+            const input = await body(request);
+            result = await media.remove(input.kind as 'image' | 'audio', String(input.id ?? ''));
+            server.ws.send({ type: 'custom', event: 'orsk-media-changed', data: {} });
+          } else if (path === '/__editor/media/trash' && request.method === 'GET') result = await media.trash();
+          else if (path === '/__editor/media/trash' && request.method === 'DELETE') {
+            const input = await body(request);
+            if (input.confirm !== true) throw Object.assign(Error('Подтвердите окончательную очистку корзины.'), { status: 422 });
+            result = await media.emptyTrash();
+            server.ws.send({ type: 'custom', event: 'orsk-media-changed', data: {} });
+          } else if (path === '/__editor/media/restore' && request.method === 'POST') {
+            const input = await body(request);
+            result = await media.restore(String(input.ticket ?? ''));
+            server.ws.send({ type: 'custom', event: 'orsk-media-changed', data: {} });
           } else if (path === '/__editor/project' && request.method === 'GET') {
             const project = await store.read(); result = { document: project.document, revision: project.revision };
           } else if (path === '/__editor/project' && request.method === 'PUT') {

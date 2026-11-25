@@ -52,6 +52,7 @@ export function parseDocument(input: unknown): Document {
     if (['text', 'scene', 'jump'].includes(String(node.type)) && typeof node.next !== 'string') throw Error(`${id}: переход должен быть строкой.`);
     if (node.type === 'text' && typeof node.text !== 'string') throw Error(`${id}: нет текста.`);
     if (node.type === 'text' && node.delayMs !== undefined && (!finite(node.delayMs) || node.delayMs < 0)) throw Error(`${id}: некорректная задержка текста.`);
+    if (node.type === 'text' && node.hideInterfaceMs !== undefined && (!finite(node.hideInterfaceMs) || node.hideInterfaceMs < 0)) throw Error(`${id}: некорректная длительность скрытия интерфейса.`);
     if (node.type === 'scene' && typeof node.asset !== 'string') throw Error(`${id}: нет ID иллюстрации.`);
     if (node.type === 'text' && node.audio !== undefined && (typeof node.audio !== 'string' || !validId(node.audio))) throw Error(`${id}: некорректный ID аудио.`);
     if (node.type === 'scene' && node.shake !== undefined && (!object(node.shake) || !['tremble', 'impact', 'sway'].includes(String(node.shake.variant)) || !finite(node.shake.durationMs) || node.shake.durationMs < 1)) throw Error(`${id}: некорректные параметры тряски.`);

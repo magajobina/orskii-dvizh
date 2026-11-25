@@ -117,3 +117,7 @@
 .audio-library strong { font-size: 13px; overflow-wrap: anywhere; }
 .audio-library small { color: #91aa9a; font-size: 11px; overflow-wrap: anywhere; }
 .audio-library audio { width: 100%; min-width: 0; }
+.editor-gallery .library-delete { color: #d7aaa0; border-color: #76524b; font-size: 11px; }
+.editor-gallery .library-delete:hover { color: #ffe0d8; background: #59382f; }
+.library-trash { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 14px 0; }
+.library-trash > span { color: #91aa9a; font-size: 12px; }

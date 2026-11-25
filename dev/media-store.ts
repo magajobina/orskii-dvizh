@@ -1,6 +1,9 @@
-import { mkdir, readFile, readdir, rename, unlink, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { copyFile, lstat, mkdir, readFile, readdir, realpath, rename, rm, unlink, writeFile } from 'node:fs/promises';
+import { constants } from 'node:fs';
+import { basename, join, resolve, sep } from 'node:path';
 import { randomUUID } from 'node:crypto';
+import { mediaUsage } from '../src/content/mediaUsage.ts';
+import type { Story } from '../src/engine/engine.ts';
 
 export const MAX_MEDIA_BYTES = 64 * 1024 * 1024;
 type Kind = 'image' | 'audio';
@@ -15,6 +18,110 @@ export function createMediaStore(root: string) {
     catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return {}; throw error; }
   }
   async function catalog() { return { images: await registry('image'), audio: await registry('audio') }; }
+  async function saveRegistry(kind: Kind, assets: Catalog) {
+    const temporary = `${registryPath(kind)}.tmp-${randomUUID()}`;
+    try {
+      await writeFile(temporary, JSON.stringify(assets, null, 2) + '\n', 'utf8');
+      await rename(temporary, registryPath(kind));
+    } finally { await unlink(temporary).catch(() => {}); }
+  }
+  function mediaPath(kind: Kind, file: unknown) {
+    if (typeof file !== 'string' || !file || basename(file) !== file || /[\\/:\x00-\x1f]/.test(file)) fail('Некорректный путь файла.');
+    return join(root, 'src/assets', kind === 'image' ? 'illustrations' : 'audio', file as string);
+  }
+  async function removeItem(kind: Kind, id: string) {
+    if (!['image', 'audio'].includes(kind)) fail('Неизвестный тип библиотеки.');
+    const assets = await registry(kind);
+    if (!Object.hasOwn(assets, id)) fail('Файл уже удалён или не найден.');
+    const story = JSON.parse(await readFile(join(root, 'src/content/story.json'), 'utf8')) as Story;
+    const uses = mediaUsage(story, kind, id);
+    for (const [alias, item] of Object.entries(assets)) if (item.fallback === id) uses.push(`Замена для ${alias}`);
+    if (uses.length) fail(`Файл используется. Сначала уберите привязки и сохраните сюжет:\n${uses.join('\n')}`);
+    const asset = assets[id];
+    const shared = Object.entries(assets).some(([other, item]) => other !== id && item.file && item.file === asset.file);
+    const ticket = `${Date.now()}-${randomUUID()}`;
+    const directory = join(root, '.editor-media-trash', ticket);
+    let moved = false;
+    const source = asset.file ? mediaPath(kind, asset.file) : undefined;
+    if (source && !shared) {
+      try {
+        const actual = await realpath(source);
+        const allowed = await realpath(join(root, 'src/assets', kind === 'image' ? 'illustrations' : 'audio'));
+        if (!actual.startsWith(allowed + sep)) fail('Файл находится вне библиотеки.');
+      } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+    }
+    await mkdir(directory, { recursive: true });
+    if (source && !shared) {
+      try { await rename(source, join(directory, asset.file as string)); moved = true; }
+      catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+    }
+    try {
+      await writeFile(join(directory, 'metadata.json'), JSON.stringify({ kind, id, asset, moved }, null, 2));
+      delete assets[id];
+      await saveRegistry(kind, assets);
+    } catch (error) {
+      if (moved) await rename(join(directory, asset.file as string), source!);
+      throw error;
+    }
+    return { ticket, id };
+  }
+  async function restoreItem(ticket: string) {
+    if (!/^\d{13}-[a-f0-9-]{36}$/.test(ticket)) fail('Некорректная запись корзины.');
+    const directory = resolve(root, '.editor-media-trash', ticket);
+    const record = JSON.parse(await readFile(join(directory, 'metadata.json'), 'utf8')) as { kind: Kind; id: string; asset: Record<string, unknown>; moved: boolean };
+    if (!['image', 'audio'].includes(record.kind)) fail('Некорректный тип файла.');
+    const assets = await registry(record.kind);
+    if (Object.hasOwn(assets, record.id)) fail('Этот ID уже занят.');
+    let restored: string | undefined;
+    if (record.moved) {
+      const destination = mediaPath(record.kind, record.asset.file);
+      await copyFile(join(directory, record.asset.file as string), destination, constants.COPYFILE_EXCL);
+      restored = destination;
+    }
+    try { assets[record.id] = record.asset; await saveRegistry(record.kind, assets); }
+    catch (error) { if (restored) await unlink(restored); throw error; }
+    return { id: record.id };
+  }
+  function serialize<T>(job: () => Promise<T>): Promise<T> {
+    const result = queue.then(job); queue = result.catch(() => {}); return result;
+  }
+
+  async function trashEntries() {
+    const workspace = await realpath(root);
+    const directory = resolve(root, '.editor-media-trash');
+    try {
+      const info = await lstat(directory);
+      if (!info.isDirectory() || info.isSymbolicLink() || await realpath(directory) !== join(workspace, '.editor-media-trash')) fail('Некорректный путь корзины.');
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') return [];
+      throw error;
+    }
+    const entries: { path: string; bytes: number }[] = [];
+    for (const name of await readdir(directory)) {
+      if (!/^\d{13}-[a-f0-9-]{36}$/.test(name)) continue;
+      const target = resolve(directory, name);
+      const info = await lstat(target);
+      if (!info.isDirectory() || info.isSymbolicLink() || await realpath(target) !== join(workspace, '.editor-media-trash', name)) fail('Некорректная запись корзины.');
+      let bytes = 0;
+      for (const file of await readdir(target)) {
+        const item = await lstat(join(target, file));
+        if (!item.isFile() || item.isSymbolicLink()) fail('В корзине обнаружен посторонний каталог или ссылка.');
+        bytes += item.size;
+      }
+      entries.push({ path: target, bytes });
+    }
+    return entries;
+  }
+  async function trashSummary() {
+    const entries = await trashEntries();
+    return { count: entries.length, bytes: entries.reduce((sum, entry) => sum + entry.bytes, 0) };
+  }
+  async function emptyTrash() {
+    // Verify every absolute target before any recursive removal. Never follow links.
+    const entries = await trashEntries();
+    for (const entry of entries) await rm(entry.path, { recursive: true });
+    return { count: entries.length, bytes: entries.reduce((sum, entry) => sum + entry.bytes, 0) };
+  }
 
   async function store(kind: Kind, name: string, bytes: Buffer, width?: number, height?: number) {
     if (!['image', 'audio'].includes(kind)) fail('Неизвестный тип библиотеки.');
@@ -75,5 +182,5 @@ export function createMediaStore(root: string) {
     queue = job.catch(() => {});
     return job;
   }
-  return { catalog, upload };
+  return { catalog, upload, remove: (kind: Kind, id: string) => serialize(() => removeItem(kind, id)), restore: (ticket: string) => serialize(() => restoreItem(ticket)), trash: () => serialize(trashSummary), emptyTrash: () => serialize(emptyTrash) };
 }

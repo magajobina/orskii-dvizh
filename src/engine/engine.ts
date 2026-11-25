@@ -1,7 +1,7 @@
 export type Option = { id: string; text: string; next: string; once?: boolean };
 export type Shake = { variant: 'tremble' | 'impact' | 'sway'; durationMs: number };
 export type Node = (
-  | { type: 'text'; text: string; next: string; audio?: string; delayMs?: number }
+  | { type: 'text'; text: string; next: string; audio?: string; delayMs?: number; hideInterfaceMs?: number }
   | { type: 'scene'; asset: string; next: string; shake?: Shake }
   | { type: 'jump'; next: string }
   | { type: 'choice'; options: Option[]; prompt?: string }

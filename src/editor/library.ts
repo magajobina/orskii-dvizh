@@ -38,6 +38,41 @@ export const mediaAccept = {
   audio: '.mp3,.wav,.ogg,.m4a,.aac,.flac',
 };
 
+export async function removeMedia(kind: 'image' | 'audio', id: string): Promise<string> {
+  const response = await fetch('/__editor/media', {
+    method: 'DELETE', headers: { 'Content-Type': 'application/json', 'X-Orsk-Editor': '1' }, body: JSON.stringify({ kind, id }),
+  });
+  const result = await response.json();
+  if (!response.ok) throw Error(result.error ?? 'Не удалось удалить файл.');
+  await refreshLibrary();
+  return result.ticket;
+}
+
+export async function restoreMedia(ticket: string) {
+  const response = await fetch('/__editor/media/restore', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Orsk-Editor': '1' }, body: JSON.stringify({ ticket }),
+  });
+  const result = await response.json();
+  if (!response.ok) throw Error(result.error ?? 'Не удалось восстановить файл.');
+  await refreshLibrary();
+}
+
+export type MediaTrash = { count: number; bytes: number };
+export async function mediaTrash(): Promise<MediaTrash> {
+  const response = await fetch('/__editor/media/trash');
+  const result = await response.json();
+  if (!response.ok) throw Error(result.error ?? 'Не удалось прочитать корзину.');
+  return result;
+}
+export async function emptyMediaTrash(): Promise<MediaTrash> {
+  const response = await fetch('/__editor/media/trash', {
+    method: 'DELETE', headers: { 'Content-Type': 'application/json', 'X-Orsk-Editor': '1' }, body: JSON.stringify({ confirm: true }),
+  });
+  const result = await response.json();
+  if (!response.ok) throw Error(result.error ?? 'Не удалось очистить корзину.');
+  return result;
+}
+
 function imageSize(file: File): Promise<{ width: number; height: number }> {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file);

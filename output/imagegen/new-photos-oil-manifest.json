@@ -673,5 +673,40 @@
     "original": "bg-troitsa-lestnitsa-akashev-fotomontazh.png",
     "asset": "bg-troitsa-lestnitsa-akashev-fotomontazh-oil",
     "generated": "exec-e17fe7a7-0ade-4200-a83e-ad9903d1eeee.png"
+  },
+  {
+    "original": "stoyanka.jpg",
+    "asset": "bg-stoyanka-moem-samolet-oil",
+    "generated": "exec-dfdcb130-3d5e-47f6-a833-4bedf41917f2.png"
+  },
+  {
+    "original": "bg-stoyanka-moem-samolet-oil.png",
+    "asset": "bg-stoyanka-moem-samolet-ne-v-kameru-oil",
+    "generated": "exec-ac8d15b1-2ddc-41eb-a190-d6dc54178968.png"
+  },
+  {
+    "original": "bg-stoyanka-moem-samolet-ne-v-kameru-oil.png",
+    "asset": "bg-stoyanka-yarik-vylivaet-vedro-oil",
+    "generated": "exec-07957484-1328-45bc-abe6-fc0f63476e29.png"
+  },
+  {
+    "original": "bg-stoyanka-yarik-vylivaet-vedro-oil.png",
+    "asset": "bg-stoyanka-yarik-vylivaet-vedro-v2-oil",
+    "generated": "exec-20cbac5a-d6d6-47e5-a505-72c3c722e8ed.png"
+  },
+  {
+    "original": "bg-stoyanka-yarik-vylivaet-vedro-v2-oil.png",
+    "asset": "bg-stoyanka-yarik-vylivaet-vedro-v3-oil",
+    "generated": "exec-5d52bf98-f92c-4f2a-a22e-5c82155262a8.png"
+  },
+  {
+    "original": "bg-alik-pomogaet-yariku-umytsya.png",
+    "asset": "bg-yarik-v-luzhe-blevotiny-oil",
+    "generated": "exec-56c7e161-fb8a-4356-81f9-b09357883c87.png"
+  },
+  {
+    "original": "bg-yarik-v-luzhe-blevotiny-oil.png",
+    "asset": "bg-yarik-plastom-v-luzhe-blevotiny-oil",
+    "generated": "exec-c2db964b-20b7-4fb6-83e0-4822a2a2d289.png"
   }
 ]

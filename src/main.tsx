@@ -5,9 +5,11 @@ import type { Chapter, Story } from './engine/engine';
 import data from './content/story.json';
 import { useMedia } from './engine/useMedia';
 import { useTypewriter } from './engine/useTypewriter';
-import { imageFilename, imageURL } from './content/assets';
+import { imageURL } from './content/assets';
+import { useInterfacePause } from './engine/useInterfacePause';
 import aircraftDrawing from './assets/decorations/da40.png';
 import propellerDrawing from './assets/decorations/propeller.png';
+import PhotoGallery from './gallery/PhotoGallery';
 import '@fontsource-variable/golos-text';
 import '@fontsource-variable/oswald';
 import './styles.css';
@@ -42,6 +44,7 @@ function ChapterDialog({ onSelect, onClose }: { onSelect: (chapter: Chapter) => 
 }
 
 function App() {
+  const [galleryOpen, setGalleryOpen] = useState(false);
   const [theme, setTheme] = useState<Theme>(themes.some(item => item.id === requestedTheme) ? requestedTheme as Theme : 'cinema');
   const [playing, setPlaying] = useState(Boolean(params.get('scene')) || (import.meta.env.DEV && params.has('playtest')));
   const [state, setState] = useState(() => {
@@ -53,9 +56,10 @@ function App() {
   });
   const [chaptersOpen, setChaptersOpen] = useState(false);
   const [returning, setReturning] = useState(false);
+  const [hiddenDialogueFor, setHiddenDialogueFor] = useState<unknown>(null);
   const screen = useRef<HTMLElement>(null);
   const artStage = useRef<HTMLDivElement>(null);
-  useMedia(story, state, playing, artStage);
+  useMedia(story, state, playing && !galleryOpen, artStage);
   const node = story.nodes[state.current];
   const options = availableOptions(story, state);
   const textId = node.type === 'text' ? state.current : node.type === 'choice'
@@ -63,8 +67,9 @@ function App() {
     : undefined;
   const textNode = textId ? story.nodes[textId] : undefined;
   const text = textNode?.type === 'text' ? textNode.text : node.type === 'end' ? 'Конец' : '';
-  const typed = useTypewriter(text, state, playing && node.type === 'text' && !returning, textNode?.type === 'text' ? textNode.delayMs ?? 0 : 0);
-  const visibleImage = playing ? state.scene : story.cover;
+  const pause = useInterfacePause(state, node.type === 'text' ? node.hideInterfaceMs ?? 0 : 0, playing && node.type === 'text' && !returning);
+  const dialogueHidden = hiddenDialogueFor === state;
+  const typed = useTypewriter(text, state, playing && node.type === 'text' && !returning && !pause.hidden, textNode?.type === 'text' ? textNode.delayMs ?? 0 : 0);
 
   useEffect(() => {
     const url = new URL(location.href);
@@ -74,7 +79,11 @@ function App() {
     history.replaceState(null, '', url);
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', { cinema: '#181b1b', cold: '#151e25', amber: '#201d1a', film: '#1c201d' }[theme]);
   }, [theme]);
-  useEffect(() => { if (playing && !chaptersOpen) screen.current?.focus({ preventScroll: true }); }, [state.current, playing, chaptersOpen]);
+  useEffect(() => { if (playing && !chaptersOpen && !galleryOpen) screen.current?.focus({ preventScroll: true }); }, [state.current, playing, chaptersOpen, galleryOpen]);
+  useEffect(() => {
+    if (!playing || node.type !== 'end') return;
+    setGalleryOpen(true);
+  }, [playing, state.current, node.type]);
 
   function openChapter(chapter?: Chapter) {
     setReturning(false);
@@ -83,6 +92,9 @@ function App() {
     setPlaying(true);
   }
   function next() {
+    if (pause.hidden) { pause.reveal(); return; }
+    if (dialogueHidden) { setHiddenDialogueFor(null); return; }
+    if (node.type === 'end') { setGalleryOpen(true); return; }
     if (typed.pending) { typed.complete(); return; }
     setReturning(false);
     setState(state => advance(story, state));
@@ -92,7 +104,7 @@ function App() {
     setReturning(true);
     setState(back);
   }
-  return <div className={`novel theme-${theme}`}>
+  return <div className={`novel theme-${theme}${pause.hidden ? ' interface-paused' : ''}`}>
     <div className="theme-switcher" role="group" aria-label="Оформление">{themes.map(item => <button key={item.id} aria-pressed={theme === item.id} onClick={() => setTheme(item.id)}>{item.name}</button>)}</div>
     {playing ? <main ref={screen} className="game-screen" tabIndex={0} aria-label="Игра"
       onClick={event => { if (!(event.target as Element).closest('button,dialog')) next(); }}
@@ -107,25 +119,22 @@ function App() {
         <div className="technical-drawing propeller-drawing" style={{ maskImage: `url(${propellerDrawing})` }} />
       </div>
       <button className="menu-button" onClick={() => setPlaying(false)}>Главное меню</button>
-      <section className="dialogue" aria-label="Реплика"><p aria-label={text}>{typed.text}</p><span className="continue-mark" aria-hidden="true">{node.type === 'text' && !typed.pending ? '▾' : ''}</span><button className="back-button" disabled={state.history.length === 0} onClick={goBack}>Назад</button></section>
+      <section className={`dialogue${dialogueHidden ? ' dialogue-collapsed' : ''}`} aria-label="Реплика">
+        <button className="dialogue-toggle" aria-label={dialogueHidden ? 'Показать текст' : 'Скрыть текст'} aria-expanded={!dialogueHidden} title={dialogueHidden ? 'Показать текст' : 'Скрыть текст'} onClick={() => setHiddenDialogueFor(dialogueHidden ? null : state)}>{dialogueHidden ? '⌃' : '⌄'}</button>
+        <div className="dialogue-content" hidden={dialogueHidden}><p aria-label={text}>{typed.text}</p>{node.type === 'end' && <button className="end-gallery-button" onClick={() => setGalleryOpen(true)}>Открыть галерею</button>}<button className="back-button" disabled={state.history.length === 0} onClick={goBack}>Назад</button></div>
+      </section>
       {node.type === 'choice' && <div className="choice-scrim"><div className="choices" role="group" aria-label="Варианты ответа">{options.map(option => <button key={option.id} onClick={() => { setReturning(false); setState(state => choose(story, state, option.id)); }}>{option.text}</button>)}</div></div>}
       <span className="chapter-label">{story.chapters.find(chapter => chapter.id === state.chapterId)?.title ?? ''}</span>
     </main> : <main className="home-screen">
       <div className="cover-stage"><img src={imageURL(story.cover)} alt="Авиационная карта Орска и навигационные линейки" fetchPriority="high" /></div>
       <section className="home-menu"><h1>ОРСКИЙ<span>ДВИЖ<span className="title-period">.</span></span></h1>
         <p>Основано на событиях,<br />которые лучше не объяснять.</p>
-        <div className="home-buttons"><button onClick={() => openChapter()}>Начать игру</button><button onClick={() => setChaptersOpen(true)}>Выбрать главу</button></div>
+        <div className="home-buttons"><button onClick={() => openChapter()}>Начать игру</button><button onClick={() => setChaptersOpen(true)}>Выбрать главу</button><button onClick={() => setGalleryOpen(true)}>Галерея</button></div>
         <div className="practice-stamp"><span>ЛЁТНАЯ ПРАКТИКА</span><strong>ДОПУЩЕН</strong><span>К ПЛОХИМ РЕШЕНИЯМ</span></div>
       </section>
     </main>}
-    <aside className="scene-debug" aria-label="Отладочные ID сцены">
-      <div><span>{playing ? node.type : 'screen'}</span> <code>{playing ? state.current : 'main-menu'}</code></div>
-      {playing && node.type === 'choice' && textId && <div><span>text</span> <code>{textId}</code></div>}
-      <div><span>image</span> <code>{visibleImage}</code></div>
-      <div className="debug-filename">{imageFilename(visibleImage)}</div>
-      {playing && node.type === 'choice' && <div><span>answers</span> <code>{options.map(option => option.id).join(' / ')}</code></div>}
-    </aside>
     {chaptersOpen && <ChapterDialog onSelect={openChapter} onClose={() => setChaptersOpen(false)} />}
+    {galleryOpen && <PhotoGallery onClose={() => setGalleryOpen(false)} />}
   </div>;
 }
 const LocalEditor = import.meta.env.DEV ? lazy(() => import('./editor/Editor')) : null;

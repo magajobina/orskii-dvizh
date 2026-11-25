@@ -62,3 +62,17 @@ test('text delay roundtrips in backups and rejects invalid values', () => {
   s.nodes.first.delayMs = 0;
   assert.equal(parseDocument(s).story.nodes.first.delayMs, 0);
 });
+
+test('cinematic interface pause survives save, advance and rollback; invalid durations are rejected', () => {
+  const s = story(); s.nodes.first.hideInterfaceMs = 2500;
+  const saved = parseDocument(JSON.parse(JSON.stringify(s))).story;
+  assert.equal(saved.nodes.first.hideInterfaceMs, 2500);
+  const first = start(saved);
+  const previous = back(advance(saved, first));
+  assert.equal(previous.current, first.current);
+  assert.equal(saved.nodes[previous.current].hideInterfaceMs, 2500);
+  for (const value of [-1, Infinity, '1000', null]) {
+    s.nodes.first.hideInterfaceMs = value;
+    assert.throws(() => parseDocument(s), /скрытия интерфейса/);
+  }
+});
