@@ -728,5 +728,20 @@
     "original": "g4-class-zaval-bez-akasheva.png",
     "asset": "g4-class-menshe-tel-studenty-plachut-oil",
     "generated": "exec-a7fc52fc-21d0-4a80-8ebd-83c0289630b8.png"
+  },
+  {
+    "original": "bg-terminal-pryachemsya-ot-troitsy-oil.png",
+    "asset": "bg-terminal-pryachemsya-ot-troitsy-step-oil",
+    "generated": "exec-451e4ab4-bb7c-4e75-ac97-49ebb4353dd2.png"
+  },
+  {
+    "original": "bg-terminal-pryachemsya-ot-troitsy-step-oil.png",
+    "asset": "bg-terminal-pryachemsya-step-parkovka-besedka-oil",
+    "generated": "exec-b594c102-9d92-4551-b1c8-6f0e91ea7cb5.png"
+  },
+  {
+    "original": "bg-terminal-pryachemsya-step-parkovka-besedka-oil.png",
+    "asset": "bg-terminal-pryachemsya-step-parkovka-besedka-v2-oil",
+    "generated": "exec-ce0c62b2-34ef-4761-b3a5-772f608ed1cb.png"
   }
 ]

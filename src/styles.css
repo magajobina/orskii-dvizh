@@ -33,7 +33,7 @@ button:disabled { cursor: default; opacity: .35; }
 .dialogue-toggle:hover { color: var(--accent); opacity: 1; }
 .dialogue.dialogue-collapsed { min-height: 30px; padding: 0; border: 0; background: none; overflow: visible; }
 .dialogue-collapsed .dialogue-toggle { background: var(--panel); }
-.interface-paused .theme-switcher, .interface-paused .menu-button, .interface-paused .dialogue, .interface-paused .chapter-label, .interface-paused .technical-decorations { visibility: hidden; pointer-events: none; }
+.interface-paused .theme-switcher, .interface-paused .menu-button, .interface-paused .dialogue, .interface-paused .chapter-label { visibility: hidden; pointer-events: none; }
 .home-screen { display: grid; grid-template-columns: 33% 67%; }
 .cover-stage { grid-column: 2; grid-row: 1; height: 100svh; }
 .home-menu { grid-column: 1; grid-row: 1; padding: 70px clamp(24px, 4vw, 65px) 45px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }

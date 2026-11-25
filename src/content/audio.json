@@ -111,5 +111,11 @@
     "title": "human_scream_-_scream",
     "source": "Локальный импорт",
     "license": "Не указана"
+  },
+  "orsk-atis-record": {
+    "file": "orsk-atis-record.mp3",
+    "title": "orsk-atis-record",
+    "source": "Локальный импорт",
+    "license": "Не указана"
   }
 }

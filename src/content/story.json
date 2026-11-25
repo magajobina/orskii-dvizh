@@ -961,7 +961,7 @@
       "next": "line-546",
       "chapterId": "gostichkayarik",
       "audio": "wet-fart",
-      "hideInterfaceMs": 1000
+      "hideInterfaceMs": 1500
     },
     "line-542": {
       "type": "choice",
@@ -1662,7 +1662,7 @@
     },
     "text-60e67ec1": {
       "type": "text",
-      "text": "«Я один раз, извините, в туалет зашел, а там один стоит срёт. Я спросил чё стоя срёшь, видно же твоё лицо скукоженное. А он мне - «я вообще-то дрочу». Сразу ясно - срака болит, даже врать приходится. Как же их там запугали, что они дрочкой прикрываются.",
+      "text": "«Я один раз, извините, в туалет зашел, а там один стоит срёт. Я спросил чё стоя срёшь, видно же по лицу что серишь стоишь. А он мне - «я вообще-то дрочу». Сразу ясно - срака болит у него, даже врать приходится. Как же их там запугали, что они дрочкой прикрываются.",
       "next": "scene-7b1a7134",
       "chapterId": "chapter-63e8615e"
     },
@@ -1675,7 +1675,7 @@
     },
     "text-65ffbd28": {
       "type": "text",
-      "text": "Достает ручку из подручницы, бумагу из подбумажника, и издаёт некоторый указ, указывая пальцами на двоих присутствующих в зале: двоих людей, кто своей аурой может помериться только с самим Акашевым...",
+      "text": "Достает ручку из подручницы, бумагу из подбумажника, и издаёт некоторый указ, указывая пальцами на двоих присутствующих в зале - двоих людей, кто своей аурой может помериться только с самим Акашевым...",
       "next": "scene-9402047d",
       "chapterId": "chapter-63e8615e"
     },
@@ -1757,7 +1757,7 @@
         {
           "id": "choice-dbdc64ec-answer-d320b952",
           "text": "Накрутить частоту 125.900",
-          "next": "text-a83eb9a6"
+          "next": "text-7906a741"
         }
       ],
       "chapterId": "chapter-63e8615e"
@@ -1840,7 +1840,7 @@
     },
     "text-ada9a782": {
       "type": "text",
-      "text": "Как только настала нужная минута Зиненко ебанул руды на взлетный режим, и вы через 5 секунд оказались на ВПП, а ещё через одну секунду уже на разбеге. И это всё попутно общаяясь с диспом Орск-вышки и щёлкая все тумблеры и кнопки с немыслимой для вас скоростью.",
+      "text": "Как только настала нужная минута Зиненко ебанул руды на взлетный режим, и через 5 секунд вы оказались на ВПП, а ещё через одну секунду уже на разбеге. И это всё попутно общаяясь с диспом Орск-вышки и щёлкая все тумблеры и кнопки с немыслимой для вас скоростью.",
       "next": "scene-9fd01b15",
       "chapterId": "chapter-63e8615e"
     },
@@ -1944,19 +1944,24 @@
       "type": "text",
       "text": "Все вахуи",
       "next": "text-02f979bc",
-      "chapterId": "chapter-63e8615e"
+      "chapterId": "chapter-63e8615e",
+      "hideInterfaceMs": 2500
     },
     "text-02f979bc": {
       "type": "text",
-      "text": "Оценка - удивительно! \nЧего не здороваетесь? А мы вообще-то вас спасать прилетели. Идём ебать Акашева за то что вам жизни не даёт, летать мешает, и трогает за хуй.",
-      "next": "text-073a42ae",
+      "text": "\"Оценка - удивительно!\" - молвил Гегам.",
+      "next": "text-7e752579",
       "chapterId": "chapter-63e8615e"
     },
     "scene-af01e5f4": {
       "type": "scene",
       "asset": "bg-gegam-aleshkov-trap-v1",
       "next": "text-cf0b8c69",
-      "chapterId": "chapter-63e8615e"
+      "chapterId": "chapter-63e8615e",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 200
+      }
     },
     "text-073a42ae": {
       "type": "text",
@@ -1988,12 +1993,6 @@
       "next": "text-f7bf34a9",
       "chapterId": "chapter-63e8615e"
     },
-    "text-4b26fde1": {
-      "type": "text",
-      "text": "Эта гулянка была легендарной",
-      "next": "scene-574164e2",
-      "chapterId": "chapter-63e8615e"
-    },
     "scene-c6da7cd9": {
       "type": "scene",
       "asset": "bg-studenty-begut-v-gostinitsu-oil",
@@ -2011,7 +2010,8 @@
       "text": "...",
       "next": "scene-aa28fbf7",
       "chapterId": "chapter-63e8615e",
-      "audio": "orsk-praktika-audio-1"
+      "audio": "orsk-praktika-audio-1",
+      "hideInterfaceMs": 8000
     },
     "scene-aa28fbf7": {
       "type": "scene",
@@ -2024,7 +2024,8 @@
       "text": "...",
       "next": "scene-5b0d7690",
       "chapterId": "chapter-63e8615e",
-      "audio": "orsk-praktika-audio-2"
+      "audio": "orsk-praktika-audio-2",
+      "hideInterfaceMs": 17000
     },
     "scene-5b0d7690": {
       "type": "scene",
@@ -2035,9 +2036,10 @@
     "text-5129dad6": {
       "type": "text",
       "text": "...",
-      "next": "scene-f524f256",
+      "next": "copy-875f8b2c-0",
       "chapterId": "chapter-63e8615e",
-      "audio": "orsk-praktika-audio-3"
+      "audio": "orsk-praktika-audio-3",
+      "hideInterfaceMs": 16000
     },
     "text-77b2277a": {
       "type": "text",
@@ -2083,7 +2085,7 @@
     },
     "scene-73a2e9fe": {
       "type": "scene",
-      "asset": "bg-terminal-pryachemsya-ot-troitsy-oil",
+      "asset": "bg-terminal-pryachemsya-step-parkovka-besedka-v2-oil",
       "next": "text-d8654171",
       "chapterId": "chapter-63e8615e"
     },
@@ -2095,7 +2097,7 @@
     },
     "text-1ed75a1a": {
       "type": "text",
-      "text": "Акашев: «Я же говорю: они только и делают что нажираются. А одна компашка вообще пару недель назад разъебала толкан в баре Трава».",
+      "text": "Акашев: «Я же говорю: они только и делают что нажираются. А одна компашка вообще пару недель назад разъебала толкан в Траве».",
       "next": "text-5cc5dc67",
       "chapterId": "chapter-63e8615e"
     },
@@ -2127,7 +2129,7 @@
       "options": [
         {
           "id": "choice-b2c44e3a-answer-1",
-          "text": "Надо бежать",
+          "text": "Надо бежать к ребятам",
           "next": "scene-00b31f65"
         }
       ],
@@ -2143,7 +2145,8 @@
       "type": "text",
       "text": "Вы забегаете в комнату, а там пиздааа",
       "next": "text-58106e6f",
-      "chapterId": "chapter-63e8615e"
+      "chapterId": "chapter-63e8615e",
+      "hideInterfaceMs": 3000
     },
     "choice-bbb6d0c3": {
       "type": "choice",
@@ -2283,13 +2286,19 @@
       "type": "scene",
       "asset": "bg-troitsa-na-poroge-gostinitsy-oil",
       "next": "text-1066c676",
-      "chapterId": "chapter-63e8615e"
+      "chapterId": "chapter-63e8615e",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 400
+      }
     },
     "text-1066c676": {
       "type": "text",
       "text": "\"Оценка - охуительно!\" - говорит Гегам.\n\"Чё в пакетах мазафака?\" - спрашивает Алешков.",
       "next": "scene-eee678ff",
-      "chapterId": "chapter-63e8615e"
+      "chapterId": "chapter-63e8615e",
+      "hideInterfaceMs": 1500,
+      "audio": "tom-scared"
     },
     "text-b26b4bdd": {
       "type": "text",
@@ -2347,7 +2356,8 @@
       "text": "...",
       "next": "scene-b9b9cbb3",
       "chapterId": "chapter-63e8615e",
-      "audio": "jg-032316-sfx-horror-style-impact-3-2"
+      "audio": "jg-032316-sfx-horror-style-impact-3-2",
+      "hideInterfaceMs": 2000
     },
     "scene-b9b9cbb3": {
       "type": "scene",
@@ -2364,7 +2374,8 @@
       "text": "...",
       "next": "copy-fe8da9d0-0",
       "chapterId": "chapter-63e8615e",
-      "audio": "boom-door"
+      "audio": "boom-door",
+      "hideInterfaceMs": 2000
     },
     "copy-fe8da9d0-0": {
       "type": "scene",
@@ -2374,11 +2385,11 @@
     },
     "copy-fe8da9d0-1": {
       "type": "text",
-      "text": "Вы сдохли",
+      "text": "Неправильно блять",
       "next": "scene-e5b24fdb",
       "chapterId": "chapter-63e8615e",
-      "delayMs": 4000,
-      "audio": "wrong-try-again"
+      "audio": "wrong-try-again",
+      "hideInterfaceMs": 4000
     },
     "scene-94c1fa1e": {
       "type": "scene",
@@ -2406,7 +2417,8 @@
       "type": "text",
       "text": "...",
       "next": "scene-ead49783",
-      "chapterId": "chapter-63e8615e"
+      "chapterId": "chapter-63e8615e",
+      "hideInterfaceMs": 2000
     },
     "text-e23f9a62": {
       "type": "text",
@@ -2422,10 +2434,11 @@
     },
     "text-f7e82011": {
       "type": "text",
-      "text": "Поздравляем, вас разъебало",
+      "text": "Поздравляем, вас убило",
       "next": "scene-e5b24fdb",
       "chapterId": "chapter-63e8615e",
-      "audio": "Macan-A.V.G---privikau"
+      "audio": "Macan-A.V.G---privikau",
+      "hideInterfaceMs": 3000
     },
     "text-aea05247": {
       "type": "text",
@@ -2454,9 +2467,10 @@
     "text-8c7494a7": {
       "type": "text",
       "text": "...",
-      "next": "copy-fe8da9d0-1",
+      "next": "scene-f42df0de",
       "chapterId": "chapter-63e8615e",
-      "audio": "zvuk-probivaniya-dveri"
+      "audio": "zvuk-probivaniya-dveri",
+      "hideInterfaceMs": 2000
     },
     "scene-604b15aa": {
       "type": "scene",
@@ -2556,9 +2570,10 @@
     },
     "text-0cc28db5": {
       "type": "text",
-      "text": "Блять, откуда",
-      "next": "text-ed64edfc",
-      "chapterId": "chapter-63e8615e"
+      "text": "...",
+      "next": "text-a665d463",
+      "chapterId": "chapter-63e8615e",
+      "hideInterfaceMs": 1500
     },
     "scene-ef07a636": {
       "type": "scene",
@@ -2611,7 +2626,8 @@
       "text": "Бляяяяяя",
       "next": "choice-3425f637",
       "chapterId": "chapter-63e8615e",
-      "delayMs": 1500
+      "hideInterfaceMs": 1500,
+      "audio": "jg-032316-sfx-horror-style-impact-3"
     },
     "text-a768b003": {
       "type": "text",
@@ -2633,8 +2649,8 @@
     },
     "text-90e5512f": {
       "type": "text",
-      "text": "Я ходил туда абсолютно ничего не делать. Вам тоже не советую",
-      "next": "text-7b2c3ae5",
+      "text": "Я ходил туда абсолютно ничего не делать.",
+      "next": "text-f1548903",
       "chapterId": "chapter-63e8615e"
     },
     "text-7b2c3ae5": {
@@ -2664,7 +2680,7 @@
     "text-bd196cf2": {
       "type": "text",
       "text": "А все ваши друзья закончили полёты в рекордные сроки, ведь им ставили полёты каждый божий день, потому что та тройца полупокеров-командиров очень прониклась к той картине что они увидели в комнате ваших друзей. Ну и конечно потому что они отъебали Акашева за то что не давал вам летать нормально.",
-      "next": "chapter-63e8615e-end",
+      "next": "text-da700bd2",
       "chapterId": "chapter-63e8615e"
     },
     "choice-3425f637": {
@@ -2766,18 +2782,20 @@
       "type": "text",
       "text": "Поздравляем, это всё что от вас осталось",
       "next": "scene-e5b24fdb",
-      "chapterId": "chapter-63e8615e"
+      "chapterId": "chapter-63e8615e",
+      "audio": "Macan-A.V.G---privikau",
+      "hideInterfaceMs": 1500
     },
     "text-f7bf34a9": {
       "type": "text",
-      "text": "Вы сходили умылись, и пошли к ребятам. Ещё на подходе к комнате ваших друзей вы услышали шум, который не мог означать ничего иначе, как звуки блядства. Вы входите в комнату.",
+      "text": "Вы сходили умылись, и пошли к ребятам. Ещё на подходе к комнате ваших друзей вы услышали шум, который не мог означать ничего иначе, кроме как звуки блядства. Вы входите в комнату.",
       "next": "text-6aef9833",
       "chapterId": "chapter-63e8615e"
     },
     "text-6aef9833": {
       "type": "text",
       "text": "Перед вами предстаёт картина, в комнате 3х3 метра сидит 100 человек, Алик и Серега играют на гитаре, все пьют водку.",
-      "next": "text-4b26fde1",
+      "next": "scene-574164e2",
       "chapterId": "chapter-63e8615e"
     },
     "scene-e3a318be": {
@@ -2791,6 +2809,50 @@
       "asset": "eto-vi",
       "next": "line-534",
       "chapterId": "gostichkayarik"
+    },
+    "text-7906a741": {
+      "type": "text",
+      "text": "АХАХА сикс севен",
+      "next": "text-a83eb9a6",
+      "chapterId": "chapter-63e8615e",
+      "audio": "orsk-atis-record",
+      "delayMs": 2000
+    },
+    "text-7e752579": {
+      "type": "text",
+      "text": "\"А мы вообще-то вас спасать прилетели. Идём ебать Акашева за то что вам жизни не даёт, летать мешает, и трогает за хуй.\"",
+      "next": "text-073a42ae",
+      "chapterId": "chapter-63e8615e"
+    },
+    "copy-875f8b2c-0": {
+      "type": "text",
+      "text": "Эта гулянка была легендарной",
+      "next": "scene-f524f256",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-f42df0de": {
+      "type": "scene",
+      "asset": "ne-pravilno",
+      "next": "copy-fe8da9d0-1",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-a665d463": {
+      "type": "text",
+      "text": "Блять, откуда тут это кресло",
+      "next": "text-ed64edfc",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-f1548903": {
+      "type": "text",
+      "text": "Вам тоже не советую",
+      "next": "text-7b2c3ae5",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-da700bd2": {
+      "type": "text",
+      "text": "Конец!",
+      "next": "chapter-63e8615e-end",
+      "chapterId": "chapter-63e8615e"
     }
   }
 }

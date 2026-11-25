@@ -1406,5 +1406,25 @@
     "file": "eto-vi.jpg",
     "width": 800,
     "height": 709
+  },
+  "bg-terminal-pryachemsya-ot-troitsy-step-oil": {
+    "file": "bg-terminal-pryachemsya-ot-troitsy-step-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-terminal-pryachemsya-step-parkovka-besedka-oil": {
+    "file": "bg-terminal-pryachemsya-step-parkovka-besedka-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-terminal-pryachemsya-step-parkovka-besedka-v2-oil": {
+    "file": "bg-terminal-pryachemsya-step-parkovka-besedka-v2-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "ne-pravilno": {
+    "file": "ne-pravilno.png",
+    "width": 720,
+    "height": 405
   }
 }
