@@ -623,5 +623,55 @@
     "original": "bg-troitsa-na-poroge-gostinitsy-oil",
     "asset": "bg-troitsa-akashev-bodrov-obrez-oil",
     "generated": "exec-e0f21ec9-3d27-447e-83a7-8f5253cf264c.png"
+  },
+  {
+    "original": "bg-gostinitsa-bezhim-s-paketami-oil.png",
+    "asset": "bg-gostinitsa-bezhim-s-paketami-step-oil",
+    "generated": "exec-62a2c3d3-4df0-4152-9fe0-36b34f133e79.png"
+  },
+  {
+    "original": "new-basement-scene",
+    "asset": "bg-tsokol-koridor-s-paketami-oil",
+    "generated": "exec-1b3d1a99-1bbd-441e-975d-15e56bac6ddc.png"
+  },
+  {
+    "original": "new-basement-chair-scene",
+    "asset": "bg-tsokol-komnata-ginekologicheskoe-kreslo-oil",
+    "generated": "exec-18165c59-4c13-435b-8cf8-6a3b2a115b2b.png"
+  },
+  {
+    "original": "bg-gostinitsa-bezhim-s-paketami-step-oil.png",
+    "asset": "bg-gostinitsa-bezhim-s-paketami-step-v2-oil",
+    "generated": "exec-2c5f150b-72a6-46f4-85ed-876d2d7fdd52.png"
+  },
+  {
+    "original": "bg-tsokol-koridor-s-paketami-oil.png",
+    "asset": "bg-tsokol-koridor-s-paketami-v2-oil",
+    "generated": "exec-4cf4470d-f0cf-4456-8a7f-3c2753d892de.png"
+  },
+  {
+    "original": "bg-tsokol-komnata-ginekologicheskoe-kreslo-oil.png",
+    "asset": "bg-tsokol-boylernaya-kreslo-oil",
+    "generated": "exec-bdbd1bc1-c332-4dd0-a5cb-c36d168cbea9.png"
+  },
+  {
+    "original": "bg-tsokol-boylernaya-kreslo-oil.png",
+    "asset": "bg-tsokol-boylernaya-pakety-na-kresle-oil",
+    "generated": "exec-e8fb5d4e-883e-4546-8efb-555efbf1321f.png"
+  },
+  {
+    "original": "bg-troitsa-na-poroge-gostinitsy-oil.png",
+    "asset": "bg-troitsa-na-lestnichnoy-ploshchadke-oil",
+    "generated": "exec-2418f383-78e8-42be-b9d1-ca4e66391097.png"
+  },
+  {
+    "original": "bg-troitsa-na-lestnichnoy-ploshchadke-oil.png",
+    "asset": "bg-troitsa-na-lestnichnoy-ploshchadke-v2-oil",
+    "generated": "exec-c39e9d70-af08-4522-bba6-e99dbffd3a41.png"
+  },
+  {
+    "original": "bg-troitsa-lestnitsa-akashev-fotomontazh.png",
+    "asset": "bg-troitsa-lestnitsa-akashev-fotomontazh-oil",
+    "generated": "exec-e17fe7a7-0ade-4200-a83e-ad9903d1eeee.png"
   }
 ]

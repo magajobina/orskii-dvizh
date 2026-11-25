@@ -56,8 +56,8 @@
   },
   "bg-start": {
     "file": "bg-start.jpg",
-    "width": 512,
-    "height": 352
+    "width": 1512,
+    "height": 1040
   },
   "bg-tsigani-anya": {
     "file": "bg-tsigani-anya.png",
@@ -1046,5 +1046,65 @@
     "file": "bg-troitsa-akashev-bodrov-obrez-oil.png",
     "width": 1672,
     "height": 941
+  },
+  "bg-gostinitsa-bezhim-s-paketami-step-oil": {
+    "file": "bg-gostinitsa-bezhim-s-paketami-step-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-tsokol-koridor-s-paketami-oil": {
+    "file": "bg-tsokol-koridor-s-paketami-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-tsokol-komnata-ginekologicheskoe-kreslo-oil": {
+    "file": "bg-tsokol-komnata-ginekologicheskoe-kreslo-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-gostinitsa-bezhim-s-paketami-step-v2-oil": {
+    "file": "bg-gostinitsa-bezhim-s-paketami-step-v2-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-tsokol-koridor-s-paketami-v2-oil": {
+    "file": "bg-tsokol-koridor-s-paketami-v2-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-tsokol-boylernaya-kreslo-oil": {
+    "file": "bg-tsokol-boylernaya-kreslo-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-tsokol-boylernaya-pakety-na-kresle-oil": {
+    "file": "bg-tsokol-boylernaya-pakety-na-kresle-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-troitsa-na-lestnichnoy-ploshchadke-oil": {
+    "file": "bg-troitsa-na-lestnichnoy-ploshchadke-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-troitsa-na-lestnichnoy-ploshchadke-v2-oil": {
+    "file": "bg-troitsa-na-lestnichnoy-ploshchadke-v2-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-troitsa-lestnitsa-akashev-fotomontazh-oil": {
+    "file": "bg-troitsa-lestnitsa-akashev-fotomontazh-oil.png",
+    "width": 1672,
+    "height": 941
+  },
+  "bg-troitsa-lestnitsa-akashev-fotomontazh": {
+    "file": "bg-troitsa-lestnitsa-akashev-fotomontazh.png",
+    "width": 1672,
+    "height": 941
+  },
+  "Изображение-ChatGPT-25-нояб.-2026-г.-13_09_14": {
+    "file": "Изображение-ChatGPT-25-нояб.-2026-г.-13_09_14.png",
+    "width": 1512,
+    "height": 1040
   }
 }

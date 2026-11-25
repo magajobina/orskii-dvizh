@@ -2101,7 +2101,7 @@
     },
     "text-7a7c0485": {
       "type": "text",
-      "text": "Акашев: «Го пожрём и проверим. Вы увидите всё своими глазами, и поймёте что я не воздухан».",
+      "text": "Акашев: «Го пожрём и проверим их комнаты. Вы увидите всё своими глазами, и поймёте что я не воздухан».",
       "next": "choice-56beda23",
       "chapterId": "chapter-63e8615e"
     },
@@ -2153,7 +2153,7 @@
     },
     "text-58106e6f": {
       "type": "text",
-      "text": "Нас идут насиловать, а тут такое. Надо прибраться срочно.",
+      "text": "Ваш главный страх идёт сюда, а тут такое. Надо прибраться срочно.",
       "next": "choice-bbb6d0c3",
       "chapterId": "chapter-63e8615e"
     },
@@ -2232,7 +2232,7 @@
         },
         {
           "id": "choice-e8a989e0-answer-c39a006b",
-          "text": "Хуй знает чё",
+          "text": "В подвал",
           "next": "scene-b94e01b3"
         }
       ],
@@ -2472,19 +2472,19 @@
     },
     "text-b29aa328": {
       "type": "text",
-      "text": "Новая реплика",
+      "text": "...",
       "next": "choice-12682636",
       "chapterId": "chapter-63e8615e"
     },
     "text-141fb8ee": {
       "type": "text",
-      "text": "Новая реплика",
+      "text": "...",
       "next": "choice-12682636",
       "chapterId": "chapter-63e8615e"
     },
     "text-68f5051c": {
       "type": "text",
-      "text": "Новая реплика",
+      "text": "...",
       "next": "scene-e5b24fdb",
       "chapterId": "chapter-63e8615e"
     },
@@ -2509,55 +2509,55 @@
     "text-d16e85d2": {
       "type": "text",
       "text": "Идёте в самый конец подвала, и открываете слава богу незапертую дверь.",
-      "next": "text-0cc28db5",
+      "next": "scene-ef07a636",
       "chapterId": "chapter-63e8615e"
     },
     "scene-a0b6de74": {
       "type": "scene",
-      "asset": "main-menu",
+      "asset": "bg-tsokol-koridor-s-paketami-v2-oil",
       "next": "text-d16e85d2",
       "chapterId": "chapter-63e8615e"
     },
     "text-9116de5f": {
       "type": "text",
-      "text": "А ты что там внизу делал? ",
+      "text": "\"А ты что там внизу делал?\" - спрашивает Вазген Гегамович",
       "next": "text-ebd8a92e",
       "chapterId": "chapter-63e8615e"
     },
     "text-ebd8a92e": {
       "type": "text",
-      "text": "\"Ничего\"",
-      "next": "text-b7e7dfc2",
+      "text": "Я?",
+      "next": "text-a768b003",
       "chapterId": "chapter-63e8615e"
     },
     "text-b7e7dfc2": {
       "type": "text",
-      "text": "Совсем ничего?",
+      "text": "\"Совсем ничего?\"",
       "next": "text-3f3b6ea0",
       "chapterId": "chapter-63e8615e"
     },
     "text-3f3b6ea0": {
       "type": "text",
-      "text": "\"Абсолютно ничего\"",
-      "next": "text-28f4a88c",
+      "text": "Абсолютно ничего",
+      "next": "text-fe5d21b1",
       "chapterId": "chapter-63e8615e"
     },
     "text-28f4a88c": {
       "type": "text",
-      "text": "Ну тогда иди в комнату, присосавшийся к авиации!",
-      "next": "chapter-63e8615e-end",
+      "text": "После этого вы отправились в свою комнату, и спокойно легли поспать когда эти черти ушли. ",
+      "next": "scene-ecd4a818",
       "chapterId": "chapter-63e8615e"
     },
     "text-0cc28db5": {
       "type": "text",
       "text": "Блять, откуда",
-      "next": "scene-ef07a636",
+      "next": "text-ed64edfc",
       "chapterId": "chapter-63e8615e"
     },
     "scene-ef07a636": {
       "type": "scene",
-      "asset": "main-menu",
-      "next": "text-ed64edfc",
+      "asset": "bg-tsokol-boylernaya-kreslo-oil",
+      "next": "text-0cc28db5",
       "chapterId": "chapter-63e8615e"
     },
     "text-ed64edfc": {
@@ -2571,10 +2571,123 @@
       "options": [
         {
           "id": "choice-45330b03-answer-1",
-          "text": "Швырнуть",
+          "text": "Закинуть",
+          "next": "scene-5e9e7f27"
+        }
+      ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-5e9e7f27": {
+      "type": "scene",
+      "asset": "bg-tsokol-boylernaya-pakety-na-kresle-oil",
+      "next": "text-4eba94c4",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-4eba94c4": {
+      "type": "text",
+      "text": "Всё, пора бежать к себе, изображать учёбу",
+      "next": "scene-2972c2db",
+      "chapterId": "chapter-63e8615e",
+      "delayMs": 800
+    },
+    "scene-2972c2db": {
+      "type": "scene",
+      "asset": "bg-troitsa-lestnitsa-akashev-fotomontazh-oil",
+      "next": "text-35dd84a0",
+      "chapterId": "chapter-63e8615e",
+      "shake": {
+        "variant": "tremble",
+        "durationMs": 300
+      }
+    },
+    "text-35dd84a0": {
+      "type": "text",
+      "text": "Бляяяяяя",
+      "next": "choice-3425f637",
+      "chapterId": "chapter-63e8615e",
+      "delayMs": 1500
+    },
+    "text-a768b003": {
+      "type": "text",
+      "text": "\"Да, ты\"",
+      "next": "text-1d0a8bc4",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-1d0a8bc4": {
+      "type": "text",
+      "text": "Я ничего там не делал",
+      "next": "text-b7e7dfc2",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-fe5d21b1": {
+      "type": "text",
+      "text": "\"Но ты внизу был\"",
+      "next": "text-90e5512f",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-90e5512f": {
+      "type": "text",
+      "text": "Я ходил туда абсолютно ничего не делать. Вам тоже не советую",
+      "next": "text-7b2c3ae5",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-7b2c3ae5": {
+      "type": "text",
+      "text": "\"Почему?\"",
+      "next": "text-0a1caf37",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-0a1caf37": {
+      "type": "text",
+      "text": "Там делать нечего",
+      "next": "text-6478104e",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-6478104e": {
+      "type": "text",
+      "text": "\"Тогда и мы туда не пойдём. Спасибо.\"",
+      "next": "scene-53cdc045",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-bbb739e3": {
+      "type": "text",
+      "text": "В дальнейшем вы остались там куковать ещё несколько месяцев потому что вы лох.",
+      "next": "scene-da001274",
+      "chapterId": "chapter-63e8615e"
+    },
+    "text-bd196cf2": {
+      "type": "text",
+      "text": "А все ваши друзья закончили полёты в рекордные сроки, ведь им ставили полёты каждый божий день, потому что та тройца полупокеров-командиров очень прониклась к той картине что они увидели в комнате ваших друзей.",
+      "next": "chapter-63e8615e-end",
+      "chapterId": "chapter-63e8615e"
+    },
+    "choice-3425f637": {
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice-3425f637-answer-1",
+          "text": "Бляяяяяяя",
           "next": "text-9116de5f"
         }
       ],
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-da001274": {
+      "type": "scene",
+      "asset": "bg-veypy-v-kabine-oil",
+      "next": "text-bd196cf2",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-53cdc045": {
+      "type": "scene",
+      "asset": "bg-alikspit",
+      "next": "text-28f4a88c",
+      "chapterId": "chapter-63e8615e"
+    },
+    "scene-ecd4a818": {
+      "type": "scene",
+      "asset": "Изображение-ChatGPT-25-нояб.-2026-г.-13_09_14",
+      "next": "text-bbb739e3",
       "chapterId": "chapter-63e8615e"
     }
   }
