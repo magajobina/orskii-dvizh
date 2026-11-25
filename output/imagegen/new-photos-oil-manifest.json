@@ -708,5 +708,25 @@
     "original": "bg-yarik-v-luzhe-blevotiny-oil.png",
     "asset": "bg-yarik-plastom-v-luzhe-blevotiny-oil",
     "generated": "exec-c2db964b-20b7-4fb6-83e0-4822a2a2d289.png"
+  },
+  {
+    "original": "bg-yarik-polzet-v-tualet.png",
+    "asset": "bg-vynosim-yarika-iz-travy-oil",
+    "generated": "exec-69c70bec-d3c7-4fca-bdfc-2c7c8fe9c361.png"
+  },
+  {
+    "original": "bg-vynosim-yarika-iz-travy-oil.png",
+    "asset": "bg-vynosim-yarika-iz-travy-v2-oil",
+    "generated": "exec-bece3000-6361-4f42-bc3e-cbb6b2a03ec2.png"
+  },
+  {
+    "original": "bg-vynosim-yarika-iz-travy-v2-oil.png",
+    "asset": "bg-vynosim-yarika-iz-travy-lica-oil",
+    "generated": "exec-aca7c7a0-8e98-4033-93d7-123bc6f77a5b.png"
+  },
+  {
+    "original": "g4-class-zaval-bez-akasheva.png",
+    "asset": "g4-class-menshe-tel-studenty-plachut-oil",
+    "generated": "exec-a7fc52fc-21d0-4a80-8ebd-83c0289630b8.png"
   }
 ]

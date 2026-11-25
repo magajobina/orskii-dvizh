@@ -1,0 +1,258 @@
+{
+  "added": [
+    {
+      "source": "photo_1_2026-11-25_15-33-48.jpg",
+      "asset": "album-rebyata-na-perrone",
+      "sha256": "adde123b169435e098295210b1cd5ebe60f8210389b267a71ce54010e4483ce5"
+    },
+    {
+      "source": "photo_2_2026-11-25_15-33-48.jpg",
+      "asset": "album-chay-s-kruzhkoy",
+      "sha256": "6c19891f0955bb4c9f43b13c3e32435c482258641a27f02c73dbf40a2084ec46"
+    },
+    {
+      "source": "photo_4_2026-11-25_15-33-48.jpg",
+      "asset": "album-balkon-nogi-vverh",
+      "sha256": "4a7a2854905013f47c1f0213e29c673ac6d8a5085f74b5d7ede928a5666caded"
+    },
+    {
+      "source": "photo_5_2026-11-25_15-33-48.jpg",
+      "asset": "album-shutka-s-nogoy",
+      "sha256": "b86b13d06d2a238bd30d3246edc5e80db6fbcc2b2f08e3506e7d6d35f2bc06b3"
+    },
+    {
+      "source": "photo_6_2026-11-25_15-33-48.jpg",
+      "asset": "album-otdyh-na-krovati",
+      "sha256": "2813bf29c820b76407c5819c76770b47887027a6da5ad8022ea27ddf18a27c44"
+    },
+    {
+      "source": "photo_7_2026-11-25_15-33-48.jpg",
+      "asset": "album-sinyaya-perchatka",
+      "sha256": "d46a0b8815da93a6697e1b4302ce68f04e55b90bf735d4d47922087bb2afb310"
+    },
+    {
+      "source": "photo_8_2026-11-25_15-33-48.jpg",
+      "asset": "album-pozy-u-fotostenda",
+      "sha256": "77194056ccf26a1d0df73726ebe2adb6d2050647eb85fba1ceb8e0d9d5821fd4"
+    },
+    {
+      "source": "photo_9_2026-11-25_15-33-48.jpg",
+      "asset": "album-kompaniya-u-fotostenda",
+      "sha256": "1d14e527e25815f07e78eced6f4793a335c9bad970bba8902a41915383888ca1"
+    },
+    {
+      "source": "photo_10_2026-11-25_15-33-48.jpg",
+      "asset": "album-troe-na-divane",
+      "sha256": "f077b7f521b0408507a8cf885f9e112e6b7514f4843487f60554a3bd8b96d3ec"
+    },
+    {
+      "source": "photo_11_2026-11-25_15-33-48.jpg",
+      "asset": "album-shutki-za-stolom",
+      "sha256": "4dd4b5ce8e7d40083316b21a077655b58c9080c35327b5eace56ec715b9fb3da"
+    },
+    {
+      "source": "photo_12_2026-11-25_15-33-48.jpg",
+      "asset": "album-vdvoem-na-parkovke",
+      "sha256": "004897a58e75fa21848ae1bbc48b44423dd7f3cddaa13988c4584f5e3c2bf4d7"
+    },
+    {
+      "source": "photo_13_2026-11-25_15-33-48.jpg",
+      "asset": "album-devushki-na-parkovke",
+      "sha256": "5fbf3d82820130dd6aa69a0c83e7885d6e1b82454a2c7983490c8eb47c1eb730"
+    },
+    {
+      "source": "photo_14_2026-11-25_15-33-48.jpg",
+      "asset": "album-dlinnye-volosy-i-usy",
+      "sha256": "9fef625ccc4e3c064423899e860a37afc30ad31a3cf2e122c17de2c057fd0044"
+    },
+    {
+      "source": "photo_15_2026-11-25_15-33-48.jpg",
+      "asset": "album-nakladnye-usy-v-kafe",
+      "sha256": "87588e9d469c5a63a59e4a8447365442463d2514698c4d2ea6806655968c69d2"
+    },
+    {
+      "source": "photo_16_2026-11-25_15-33-48.jpg",
+      "asset": "album-portret-posle-tusovki",
+      "sha256": "112b97d641b32ae29619e99b41d6a5754ed4e8c40432322c89d0408b721c0117"
+    },
+    {
+      "source": "photo_17_2026-11-25_15-33-48.jpg",
+      "asset": "album-razgovor-v-komnate",
+      "sha256": "58694bae7f823e9f230a682e0189851ecc179e1a72d8ab402ecc1ac8a9e707ae"
+    },
+    {
+      "source": "photo_19_2026-11-25_15-33-48.jpg",
+      "asset": "album-kompaniya-u-dvuhyarusnoy-krovati",
+      "sha256": "de80e9f486e023c750a0f7339bc3b22ed79803fa5bd9620b0ecdb44b0943a989"
+    },
+    {
+      "source": "photo_20_2026-11-25_15-33-48.jpg",
+      "asset": "album-u-krasnogo-belogo",
+      "sha256": "8ce99a25a7e2af369bad6b70b5e8a0f909ba1c5177b5926b176adefe75775cbd"
+    },
+    {
+      "source": "photo_21_2026-11-25_15-33-48.jpg",
+      "asset": "album-balkon-akrobaty-obshchiy-plan",
+      "sha256": "a0de80cbb2b257f61fbe9395fab4d8596daa2395528d57b90d086f297cd536d3"
+    },
+    {
+      "source": "photo_22_2026-11-25_15-33-48.jpg",
+      "asset": "album-balkon-akrobaty-vblizi",
+      "sha256": "f3df0bd734300be384d772d2f73bfc92a0b4ee7028433c4498883311cf49170e"
+    },
+    {
+      "source": "photo_23_2026-11-25_15-33-48.jpg",
+      "asset": "album-na-lavke-s-devushkami",
+      "sha256": "94261f2fd909258365f68689c6508c1a98b46c42b15051298c891ea891f17ffc"
+    },
+    {
+      "source": "photo_24_2026-11-25_15-33-48.jpg",
+      "asset": "album-na-dorozhnom-znake",
+      "sha256": "e90ef262f972fd5723019840bce95f125bd1f20ca474f31c541b0f46acbc829e"
+    },
+    {
+      "source": "photo_25_2026-11-25_15-33-48.jpg",
+      "asset": "album-v-stepi-u-tyuka",
+      "sha256": "85c5df8b8fc3950fbc7f2669c72f5875f296a7a85e98e6e4d6e1bd1ee1d35fba"
+    },
+    {
+      "source": "photo_26_2026-11-25_15-33-48.jpg",
+      "asset": "album-selfi-na-prirode",
+      "sha256": "aa5629a95c888853d16d16c272e051979249b7a1244ffc274947a8a26ef9947e"
+    },
+    {
+      "source": "photo_27_2026-11-25_15-33-48.jpg",
+      "asset": "album-kompaniya-na-dereve",
+      "sha256": "6b0a895cbecb9c0d9832a4544796340f93b4e3ba621c72a1d491a6c997c73bb3"
+    },
+    {
+      "source": "photo_28_2026-11-25_15-33-48.jpg",
+      "asset": "album-rebyata-na-polyane",
+      "sha256": "b66b864803306b62a2dfd532816d8a8b3e1c622e8a9c90980184e6f23222b080"
+    },
+    {
+      "source": "photo_29_2026-11-25_15-33-48.jpg",
+      "asset": "album-vecher-na-polyane",
+      "sha256": "02699b8dea89bab9682ba497c6141f5f322e7da4b36a4a5ecbb57ae2ec7e9894"
+    },
+    {
+      "source": "photo_30_2026-11-25_15-33-48.jpg",
+      "asset": "album-gruppa-v-rame",
+      "sha256": "2a37df078d706a360dea58364cd960da17abd96bc67cf2e77c2aac7056f25770"
+    },
+    {
+      "source": "photo_31_2026-11-25_15-33-48.jpg",
+      "asset": "album-u-magazina",
+      "sha256": "34545a799d6b6d0aedfb21cf3f532327435e8e1624b97e2087f2885a41262f44"
+    },
+    {
+      "source": "photo_32_2026-11-25_15-33-48.jpg",
+      "asset": "album-na-balkone-v-kresle",
+      "sha256": "37ac623992ae7a5298915447a0c13887519264ba3fdf5fba62cafd3f2798a3eb"
+    },
+    {
+      "source": "photo_33_2026-11-25_15-33-48.jpg",
+      "asset": "album-dvoe-za-ekranom",
+      "sha256": "88884fef2221d40cfd9764e71e2ab712399525adf3f5a3f759c6d0c6e2618c83"
+    },
+    {
+      "source": "photo_34_2026-11-25_15-33-48.jpg",
+      "asset": "album-utro-v-komnate",
+      "sha256": "955b1488fe228efb459cc2ef229f0f098cd0437e6135c161ffcbb8455228df4e"
+    },
+    {
+      "source": "photo_35_2026-11-25_15-33-48.jpg",
+      "asset": "album-shutka-s-tatuirovkoy-1",
+      "sha256": "716352bd6047c2bf4842e17a8d72af5a61986548504347904567ad7aeac454ce"
+    },
+    {
+      "source": "photo_36_2026-11-25_15-33-48.jpg",
+      "asset": "album-shutka-s-tatuirovkoy-2",
+      "sha256": "a69ca3740ed3fc7bd559c09d3cad4f76f3b1412eaa1057facb08e47894f9535d"
+    },
+    {
+      "source": "photo_37_2026-11-25_15-33-48.jpg",
+      "asset": "album-son-na-krovati",
+      "sha256": "bbe2c4b9ec00564a648a1a8309d183dacd770625f585de607df487d2c0449fb9"
+    },
+    {
+      "source": "photo_38_2026-11-25_15-33-48.jpg",
+      "asset": "album-vdvoem-za-stolom",
+      "sha256": "6b349d0a05f1dcf2a25f8eb7ba5e53ef357240913552346ee4af3f6056bbe53d"
+    },
+    {
+      "source": "photo_39_2026-11-25_15-33-48.jpg",
+      "asset": "album-obnimashki-na-tusovke",
+      "sha256": "5e6bf392ece4d82fd7527fe870805282caacd9db4670ed35b438caee12732b13"
+    },
+    {
+      "source": "photo_40_2026-11-25_15-33-48.jpg",
+      "asset": "album-na-balkone-s-veypom",
+      "sha256": "7d797bc40f62d6e388478e3b53a7ae7e1b859afef3026ca6c045e7b4ea71ad55"
+    },
+    {
+      "source": "photo_42_2026-11-25_15-33-48.jpg",
+      "asset": "album-troe-v-zelenyh-futbolkah",
+      "sha256": "abec0eece3e1fc2737a46e342b0ee2da5d522e5404eb5f00fbbcb5ec64ef466b"
+    },
+    {
+      "source": "photo_43_2026-11-25_15-33-48.jpg",
+      "asset": "album-lezhim-na-doroge",
+      "sha256": "822baa7cdf3aff08d0505607d132308509caf3575efa3960680bd2b012300e3c"
+    },
+    {
+      "source": "photo_44_2026-11-25_15-33-48.jpg",
+      "asset": "album-u-znaka-na-zakate",
+      "sha256": "811b361058f86c4320d179bea9c912c1c85e64a5732acedb236551242ff9e870"
+    },
+    {
+      "source": "photo_45_2026-11-25_15-33-48.jpg",
+      "asset": "album-serdechko-rukami-1",
+      "sha256": "d75ed55c206d07496b645640051ee35f4d5c72df6a32622d440ec8dd4647ff37"
+    },
+    {
+      "source": "photo_46_2026-11-25_15-33-48.jpg",
+      "asset": "album-serdechko-rukami-2",
+      "sha256": "0cb16adc6192b629edc8b332dc5f2a4d937a76b59ae7ea4656fe32bbe4329c46"
+    },
+    {
+      "source": "photo_47_2026-11-25_15-33-48.jpg",
+      "asset": "album-gitara-v-komnate",
+      "sha256": "ccaeb0949c4784edfd9ce4d4be34bc4622fab310971070f68949a609bb3a0f1c"
+    },
+    {
+      "source": "photo_48_2026-11-25_15-33-48.jpg",
+      "asset": "album-selfi-v-gorode",
+      "sha256": "12320e4f6cff4268488753e44ecbcd2e92f045c9fd980b6ad3ec37b9a280746b"
+    },
+    {
+      "source": "photo_49_2026-11-25_15-33-48.jpg",
+      "asset": "album-dvoe-v-ochkah",
+      "sha256": "e58dc4e6ec7e4b695284d5cbd9c4e7f7e966d04b6acf2a520191b970f39354a9"
+    },
+    {
+      "source": "photo_50_2026-11-25_15-33-48.jpg",
+      "asset": "album-dvoe-v-ochkah-lezhat",
+      "sha256": "29f4dd5c090d6824cbdd1adb19f2cb99659e0daf9b9799045ab22af16757d77d"
+    },
+    {
+      "source": "photo_51_2026-11-25_15-33-48.jpg",
+      "asset": "album-v-kabine-s-garnituroy",
+      "sha256": "a0ad37854559f610689a6fd20390ed11e8de5c2024a64d289deee08a2c008360"
+    }
+  ],
+  "duplicates": [
+    {
+      "source": "photo_3_2026-11-25_15-33-48.jpg",
+      "existingAsset": "bg-bashnya-iz-butylok-oil"
+    },
+    {
+      "source": "photo_18_2026-11-25_15-33-48.jpg",
+      "existingAsset": "bg-da40-noch-fak-oil"
+    },
+    {
+      "source": "photo_41_2026-11-25_15-33-48.jpg",
+      "existingAsset": "bg-kompaniya-na-balkone-oil"
+    }
+  ]
+}
