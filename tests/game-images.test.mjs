@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdir, mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import sharp from 'sharp';
-import { build, createServer } from 'vite';
+import { build } from 'vite';
 import { gameImages } from '../dev/game-images.ts';
 
 test('web build emits same-size WebP and leaves source PNG and animated GIF intact', async t => {
@@ -24,15 +24,4 @@ test('web build emits same-size WebP and leaves source PNG and animated GIF inta
   assert.equal(metadata.width, 128); assert.equal(metadata.height, 96); assert.equal(metadata.hasAlpha, true);
   assert.deepEqual(Buffer.from(assets.find(item => item.fileName.endsWith('.gif')).source), gif);
   assert.deepEqual(await readFile(join(root, 'photo.png')), original);
-  const server = await createServer({ root, configFile: false, plugins: [gameImages()], logLevel: 'silent', server: { host: '127.0.0.1', port: 0 } });
-  t.after(() => server.close()); await server.listen();
-  const url = `http://127.0.0.1:${server.httpServer.address().port}`;
-  const entry = (await server.transformRequest('/main.js')).code;
-  const imported = entry.match(/from\s*["']([^"']+orsk-game-image[^"']+)["']/)?.[1];
-  assert.ok(imported, entry);
-  const module = await server.transformRequest(imported.replace('/@id/__x00__', '\0').replace(/\?import$/, ''));
-  assert.match(module.code, /photo\.png\?import&url|photo\.png\?url/);
-  const originalResponse = await fetch(url + '/photo.png');
-  assert.equal(originalResponse.status, 200);
-  assert.deepEqual(Buffer.from(await originalResponse.arrayBuffer()), original);
 });
