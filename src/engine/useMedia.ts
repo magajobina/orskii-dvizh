@@ -14,14 +14,12 @@ export function useMedia(story: Story, state: State, playing: boolean, stage: Re
   const images = useRef<ImagePreloader | null>(null);
   if (!images.current) images.current = new ImagePreloader();
   useEffect(() => {
-    audioPool.current!.preload(storyAudioURLs(story, audioURL));
-  }, [story]);
+    audioPool.current!.preload(storyAudioURLs(story, audioURL, playing ? state.current : story.entry));
+  }, [story, state.current, playing]);
   useEffect(() => () => audioPool.current!.dispose(), []);
   useEffect(() => {
-    if (playing) {
-      const currentImage = imageURL(state.scene);
-      images.current!.preload(storyImageURLs(story, state.current, imageURL).filter(url => url !== currentImage));
-    } else images.current!.pause();
+    // Begin on the title screen too. Every route update reprioritizes its lookahead.
+    images.current!.preload(storyImageURLs(story, playing ? state.current : story.entry, imageURL));
     return () => images.current!.pause();
   }, [story, state.current, state.scene, playing]);
   useEffect(() => () => images.current!.dispose(), []);
@@ -35,17 +33,22 @@ export function useMedia(story: Story, state: State, playing: boolean, stage: Re
     const node = story.nodes[state.current];
     const url = playing && node.type === 'text' && node.audio ? audioURL(node.audio) : undefined;
     if (!url) return;
-    const sound = audioPool.current!.get(url);
+    let sound: HTMLAudioElement | undefined;
     let active = true;
-    const retry = () => { void sound.play().catch(() => {}); };
-    void sound.play().catch(error => {
-      if (active && error.name === 'NotAllowedError') {
-        window.addEventListener('pointerdown', retry, { once: true });
-        window.addEventListener('keydown', retry, { once: true });
-      }
-    });
+    const retry = () => { if (active) void sound?.play().catch(() => {}); };
+    void audioPool.current!.prepare(url).then(ready => {
+      if (!active) return;
+      sound = ready;
+      void sound.play().catch(error => {
+        if (active && error.name === 'NotAllowedError') {
+          window.addEventListener('pointerdown', retry, { once: true });
+          window.addEventListener('keydown', retry, { once: true });
+        }
+      });
+    }).catch(() => { /* A disposed pool must not start a late sound. */ });
     return () => {
-      active = false; sound.pause(); sound.currentTime = 0;
+      active = false;
+      if (sound) { sound.pause(); sound.currentTime = 0; }
       window.removeEventListener('pointerdown', retry); window.removeEventListener('keydown', retry);
     };
   }, [story, state.current, playing]);

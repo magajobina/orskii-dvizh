@@ -34,6 +34,9 @@ const defer: Defer = job => {
 
 export class ImagePreloader {
   private completed = new Set<string>();
+  private retained = new Map<string, HTMLImageElement>();
+  private warm = new Set<string>();
+  private attempts = new Map<string, number>();
   private running = new Map<HTMLImageElement, string>();
   private pending: string[] = [];
   private active = false;
@@ -47,8 +50,13 @@ export class ImagePreloader {
   }
 
   preload(urls: string[]) {
+    this.warm = new Set(urls.slice(0, 6));
+    for (const [url, image] of this.retained) if (!this.warm.has(url)) {
+      image.removeAttribute('src'); this.retained.delete(url);
+    }
     const loading = new Set(this.running.values());
-    this.pending = [...new Set(urls)].filter(url => !this.completed.has(url) && !loading.has(url));
+    this.pending = [...new Set(urls)].filter(url => !loading.has(url) && (this.attempts.get(url) ?? 0) < 3 &&
+      (!this.completed.has(url) || (this.warm.has(url) && !this.retained.has(url))));
     this.active = true;
     this.schedule();
   }
@@ -63,18 +71,26 @@ export class ImagePreloader {
 
   private load(url: string) {
     const image = this.create();
-    image.fetchPriority = 'low';
+    image.fetchPriority = this.warm.has(url) ? 'high' : 'low';
     image.decoding = 'async';
     this.running.set(image, url);
-    const finish = () => {
-      this.completed.add(url);
+    this.attempts.set(url, (this.attempts.get(url) ?? 0) + 1);
+    const finish = (success: boolean) => {
+      if (!this.running.has(image)) return;
+      if (success) { this.completed.add(url); this.attempts.delete(url); }
       this.running.delete(image);
       image.onload = image.onerror = null;
-      // Warm the browser cache without retaining every decoded image/GIF in RAM.
-      image.removeAttribute('src');
+      // Keep a small lookahead decoded; release distant images instead of retaining the whole game.
+      if (success && this.warm.has(url)) this.retained.set(url, image);
+      else image.removeAttribute('src');
+      if (!success && (this.attempts.get(url) ?? 0) < 3) this.pending.push(url);
       this.schedule();
     };
-    image.onload = image.onerror = finish;
+    image.onload = () => {
+      if (this.warm.has(url) && image.decode) void image.decode().then(() => finish(true), () => finish(true));
+      else finish(true);
+    };
+    image.onerror = () => finish(false);
     image.src = url;
   }
 
@@ -91,6 +107,8 @@ export class ImagePreloader {
       image.removeAttribute('src');
     }
     this.running.clear();
+    for (const image of this.retained.values()) image.removeAttribute('src');
+    this.retained.clear(); this.warm.clear(); this.attempts.clear();
     this.pending = [];
     this.completed.clear();
   }

@@ -3,7 +3,7 @@ import registry from './assets.json';
 export type Asset = { file?: string; fallback?: string; width?: number; height?: number };
 export const imageAssets: Record<string, Asset> = { ...registry };
 const assets = imageAssets;
-const files = import.meta.glob<string>('../assets/illustrations/*', { query: '?url', import: 'default', eager: true });
+const files = import.meta.glob<string>('../assets/illustrations/*', { query: '?game-image', import: 'default', eager: true });
 
 export function imageFilename(id: string): string {
   const asset = assets[id];

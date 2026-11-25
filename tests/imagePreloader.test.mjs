@@ -28,36 +28,39 @@ function harness() {
   return { pool, images, tick };
 }
 
-test('downloads at low priority, at most two at once, deduplicates and prioritizes a new route', () => {
+test('nearest pictures stay decoded, distant ones are released and route changes reprioritize', () => {
   const { pool, images, tick } = harness();
-  pool.preload(['/a', '/b', '/c', '/a']);
-  assert.equal(images.length, 0);
-  tick();
-  assert.deepEqual(images.map(image => image.src), ['/a', '/b']);
-  assert.ok(images.every(image => image.fetchPriority === 'low' && image.decoding === 'async'));
-  pool.preload(['/urgent', '/a', '/b', '/c']);
-  images[0].onload();
-  assert.equal(images[0].src, '');
+  pool.preload(['/a', '/b', '/c', '/d', '/e', '/f', '/g']); tick();
   assert.equal(images.length, 2);
-  tick();
-  assert.equal(images[2].src, '/urgent');
-  images[1].onerror();
-  tick();
-  assert.equal(images[3].src, '/c');
-  images[2].onload(); images[3].onload();
-  pool.preload(['/a', '/b', '/c', '/urgent']); tick();
-  assert.equal(images.length, 4);
+  assert.equal(images[0].fetchPriority, 'high');
+  images[0].onload(); images[1].onload(); tick();
+  assert.equal(images[0].src, '/a');
+  pool.preload(['/urgent', '/c', '/d', '/e', '/f', '/g', '/a']);
+  assert.equal(images[0].src, '');
+  images[2].onload(); tick();
+  assert.equal(images[4].src, '/urgent');
+  assert.equal(images[4].fetchPriority, 'high');
+  pool.dispose();
+  assert.ok(images.every(image => image.src === '' && image.onload === null && image.onerror === null));
 });
 
-test('menu pauses new downloads, resuming keeps the cache and disposal aborts pending work', () => {
+test('failed downloads retry rather than being marked ready; retries are bounded', () => {
   const { pool, images, tick } = harness();
-  pool.preload(['/a', '/b', '/c']);
-  pool.pause(); tick(); assert.equal(images.length, 0);
-  pool.preload(['/a', '/b', '/c']); tick();
-  pool.pause(); images[0].onload(); tick();
+  pool.preload(['/a']); tick(); images[0].onerror(); tick();
+  assert.equal(images[1].src, '/a');
+  images[1].onload(); pool.preload(['/a']); tick();
   assert.equal(images.length, 2);
+  pool.preload(['/broken']); tick();
+  for (let i = 2; i < 5; i++) { images[i].onerror(); tick(); }
+  assert.equal(images.length, 5);
+});
+
+test('pause stops new jobs; resume keeps successful lookahead; dispose aborts requests', () => {
+  const { pool, images, tick } = harness();
+  pool.preload(['/a', '/b', '/c']); pool.pause(); tick();
+  assert.equal(images.length, 0);
   pool.preload(['/a', '/b', '/c']); tick();
-  assert.equal(images[2].src, '/c');
-  pool.dispose(); tick();
-  assert.ok(images.every(image => image.src === '' && image.onload === null && image.onerror === null));
+  pool.pause(); images[0].onload(); tick(); assert.equal(images.length, 2);
+  pool.preload(['/a', '/b', '/c']); tick(); assert.equal(images[2].src, '/c');
+  pool.dispose(); tick(); assert.ok(images.every(image => image.src === ''));
 });
