@@ -1426,5 +1426,30 @@
     "file": "ne-pravilno.png",
     "width": 720,
     "height": 405
+  },
+  "photo_2026-11-25_14-20-03": {
+    "file": "photo_2026-11-25_14-20-03.jpg",
+    "width": 1125,
+    "height": 2436
+  },
+  "bg-tolkaem-mashinu-step-aeroport-oil": {
+    "file": "bg-tolkaem-mashinu-step-aeroport-oil.png",
+    "width": 852,
+    "height": 1846
+  },
+  "bg-tolkaem-mashinu-u-gostinitsy-oil": {
+    "file": "bg-tolkaem-mashinu-u-gostinitsy-oil.png",
+    "width": 852,
+    "height": 1846
+  },
+  "bg-tolkaem-mashinu-panorama-aeroport-oil": {
+    "file": "bg-tolkaem-mashinu-panorama-aeroport-oil.png",
+    "width": 1060,
+    "height": 1484
+  },
+  "bg-limonchella-anya-polina-yarik-pustoy-stol": {
+    "file": "bg-limonchella-anya-polina-yarik-pustoy-stol.png",
+    "width": 1086,
+    "height": 1448
   }
 }

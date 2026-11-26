@@ -625,7 +625,7 @@
     },
     "line-379": {
       "type": "text",
-      "text": "Вас всё равно заставят пить лимончелло.",
+      "text": "Это глупо. Вас всё равно заставят пить лимончеллу.",
       "next": "line-369",
       "chapterId": "dalee"
     },
@@ -647,7 +647,7 @@
         {
           "id": "line-383",
           "text": "Согласиться ебашить лимончеллу",
-          "next": "line-439"
+          "next": "scene-08feb215"
         }
       ],
       "chapterId": "dalee"
@@ -660,7 +660,7 @@
     },
     "line-366": {
       "type": "scene",
-      "asset": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2",
+      "asset": "bg-limonchella-anya-polina-yarik-pustoy-stol",
       "next": "line-370",
       "chapterId": "dalee"
     },
@@ -1814,7 +1814,7 @@
     },
     "text-c77e1484": {
       "type": "text",
-      "text": "Я ебал...     \nприятного романтического вечернего секса с Акашевым кому-то",
+      "text": "Приятного романтического вечернего секса с Акашевым и Кузнецовым кому-то",
       "next": "scene-82bf5c64",
       "chapterId": "chapter-63e8615e",
       "delayMs": 15000,
@@ -2732,7 +2732,7 @@
     },
     "scene-37b2568a": {
       "type": "scene",
-      "asset": "main-menu",
+      "asset": "bg-tolkaem-mashinu-panorama-aeroport-oil",
       "next": "text-23b2a197",
       "chapterId": "dalee"
     },
@@ -2812,7 +2812,7 @@
     },
     "text-7906a741": {
       "type": "text",
-      "text": "АХАХА сикс севен",
+      "text": "АХАХА сикс севен там был",
       "next": "text-a83eb9a6",
       "chapterId": "chapter-63e8615e",
       "audio": "orsk-atis-record",
@@ -2853,6 +2853,12 @@
       "text": "Конец!",
       "next": "chapter-63e8615e-end",
       "chapterId": "chapter-63e8615e"
+    },
+    "scene-08feb215": {
+      "type": "scene",
+      "asset": "bg-limonchella-anya-polina-yarik-pustye-grafiny-v2",
+      "next": "line-439",
+      "chapterId": "dalee"
     }
   }
 }
